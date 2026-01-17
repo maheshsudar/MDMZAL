@@ -1,0 +1,187 @@
+{
+    "_version": "1.49.0",
+    "sap.app": {
+        "id": "com.company.salesforcerequests",
+        "type": "application",
+        "i18n": "i18n/i18n.properties",
+        "applicationVersion": {
+            "version": "1.0.0"
+        },
+        "title": "{{appTitle}}",
+        "description": "{{appDescription}}",
+        "sourceTemplate": {
+            "id": "@sap/generator-fiori:lrop",
+            "version": "1.8.0"
+        },
+        "dataSources": {
+            "mainService": {
+                "uri": "/salesforce/",
+                "type": "OData",
+                "settings": {
+                    "annotations": [],
+                    "localUri": "localService/metadata.xml",
+                    "odataVersion": "4.0"
+                }
+            },
+            "adminService": {
+                "uri": "/admin/",
+                "type": "OData",
+                "settings": {
+                    "odataVersion": "4.0"
+                }
+            }
+        }
+    },
+    "sap.ui": {
+        "technology": "UI5",
+        "icons": {
+            "icon": "sap-icon://customer",
+            "favIcon": "",
+            "phone": "",
+            "phone@2": "",
+            "tablet": "",
+            "tablet@2": ""
+        },
+        "deviceTypes": {
+            "desktop": true,
+            "tablet": true,
+            "phone": true
+        }
+    },
+    "sap.ui5": {
+        "flexEnabled": false,
+        "extends": {
+            "extensions": {
+                "sap.ui.controllerExtensions": {
+                    "sap.fe.templates.ListReport.ListReportController": {
+                        "controllerName": "com.company.salesforcerequests.ext.controller.ListReportExt"
+                    },
+                    "sap.fe.templates.ObjectPage.ObjectPageController": {
+                        "controllerName": "com.company.salesforcerequests.ext.controller.ObjectPageExt"
+                    }
+                }
+            }
+        },
+        "dependencies": {
+            "minUI5Version": "1.120.0",
+            "libs": {
+                "sap.m": {},
+                "sap.ui.core": {},
+                "sap.ushell": {},
+                "sap.fe.templates": {},
+                "sap.f": {},
+                "sap.ui.comp": {},
+                "sap.ui.generic.app": {},
+                "sap.ui.table": {},
+                "sap.suite.ui.commons": {},
+                "sap.suite.ui.microchart": {},
+                "sap.ui.layout": {},
+                "sap.ui.unified": {}
+            }
+        },
+        "models": {
+            "i18n": {
+                "type": "sap.ui.model.resource.ResourceModel",
+                "settings": {
+                    "bundleName": "com.company.salesforcerequests.i18n.i18n"
+                }
+            },
+            "": {
+                "dataSource": "mainService",
+                "preload": false,
+                "settings": {
+                    "synchronizationMode": "None",
+                    "operationMode": "Server",
+                    "autoExpandSelect": true,
+                    "earlyRequests": true
+                }
+            },
+            "admin": {
+                "dataSource": "adminService",
+                "preload": false,
+                "settings": {
+                    "synchronizationMode": "None",
+                    "operationMode": "Server",
+                    "autoExpandSelect": true,
+                    "earlyRequests": false
+                }
+            }
+        },
+        "routing": {
+            "config": {
+                "statePreservation": false
+            },
+            "routes": [
+                {
+                    "pattern": ":?query:",
+                    "name": "SalesforceRequestsList",
+                    "target": "SalesforceRequestsList"
+                },
+                {
+                    "pattern": "SalesforceRequests({key}):?query:",
+                    "name": "SalesforceRequestsObjectPage",
+                    "target": "SalesforceRequestsObjectPage"
+                },
+                {
+                    "pattern": "SalesforceRequests({key})/subAccounts({key2}):?query:",
+                    "name": "SubAccountsObjectPage",
+                    "target": "SubAccountsObjectPage"
+                }
+            ],
+            "targets": {
+                "SalesforceRequestsList": {
+                    "type": "Component",
+                    "id": "SalesforceRequestsList",
+                    "name": "sap.fe.templates.ListReport",
+                    "options": {
+                        "settings": {
+                            "contextPath": "/SalesforceRequests",
+                            "variantManagement": "Page",
+                            "navigation": {
+                                "SalesforceRequests": {
+                                    "detail": {
+                                        "route": "SalesforceRequestsObjectPage"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "SalesforceRequestsObjectPage": {
+                    "type": "Component",
+                    "id": "SalesforceRequestsObjectPage",
+                    "name": "sap.fe.templates.ObjectPage",
+                    "options": {
+                        "settings": {
+                            "editableHeaderContent": false,
+                            "contextPath": "/SalesforceRequests",
+                            "navigation": {
+                                "subAccounts": {
+                                    "detail": {
+                                        "route": "SubAccountsObjectPage"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "SubAccountsObjectPage": {
+                    "type": "Component",
+                    "id": "SubAccountsObjectPage",
+                    "name": "sap.fe.templates.ObjectPage",
+                    "options": {
+                        "settings": {
+                            "editableHeaderContent": false,
+                            "contextPath": "/SalesforceRequests/subAccounts",
+                            "navigation": {}
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "sap.cloud": {
+        "public": true,
+        "service": "com.company.salesforcerequests"
+    }
+}
