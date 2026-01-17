@@ -1,0 +1,35 @@
+ID;locale;status;sourceSystem;entityType;sectionName;sectionLabel;minimumCount;maximumCount;minErrorMessage;maxErrorMessage;filterCriteria;priority;isActive;blockSubmission
+1;en;Submitted;;;addresses;Addresses;1;;At least one address is required for submission;;;10;true;true
+2;de;Submitted;;;addresses;Adressen;1;;Mindestens eine Adresse ist für die Einreichung erforderlich;;;10;true;true
+3;en;Submitted;;Supplier;banks;Bank Accounts;1;;At least one bank account is required for suppliers to receive payments;;;10;true;true
+4;de;Submitted;;Supplier;banks;Bankverbindungen;1;;Mindestens ein Bankkonto ist erforderlich, damit Lieferanten Zahlungen erhalten können;;;10;true;true
+5;en;Submitted;;;emails;Email Addresses;1;;At least one email address is required for submission;;;10;true;true
+6;de;Submitted;;;emails;E-Mail-Adressen;1;;Mindestens eine E-Mail-Adresse ist für die Einreichung erforderlich;;;10;true;true
+7;en;Submitted;;;vatIds;VAT IDs;1;;At least one VAT ID is required for submission;;;10;true;false
+8;de;Submitted;;;vatIds;USt-IdNrn.;1;;Mindestens eine USt-IdNr. ist für die Einreichung erforderlich;;;10;true;false
+9;en;Submitted;Coupa;Supplier;banks;Bank Accounts;1;;Coupa suppliers must provide bank account information for payment processing;;;5;true;true
+10;de;Submitted;Coupa;Supplier;banks;Bankverbindungen;1;;Coupa-Lieferanten müssen Bankkontoinformationen für die Zahlungsabwicklung bereitstellen;;;5;true;true
+11;en;Submitted;Salesforce;Customer;emails;Email Addresses;1;;Customer requests from Salesforce must have at least one email for communication;;;5;true;true
+12;de;Submitted;Salesforce;Customer;emails;E-Mail-Adressen;1;;Kundenanfragen von Salesforce müssen mindestens eine E-Mail-Adresse für die Kommunikation enthalten;;;5;true;true
+13;en;New;;;addresses;Addresses;0;;No minimum address count required for New status;;;20;true;false
+14;de;New;;;addresses;Adressen;0;;Keine Mindestanzahl von Adressen für Status Neu erforderlich;;;20;true;false
+15;en;New;;;banks;Bank Accounts;0;;No minimum bank account count required for New status;;;20;true;false
+16;de;New;;;banks;Bankverbindungen;0;;Keine Mindestanzahl von Bankkonten für Status Neu erforderlich;;;20;true;false
+17;en;New;;;emails;Email Addresses;0;;No minimum email count required for New status;;;20;true;false
+18;de;New;;;emails;E-Mail-Adressen;0;;Keine Mindestanzahl von E-Mail-Adressen für Status Neu erforderlich;;;20;true;false
+19;en;New;;;vatIds;VAT IDs;0;;No minimum VAT ID count required for New status;;;20;true;false
+20;de;New;;;vatIds;USt-IdNrn.;0;;Keine Mindestanzahl von USt-IdNrn. für Status Neu erforderlich;;;20;true;false
+21;en;Submitted;Salesforce;;subAccounts;Sub-Accounts;1;;At least one sub-account is required for Salesforce customer requests;;;5;true;true
+22;de;Submitted;Salesforce;;subAccounts;Sub-Accounts;1;;Mindestens ein Sub-Account ist für Salesforce-Kundenanfragen erforderlich;;;5;true;true
+23;en;Submitted;Salesforce;;emails;SubAccount Email Contacts;1;;At least one email contact is required within each sub-account;;;5;true;true
+24;de;Submitted;Salesforce;;emails;SubAccount E-Mail-Kontakte;1;;Mindestens ein E-Mail-Kontakt ist in jedem Sub-Account erforderlich;;;5;true;true
+25;en;Submitted;Salesforce;;addresses;Established Addresses;1;;At least one address with type 'Established' is required for Salesforce requests;;{"addressType_code":"Established"};5;true;true
+26;de;Submitted;Salesforce;;addresses;Established-Adressen;1;;Mindestens eine Adresse vom Typ 'Established' ist für Salesforce-Anfragen erforderlich;;{"addressType_code":"Established"};5;true;true
+27;en;Submitted;Salesforce;;addresses;Established Addresses;1;1;At least one address with type 'Established' is required for Salesforce requests;Only one address with type 'Established' is allowed for Salesforce requests;{"addressType_code":"Established"};5;true;true
+28;de;Submitted;Salesforce;;addresses;Established-Adressen;1;1;Mindestens eine Adresse vom Typ 'Established' ist für Salesforce-Anfragen erforderlich;Nur eine Adresse vom Typ 'Established' ist für Salesforce-Anfragen zulässig;{"addressType_code":"Established"};5;true;true
+29;en;Submitted;PI;Supplier;banks;Bank Accounts;1;;PI suppliers must provide bank account information for payment processing;;;5;true;true
+30;de;Submitted;PI;Supplier;banks;Bankverbindungen;1;;PI-Lieferanten müssen Bankkontoinformationen für die Zahlungsabwicklung bereitstellen;;;5;true;true
+31;en;Submitted;PI;Supplier;addresses;Addresses;1;;For PI requests, at least one address must be of type Established;;addressType_code=Established;10;true;true
+32;de;Submitted;PI;Supplier;addresses;Adressen;1;;F�r PI-Anfragen muss mindestens eine Adresse vom Typ Etabliert sein;;addressType_code=Established;10;true;true
+33;en;Submitted;Coupa;Supplier;addresses;Addresses;1;;For Coupa requests, at least one address must be of type Established;;addressType_code=Established;10;true;true
+34;de;Submitted;Coupa;Supplier;addresses;Adressen;1;;F�r Coupa-Anfragen muss mindestens eine Adresse vom Typ Etabliert sein;;addressType_code=Established;10;true;true

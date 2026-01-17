@@ -1,0 +1,3 @@
+ID;request_ID;matchType;matchScore;existingBpNumber;existingBpName;matchDetails;reviewRequired;canMerge
+50000000-0000-0000-0000-000000000001;10000000-0000-0000-0000-000000000005;NameMatch;95;10000000-0000-0000-0000-000000000006;Duplicate Inc;Potential name match with existing request;true;true
+50000000-0000-0000-0000-000000000002;10000000-0000-0000-0000-000000000006;NameMatch;95;10000000-0000-0000-0000-000000000005;Duplicate Corp;Potential name match with existing request;true;true

@@ -1,0 +1,3 @@
+workflowName;stepNumber;stepName;approverRole;isParallel;isMandatory;timeoutDays
+StandardApproval;1;Manager Approval;Manager;false;true;3
+StandardApproval;2;MDM Review;MDMApprover;false;true;5

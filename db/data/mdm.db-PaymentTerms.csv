@@ -1,0 +1,9 @@
+code;locale;name;description;isActive
+Z001;en;Net 30;Net 30 Days;true
+Z001;de;Netto 30;Net 30 Days;true
+Z002;en;Net 60;Net 60 Days;true
+Z002;de;Netto 60;Net 60 Days;true
+Z003;en;Net 90;Net 90 Days;true
+Z003;de;Netto 90;Net 90 Days;true
+Z004;en;Immediate;Payable Immediately;true
+Z004;de;Sofort;Payable Immediately;true

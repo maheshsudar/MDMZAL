@@ -1,0 +1,21 @@
+code;symbol;name;descr;minorUnit
+EUR;€;Euro;Euro;2
+USD;$;US Dollar;US Dollar;2
+GBP;£;British Pound;British Pound Sterling;2
+CHF;CHF;Swiss Franc;Swiss Franc;2
+JPY;¥;Japanese Yen;Japanese Yen;0
+CNY;¥;Chinese Yuan;Chinese Yuan Renminbi;2
+INR;₹;Indian Rupee;Indian Rupee;2
+AUD;A$;Australian Dollar;Australian Dollar;2
+CAD;C$;Canadian Dollar;Canadian Dollar;2
+SGD;S$;Singapore Dollar;Singapore Dollar;2
+HKD;HK$;Hong Kong Dollar;Hong Kong Dollar;2
+SEK;kr;Swedish Krona;Swedish Krona;2
+NOK;kr;Norwegian Krone;Norwegian Krone;2
+DKK;kr;Danish Krone;Danish Krone;2
+PLN;zł;Polish Zloty;Polish Zloty;2
+CZK;Kč;Czech Koruna;Czech Koruna;2
+HUF;Ft;Hungarian Forint;Hungarian Forint;2
+MXN;$;Mexican Peso;Mexican Peso;2
+BRL;R$;Brazilian Real;Brazilian Real;2
+ZAR;R;South African Rand;South African Rand;2

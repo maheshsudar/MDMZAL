@@ -1,0 +1,7 @@
+code;locale;name;description;isActive
+Create;en;Create Request;Request to create a new Business Partner;true
+Create;de;Anfrage erstellen;Request to create a new Business Partner;true
+Change;en;Change Request;Request to modify an existing Business Partner;true
+Change;de;Änderungsanfrage;Request to modify an existing Business Partner;true
+AdhocSync;en;Adhoc Sync;Manual synchronization of SAP Business Partner to satellite system;true
+AdhocSync;de;Adhoc-Synchronisation;Manuelle Synchronisation des SAP-Geschäftspartners mit dem Satellitensystem;true

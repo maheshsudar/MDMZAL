@@ -1,0 +1,7 @@
+channelCode;locale;channelName;description;isActive
+CH01;en;Retail;Retail Channel;true
+CH01;de;Retail;Retail Channel;true
+CH02;en;Wholesale;Wholesale Channel;true
+CH02;de;Wholesale;Wholesale Channel;true
+CH03;en;Online;Online Channel;true
+CH03;de;Online;Online Channel;true

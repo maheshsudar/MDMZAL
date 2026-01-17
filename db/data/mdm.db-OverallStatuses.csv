@@ -1,0 +1,19 @@
+code;locale;name;description;criticality;isActive
+Draft;en;Draft;Draft request (not yet submitted);2;true
+Draft;de;Entwurf;Draft request (not yet submitted);2;true
+New;en;New;Newly created request;2;true
+New;de;Neu;Newly created request;2;true
+Submitted;en;Submitted;Submitted for approval;2;true
+Submitted;de;Eingereicht;Submitted for approval;2;true
+ComplianceCheck;en;Compliance Check;Undergoing AEB/VIES compliance validation;2;true
+ComplianceCheck;de;Compliance-Prüfung;Undergoing AEB/VIES compliance validation;2;true
+DuplicateReview;en;Duplicate Review;Duplicate partner found - awaiting review;2;true
+DuplicateReview;de;Duplikatsprüfung;Duplicate partner found - awaiting review;2;true
+Approved;en;Approved;Approved by MDM;3;true
+Approved;de;Genehmigt;Approved by MDM;3;true
+Rejected;en;Rejected;Rejected by MDM;1;true
+Rejected;de;Abgelehnt;Rejected by MDM;1;true
+Completed;en;Completed;Processing completed;3;true
+Completed;de;Abgeschlossen;Processing completed;3;true
+Error;en;Error;Integration or processing error;1;true
+Error;de;Fehler;Integration or processing error;1;true

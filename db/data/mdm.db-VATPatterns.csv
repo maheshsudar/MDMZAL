@@ -1,0 +1,63 @@
+countryCode;locale;countryName;vatLabel;pattern;minLength;maxLength;exampleVAT;notes;viesEnabled;isActive
+AT;en;Austria;VAT Number;^ATU[0-9]{8}$;11;11;ATU12345678;Austria - ATU + 8 digits;true;true
+AT;de;Österreich;USt-IdNr.;^ATU[0-9]{8}$;11;11;ATU12345678;Österreich - ATU + 8 Ziffern;true;true
+BE;en;Belgium;VAT Number;^BE[0-9]{10}$;12;12;BE0123456789;Belgium - BE + 10 digits;true;true
+BE;de;Belgien;Mehrwertsteuernummer;^BE[0-9]{10}$;12;12;BE0123456789;Belgien - BE + 10 Ziffern;true;true
+BG;en;Bulgaria;VAT Number;^BG[0-9]{9,10}$;11;12;BG123456789;Bulgaria - BG + 9 or 10 digits;true;true
+BG;de;Bulgarien;Umsatzsteuer-ID;^BG[0-9]{9,10}$;11;12;BG123456789;Bulgarien - BG + 9 oder 10 Ziffern;true;true
+HR;en;Croatia;VAT Number;^HR[0-9]{11}$;13;13;HR12345678901;Croatia - HR + 11 digits;true;true
+HR;de;Kroatien;Umsatzsteuer-ID;^HR[0-9]{11}$;13;13;HR12345678901;Kroatien - HR + 11 Ziffern;true;true
+CY;en;Cyprus;VAT Number;^CY[0-9]{8}[A-Z]$;11;11;CY12345678A;Cyprus - CY + 8 digits + 1 letter;true;true
+CY;de;Zypern;Umsatzsteuer-ID;^CY[0-9]{8}[A-Z]$;11;11;CY12345678A;Zypern - CY + 8 Ziffern + 1 Buchstabe;true;true
+CZ;en;Czech Republic;VAT Number;^CZ[0-9]{8,10}$;10;12;CZ12345678;Czech - CZ + 8 to 10 digits;true;true
+CZ;de;Tschechische Republik;Umsatzsteuer-ID;^CZ[0-9]{8,10}$;10;12;CZ12345678;Tschechien - CZ + 8 bis 10 Ziffern;true;true
+DK;en;Denmark;VAT Number;^DK[0-9]{8}$;10;10;DK12345678;Denmark - DK + 8 digits;true;true
+DK;de;Dänemark;Umsatzsteuer-ID;^DK[0-9]{8}$;10;10;DK12345678;Dänemark - DK + 8 Ziffern;true;true
+EE;en;Estonia;VAT Number;^EE[0-9]{9}$;11;11;EE123456789;Estonia - EE + 9 digits;true;true
+EE;de;Estland;Umsatzsteuer-ID;^EE[0-9]{9}$;11;11;EE123456789;Estland - EE + 9 Ziffern;true;true
+FI;en;Finland;VAT Number;^FI[0-9]{8}$;10;10;FI12345678;Finland - FI + 8 digits;true;true
+FI;de;Finnland;Umsatzsteuer-ID;^FI[0-9]{8}$;10;10;FI12345678;Finnland - FI + 8 Ziffern;true;true
+FR;en;France;VAT Number;^FR[A-HJ-NP-Z0-9]{2}[0-9]{9}$;13;13;FR12345678901;France - FR + 2 chars + 9 digits;true;true
+FR;de;Frankreich;Umsatzsteuer-ID;^FR[A-HJ-NP-Z0-9]{2}[0-9]{9}$;13;13;FR12345678901;Frankreich - FR + 2 Zeichen + 9 Ziffern;true;true
+DE;en;Germany;VAT Number;^DE[0-9]{9}$;11;11;DE123456789;Germany - DE + 9 digits;true;true
+DE;de;Deutschland;USt-IdNr.;^DE[0-9]{9}$;11;11;DE123456789;Deutschland - DE + 9 Ziffern;true;true
+GR;en;Greece;VAT Number;^GR[0-9]{9}$;11;11;GR123456789;Greece - GR + 9 digits (also EL);true;true
+GR;de;Griechenland;Umsatzsteuer-ID;^GR[0-9]{9}$;11;11;GR123456789;Griechenland - GR + 9 Ziffern (auch EL);true;true
+EL;en;Greece (Alternative);VAT Number;^EL[0-9]{9}$;11;11;EL123456789;Greece - EL + 9 digits (ISO code);true;true
+EL;de;Griechenland (Alternativ);Umsatzsteuer-ID;^EL[0-9]{9}$;11;11;EL123456789;Griechenland - EL + 9 Ziffern (ISO-Code);true;true
+HU;en;Hungary;VAT Number;^HU[0-9]{8}$;10;10;HU12345678;Hungary - HU + 8 digits;true;true
+HU;de;Ungarn;Umsatzsteuer-ID;^HU[0-9]{8}$;10;10;HU12345678;Ungarn - HU + 8 Ziffern;true;true
+IE;en;Ireland;VAT Number;^IE[0-9][A-Z][0-9]{5}[A-Z]$;10;10;IE1A23456B;Ireland - IE + complex format;true;true
+IE;de;Irland;Umsatzsteuer-ID;^IE[0-9][A-Z][0-9]{5}[A-Z]$;10;10;IE1A23456B;Irland - IE + komplexes Format;true;true
+IT;en;Italy;VAT Number;^IT[0-9]{11}$;13;13;IT12345678901;Italy - IT + 11 digits;true;true
+IT;de;Italien;Partita IVA;^IT[0-9]{11}$;13;13;IT12345678901;Italien - IT + 11 Ziffern;true;true
+LV;en;Latvia;VAT Number;^LV[0-9]{11}$;13;13;LV12345678901;Latvia - LV + 11 digits;true;true
+LV;de;Lettland;Umsatzsteuer-ID;^LV[0-9]{11}$;13;13;LV12345678901;Lettland - LV + 11 Ziffern;true;true
+LT;en;Lithuania;VAT Number;^LT([0-9]{9}|[0-9]{12})$;11;14;LT123456789;Lithuania - LT + 9 or 12 digits;true;true
+LT;de;Litauen;Umsatzsteuer-ID;^LT([0-9]{9}|[0-9]{12})$;11;14;LT123456789;Litauen - LT + 9 oder 12 Ziffern;true;true
+LU;en;Luxembourg;VAT Number;^LU[0-9]{8}$;10;10;LU12345678;Luxembourg - LU + 8 digits;true;true
+LU;de;Luxemburg;Umsatzsteuer-ID;^LU[0-9]{8}$;10;10;LU12345678;Luxemburg - LU + 8 Ziffern;true;true
+MT;en;Malta;VAT Number;^MT[0-9]{8}$;10;10;MT12345678;Malta - MT + 8 digits;true;true
+MT;de;Malta;Umsatzsteuer-ID;^MT[0-9]{8}$;10;10;MT12345678;Malta - MT + 8 Ziffern;true;true
+NL;en;Netherlands;VAT Number;^NL[0-9]{9}B[0-9]{2}$;14;14;NL123456789B01;Netherlands - NL + 9 digits + B + 2 digits;true;true
+NL;de;Niederlande;BTW-nummer;^NL[0-9]{9}B[0-9]{2}$;14;14;NL123456789B01;Niederlande - NL + 9 Ziffern + B + 2 Ziffern;true;true
+PL;en;Poland;VAT Number;^PL[0-9]{10}$;12;12;PL1234567890;Poland - PL + 10 digits;true;true
+PL;de;Polen;NIP;^PL[0-9]{10}$;12;12;PL1234567890;Polen - PL + 10 Ziffern;true;true
+PT;en;Portugal;VAT Number;^PT[0-9]{9}$;11;11;PT123456789;Portugal - PT + 9 digits;true;true
+PT;de;Portugal;NIF;^PT[0-9]{9}$;11;11;PT123456789;Portugal - PT + 9 Ziffern;true;true
+RO;en;Romania;VAT Number;^RO[0-9]{2,10}$;4;12;RO12345678;Romania - RO + 2 to 10 digits;true;true
+RO;de;Rumänien;Umsatzsteuer-ID;^RO[0-9]{2,10}$;4;12;RO12345678;Rumänien - RO + 2 bis 10 Ziffern;true;true
+SK;en;Slovakia;VAT Number;^SK[0-9]{10}$;12;12;SK1234567890;Slovakia - SK + 10 digits;true;true
+SK;de;Slowakei;Umsatzsteuer-ID;^SK[0-9]{10}$;12;12;SK1234567890;Slowakei - SK + 10 Ziffern;true;true
+SI;en;Slovenia;VAT Number;^SI[0-9]{8}$;10;10;SI12345678;Slovenia - SI + 8 digits;true;true
+SI;de;Slowenien;Umsatzsteuer-ID;^SI[0-9]{8}$;10;10;SI12345678;Slowenien - SI + 8 Ziffern;true;true
+ES;en;Spain;VAT Number;^ES[A-Z][0-9]{7}[0-9A-Z]$;11;11;ESA1234567B;Spain - ES + letter + 7 digits + letter/digit;true;true
+ES;de;Spanien;CIF/NIF;^ES[A-Z][0-9]{7}[0-9A-Z]$;11;11;ESA1234567B;Spanien - ES + Buchstabe + 7 Ziffern + Zeichen;true;true
+SE;en;Sweden;VAT Number;^SE[0-9]{12}$;14;14;SE123456789001;Sweden - SE + 12 digits;true;true
+SE;de;Schweden;Momsregistreringsnummer;^SE[0-9]{12}$;14;14;SE123456789001;Schweden - SE + 12 Ziffern;true;true
+GB;en;United Kingdom;VAT Number;^GB([0-9]{9}|[0-9]{12}|GD[0-9]{3}|HA[0-9]{3})$;11;16;GB123456789;UK - GB + 9 or 12 digits or special codes;false;true
+GB;de;Großbritannien;VAT-Nummer;^GB([0-9]{9}|[0-9]{12}|GD[0-9]{3}|HA[0-9]{3})$;11;16;GB123456789;GB - GB + 9 oder 12 Ziffern oder Sondercodes;false;true
+CH;en;Switzerland;VAT Number;^CHE[0-9]{9}(MWST|TVA|IVA)?$;12;16;CHE123456789;Switzerland - CHE + 9 digits + optional suffix;false;true
+CH;de;Schweiz;MWST-Nummer;^CHE[0-9]{9}(MWST|TVA|IVA)?$;12;16;CHE123456789MWST;Schweiz - CHE + 9 Ziffern + optionales Suffix;false;true
+NO;en;Norway;VAT Number;^NO[0-9]{9}MVA$;12;12;NO123456789MVA;Norway - NO + 9 digits + MVA;false;true
+NO;de;Norwegen;MVA-Nummer;^NO[0-9]{9}MVA$;12;12;NO123456789MVA;Norwegen - NO + 9 Ziffern + MVA;false;true

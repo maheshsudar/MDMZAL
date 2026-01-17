@@ -1,0 +1,9 @@
+code;locale;name;sapIdentificationNo;description;isActive
+Coupa;en;Coupa;COUPA_001;Coupa Procurement System;true
+Coupa;de;Coupa;COUPA_001;Coupa Procurement System;true
+Salesforce;en;Salesforce;SF_001;Salesforce CRM;true
+Salesforce;de;Salesforce;SF_001;Salesforce CRM;true
+PI;en;PI;PI_001;Purchasing Interface;true
+PI;de;PI;PI_001;Purchasing Interface;true
+Manual;en;Manual;MANUAL_001;Manual Entry;true
+Manual;de;Manuell;MANUAL_001;Manual Entry;true

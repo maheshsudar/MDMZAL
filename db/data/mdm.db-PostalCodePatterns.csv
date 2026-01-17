@@ -1,0 +1,61 @@
+countryCode;locale;countryName;postalCodeLabel;formatDescription;pattern;minLength;maxLength;examplePostalCode;notes;isActive
+AT;en;Austria;Postleitzahl;4 digits;^[0-9]{4}$;4;4;1010;Austrian postal code;true
+AT;de;Österreich;Postleitzahl;4 Ziffern;^[0-9]{4}$;4;4;1010;Österreichische Postleitzahl;true
+BE;en;Belgium;Postcode;4 digits;^[0-9]{4}$;4;4;1000;Belgian postal code;true
+BE;de;Belgien;Postleitzahl;4 Ziffern;^[0-9]{4}$;4;4;1000;Belgische Postleitzahl;true
+BG;en;Bulgaria;Пощенски код;4 digits;^[0-9]{4}$;4;4;1000;Bulgarian postal code;true
+BG;de;Bulgarien;Postleitzahl;4 Ziffern;^[0-9]{4}$;4;4;1000;Bulgarische Postleitzahl;true
+HR;en;Croatia;Poštanski broj;5 digits;^[0-9]{5}$;5;5;10000;Croatian postal code;true
+HR;de;Kroatien;Postleitzahl;5 Ziffern;^[0-9]{5}$;5;5;10000;Kroatische Postleitzahl;true
+CY;en;Cyprus;Ταχυδρομικός;4 digits;^[0-9]{4}$;4;4;1010;Cypriot postal code;true
+CY;de;Zypern;Postleitzahl;4 Ziffern;^[0-9]{4}$;4;4;1010;Zyprische Postleitzahl;true
+CZ;en;Czech Republic;PSČ;5 digits (3+2);^[0-9]{3} ?[0-9]{2}$;5;6;110 00;Czech postal code;true
+CZ;de;Tschechische Republik;PLZ;5 Ziffern (3+2);^[0-9]{3} ?[0-9]{2}$;5;6;110 00;Tschechische Postleitzahl;true
+DE;en;Germany;Postleitzahl;5 digits;^[0-9]{5}$;5;5;10115;German postal code;true
+DE;de;Deutschland;Postleitzahl;5 Ziffern;^[0-9]{5}$;5;5;10115;Deutsche Postleitzahl;true
+DK;en;Denmark;Postnummer;4 digits;^[0-9]{4}$;4;4;1050;Danish postal code;true
+DK;de;Dänemark;Postleitzahl;4 Ziffern;^[0-9]{4}$;4;4;1050;Dänische Postleitzahl;true
+EE;en;Estonia;Postiindeks;5 digits;^[0-9]{5}$;5;5;10111;Estonian postal code;true
+EE;de;Estland;Postleitzahl;5 Ziffern;^[0-9]{5}$;5;5;10111;Estnische Postleitzahl;true
+ES;en;Spain;Código Postal;5 digits;^[0-9]{5}$;5;5;28001;Spanish postal code;true
+ES;de;Spanien;Postleitzahl;5 Ziffern;^[0-9]{5}$;5;5;28001;Spanische Postleitzahl;true
+FI;en;Finland;Postinumero;5 digits;^[0-9]{5}$;5;5;00100;Finnish postal code;true
+FI;de;Finnland;Postleitzahl;5 Ziffern;^[0-9]{5}$;5;5;00100;Finnische Postleitzahl;true
+FR;en;France;Code Postal;5 digits;^[0-9]{5}$;5;5;75001;French postal code;true
+FR;de;Frankreich;Postleitzahl;5 Ziffern;^[0-9]{5}$;5;5;75001;Französische Postleitzahl;true
+GR;en;Greece;Ταχυδρομικός;5 digits (3+2);^[0-9]{3} ?[0-9]{2}$;5;6;101 00;Greek postal code;true
+GR;de;Griechenland;Postleitzahl;5 Ziffern (3+2);^[0-9]{3} ?[0-9]{2}$;5;6;101 00;Griechische Postleitzahl;true
+HU;en;Hungary;Irányítószám;4 digits;^[0-9]{4}$;4;4;1011;Hungarian postal code;true
+HU;de;Ungarn;Postleitzahl;4 Ziffern;^[0-9]{4}$;4;4;1011;Ungarische Postleitzahl;true
+IE;en;Ireland;Eircode;7 characters;^[A-Z0-9]{3} ?[A-Z0-9]{4}$;7;8;D02 AF30;Irish postal code (Eircode);true
+IE;de;Irland;Eircode;7 Zeichen;^[A-Z0-9]{3} ?[A-Z0-9]{4}$;7;8;D02 AF30;Irische Postleitzahl (Eircode);true
+IT;en;Italy;CAP;5 digits;^[0-9]{5}$;5;5;00100;Italian postal code;true
+IT;de;Italien;PLZ;5 Ziffern;^[0-9]{5}$;5;5;00100;Italienische Postleitzahl;true
+LT;en;Lithuania;Pašto kodas;5 digits;^LT-[0-9]{5}$;8;8;LT-01001;Lithuanian postal code;true
+LT;de;Litauen;Postleitzahl;5 Ziffern;^LT-[0-9]{5}$;8;8;LT-01001;Litauische Postleitzahl;true
+LU;en;Luxembourg;Code Postal;4 digits;^[0-9]{4}$;4;4;1234;Luxembourg postal code;true
+LU;de;Luxemburg;Postleitzahl;4 Ziffern;^[0-9]{4}$;4;4;1234;Luxemburgische Postleitzahl;true
+LV;en;Latvia;Pasta indekss;4 digits;^LV-[0-9]{4}$;7;7;LV-1010;Latvian postal code;true
+LV;de;Lettland;Postleitzahl;4 Ziffern;^LV-[0-9]{4}$;7;7;LV-1010;Lettische Postleitzahl;true
+MT;en;Malta;Postal Code;7 characters;^[A-Z]{3} [0-9]{4}$;8;8;VLT 1234;Maltese postal code;true
+MT;de;Malta;Postleitzahl;7 Zeichen;^[A-Z]{3} [0-9]{4}$;8;8;VLT 1234;Maltesische Postleitzahl;true
+NL;en;Netherlands;Postcode;4 digits + 2 letters;^[0-9]{4} ?[A-Z]{2}$;6;7;1234 AB;Dutch postal code;true
+NL;de;Niederlande;Postleitzahl;4 Ziffern + 2 Buchstaben;^[0-9]{4} ?[A-Z]{2}$;6;7;1234 AB;Niederländische Postleitzahl;true
+PL;en;Poland;Kod Pocztowy;5 digits (2-3);^[0-9]{2}-[0-9]{3}$;6;6;00-001;Polish postal code;true
+PL;de;Polen;Postleitzahl;5 Ziffern (2-3);^[0-9]{2}-[0-9]{3}$;6;6;00-001;Polnische Postleitzahl;true
+PT;en;Portugal;Código Postal;7 digits (4-3);^[0-9]{4}-[0-9]{3}$;8;8;1000-001;Portuguese postal code;true
+PT;de;Portugal;Postleitzahl;7 Ziffern (4-3);^[0-9]{4}-[0-9]{3}$;8;8;1000-001;Portugiesische Postleitzahl;true
+RO;en;Romania;Cod Poștal;6 digits;^[0-9]{6}$;6;6;010011;Romanian postal code;true
+RO;de;Rumänien;Postleitzahl;6 Ziffern;^[0-9]{6}$;6;6;010011;Rumänische Postleitzahl;true
+SE;en;Sweden;Postnummer;5 digits (3+2);^[0-9]{3} ?[0-9]{2}$;5;6;123 45;Swedish postal code;true
+SE;de;Schweden;Postleitzahl;5 Ziffern (3+2);^[0-9]{3} ?[0-9]{2}$;5;6;123 45;Schwedische Postleitzahl;true
+SI;en;Slovenia;Poštna številka;4 digits;^[0-9]{4}$;4;4;1000;Slovenian postal code;true
+SI;de;Slowenien;Postleitzahl;4 Ziffern;^[0-9]{4}$;4;4;1000;Slowenische Postleitzahl;true
+SK;en;Slovakia;PSČ;5 digits (3+2);^[0-9]{3} ?[0-9]{2}$;5;6;811 01;Slovak postal code;true
+SK;de;Slowakei;PLZ;5 Ziffern (3+2);^[0-9]{3} ?[0-9]{2}$;5;6;811 01;Slowakische Postleitzahl;true
+GB;en;United Kingdom;Postcode;AA9A 9AA or A9 9AA;^[A-Z]{1,2}[0-9R][0-9A-Z]? [0-9][A-Z]{2}$;6;8;SW1A 1AA;UK postcode;true
+GB;de;Großbritannien;Postleitzahl;AA9A 9AA oder A9 9AA;^[A-Z]{1,2}[0-9R][0-9A-Z]? [0-9][A-Z]{2}$;6;8;SW1A 1AA;GB-Postleitzahl;true
+CH;en;Switzerland;Postleitzahl;4 digits;^[0-9]{4}$;4;4;8001;Swiss postal code;true
+CH;de;Schweiz;Postleitzahl;4 Ziffern;^[0-9]{4}$;4;4;8001;Schweizer Postleitzahl;true
+NO;en;Norway;Postnummer;4 digits;^[0-9]{4}$;4;4;0001;Norwegian postal code;true
+NO;de;Norwegen;Postleitzahl;4 Ziffern;^[0-9]{4}$;4;4;0001;Norwegische Postleitzahl;true

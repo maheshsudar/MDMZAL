@@ -1,0 +1,11 @@
+status;app;isEditable;isActive
+New;Coupa;true;true
+Rejected;Coupa;true;true
+Submitted;Coupa;false;true
+Approved;Coupa;false;true
+Completed;Coupa;false;true
+New;MDM;false;true
+Submitted;MDM;false;true
+Approved;MDM;false;true
+Rejected;MDM;false;true
+Completed;MDM;false;true

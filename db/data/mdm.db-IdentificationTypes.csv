@@ -1,0 +1,27 @@
+code;name;descr;locale
+01;Passport;Passport Number;en
+02;Tax ID;Tax Identification Number;en
+03;VAT ID;VAT Registration Number;en
+04;Trade Register;Trade Register Number;en
+05;DUNS;D-U-N-S Number;en
+06;LEI;Legal Entity Identifier;en
+07;National ID;National Identity Card;en
+08;Driving License;Driver's License Number;en
+09;Social Security;Social Security Number;en
+10;Other;Other Identification;en
+COUPA;COUPA;Coupa supplier no;en
+SALESFORCE;SALESFORCE;Salesforce account no;en
+PI;PI;PI supplier no;en
+01;Reisepass;Reisepassnummer;de
+02;Steuer-ID;Steueridentifikationsnummer;de
+03;USt-ID;Umsatzsteuer-Identifikationsnummer;de
+04;Handelsregister;Handelsregisternummer;de
+05;DUNS;D-U-N-S-Nummer;de
+06;LEI;Legal Entity Identifier;de
+07;Personalausweis;Personalausweisnummer;de
+08;Führerschein;Führerscheinnummer;de
+09;Sozialversicherung;Sozialversicherungsnummer;de
+10;Sonstige;Sonstige Identifikation;de
+COUPA;COUPA;Coupa-Lieferanten-Nr;de
+SALESFORCE;SALESFORCE;Salesforce-Konto-Nr;de
+PI;PI;PI-Interne-Nr;de

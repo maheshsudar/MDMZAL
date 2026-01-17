@@ -1,0 +1,7 @@
+code;locale;name;descr
+VAT;en;VAT Registration;VAT Registration Number
+VAT;de;USt-Registrierung;VAT Registration Number
+TIN;en;Tax ID Number;Tax Identification Number
+TIN;de;Steuer-ID-Nummer;Tax Identification Number
+LOC;en;Local Tax;Local Tax Number
+LOC;de;Lokale Steuer;Local Tax Number

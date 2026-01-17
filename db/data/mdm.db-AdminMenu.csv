@@ -1,0 +1,25 @@
+code;title;description;category;sortOrder;routeName;entitySet
+ValidationRules;Validation Rules;Field-level validation;Validation Management;1;ValidationRulesList;ValidationRules
+SectionValidationRules;Section Validation;Table-level validation;Validation Management;2;SectionValidationRulesList;SectionValidationRules
+CustomValidators;Custom Validators;Custom validation logic;Validation Management;3;CustomValidatorsList;CustomValidators
+PaymentTerms;Payment Terms;Configure payment terms;Code Lists - Business Configuration;1;PaymentTermsList;PaymentTerms
+PaymentMethods;Payment Methods;Configure payment methods;Code Lists - Business Configuration;2;PaymentMethodsList;PaymentMethods
+SourceSystems;Source Systems;Configure source systems;Code Lists - Business Configuration;3;SourceSystemsList;SourceSystems
+OverallStatuses;Overall Statuses;Configure request statuses;Code Lists - Business Configuration;4;OverallStatusesList;OverallStatuses
+RequestTypes;Request Types;Configure request types;Code Lists - Business Configuration;5;RequestTypesList;RequestTypes
+AddressTypes;Address Types;Configure address types;Code Lists - Partner Data;1;AddressTypesList;AddressTypes
+EmailTypes;Email Types;Configure email types;Code Lists - Partner Data;2;EmailTypesList;EmailTypes
+VatTypes;VAT Types;Configure VAT types;Code Lists - Partner Data;3;VatTypesList;VatTypes
+BPTypes;BP Types;Configure BP types;Code Lists - Partner Data;4;BPTypesList;BPTypes
+ContactTypes;Contact Types;Configure contact types;Code Lists - Partner Data;5;ContactTypesList;ContactTypes
+DocumentTypes;Document Types;Configure document types;Code Lists - Partner Data;6;DocumentTypesList;DocumentTypes
+DunningStrategies;Dunning Strategies;Configure dunning strategies;Code Lists - Partner Data;7;DunningStrategiesList;DunningStrategies
+VendorClassifications;Vendor Classifications;Configure vendor classifications;Code Lists - Partner Data;8;VendorClassificationsList;VendorClassifications
+RevenueStreams;Revenue Streams;Configure revenue streams;Code Lists - Salesforce Specific;1;RevenueStreamsList;RevenueStreams
+BillingCycles;Billing Cycles;Configure billing cycles;Code Lists - Salesforce Specific;2;BillingCyclesList;BillingCycles
+BusinessChannels;Business Channels;Configure business channels;Code Lists - Salesforce Specific;3;BusinessChannelsList;BusinessChannels
+SystemConfiguration;System Configuration;System-wide settings;System Configuration;1;SystemConfigurationList;SystemConfiguration
+StatusTransitions;Status Transitions;Configure status workflow;System Configuration;2;StatusTransitionsList;StatusTransitions
+UserRoles;User Roles;Configure user roles;System Configuration;3;UserRolesList;UserRoles
+WorkflowSteps;Workflow Steps;Configure workflow steps;System Configuration;4;WorkflowStepsList;WorkflowSteps
+StatusAppConfig;Status App Config;Configure status app settings;System Configuration;5;StatusAppConfigList;StatusAppConfig

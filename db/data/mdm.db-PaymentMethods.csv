@@ -1,0 +1,11 @@
+code;locale;name;description;isActive
+T;en;Bank Transfer;Bank Transfer;true
+T;de;Banküberweisung;Bank Transfer;true
+C;en;Check;Check;true
+C;de;Scheck;Check;true
+W;en;Wire;Wire Transfer;true
+W;de;Überweisung;Wire Transfer;true
+A;en;ACH;Automated Clearing House;true
+A;de;ACH;Automated Clearing House;true
+D;en;Credit Card;Credit Card;true
+D;de;Kreditkarte;Credit Card;true

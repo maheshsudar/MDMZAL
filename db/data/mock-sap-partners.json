@@ -1,0 +1,167 @@
+[
+    {
+        "BusinessPartner": "0000100001",
+        "BusinessPartnerFullName": "Acme Corporation GmbH",
+        "OrganizationBPName1": "Acme Corporation",
+        "BusinessPartnerCategory": "2",
+        "BusinessPartnerIsBlocked": false,
+        "YY1_ExternalSystemID": "COUPA-12345",
+        "to_BusinessPartnerAddress": [
+            {
+                "AddressID": "0001",
+                "StreetName": "Hauptstrasse",
+                "HouseNumber": "42",
+                "CityName": "Munich",
+                "PostalCode": "80331",
+                "Country": "DE"
+            }
+        ],
+        "to_BusinessPartnerBank": [
+            {
+                "BankCountryKey": "DE",
+                "BankAccount": "1234567890",
+                "IBAN": "DE89370400440532013000",
+                "BankName": "Deutsche Bank"
+            }
+        ],
+        "to_BusinessPartnerTaxNumber": [
+            {
+                "Country": "DE",
+                "TaxNumber": "DE123456789",
+                "TaxNumberCategory": "VAT1"
+            }
+        ]
+    },
+    {
+        "BusinessPartner": "0000100002",
+        "BusinessPartnerFullName": "Tech Solutions Ltd",
+        "OrganizationBPName1": "Tech Solutions",
+        "BusinessPartnerCategory": "2",
+        "BusinessPartnerIsBlocked": false,
+        "YY1_ExternalSystemID": "COUPA-67890",
+        "to_BusinessPartnerAddress": [
+            {
+                "AddressID": "0001",
+                "StreetName": "Oxford Street",
+                "HouseNumber": "100",
+                "CityName": "London",
+                "PostalCode": "W1D 1LL",
+                "Country": "GB"
+            }
+        ],
+        "to_BusinessPartnerBank": [
+            {
+                "BankCountryKey": "GB",
+                "BankAccount": "12345678",
+                "IBAN": "GB29NWBK60161331926819",
+                "BankName": "Barclays Bank"
+            }
+        ],
+        "to_BusinessPartnerTaxNumber": [
+            {
+                "Country": "GB",
+                "TaxNumber": "GB123456789",
+                "TaxNumberCategory": "VAT1"
+            }
+        ]
+    },
+    {
+        "BusinessPartner": "0000100003",
+        "BusinessPartnerFullName": "Global Trade Inc",
+        "OrganizationBPName1": "Global Trade",
+        "BusinessPartnerCategory": "2",
+        "BusinessPartnerIsBlocked": false,
+        "YY1_ExternalSystemID": "SALESFORCE-SF-12345",
+        "to_BusinessPartnerAddress": [
+            {
+                "AddressID": "0001",
+                "StreetName": "Fifth Avenue",
+                "HouseNumber": "500",
+                "CityName": "New York",
+                "PostalCode": "10110",
+                "Country": "US"
+            }
+        ],
+        "to_BusinessPartnerBank": [
+            {
+                "BankCountryKey": "US",
+                "BankAccount": "987654321",
+                "IBAN": "",
+                "BankName": "Chase Bank"
+            }
+        ],
+        "to_BusinessPartnerTaxNumber": [
+            {
+                "Country": "US",
+                "TaxNumber": "12-3456789",
+                "TaxNumberCategory": "TAX1"
+            }
+        ]
+    },
+    {
+        "BusinessPartner": "0000100004",
+        "BusinessPartnerFullName": "Fromagerie Française SARL",
+        "OrganizationBPName1": "Fromagerie Française",
+        "BusinessPartnerCategory": "2",
+        "BusinessPartnerIsBlocked": false,
+        "YY1_ExternalSystemID": "COUPA-FR-555",
+        "to_BusinessPartnerAddress": [
+            {
+                "AddressID": "0001",
+                "StreetName": "Rue de Rivoli",
+                "HouseNumber": "25",
+                "CityName": "Paris",
+                "PostalCode": "75001",
+                "Country": "FR"
+            }
+        ],
+        "to_BusinessPartnerBank": [
+            {
+                "BankCountryKey": "FR",
+                "BankAccount": "30004012340001234567890",
+                "IBAN": "FR1420041010050500013M02606",
+                "BankName": "BNP Paribas"
+            }
+        ],
+        "to_BusinessPartnerTaxNumber": [
+            {
+                "Country": "FR",
+                "TaxNumber": "FR12345678901",
+                "TaxNumberCategory": "VAT1"
+            }
+        ]
+    },
+    {
+        "BusinessPartner": "0000100005",
+        "BusinessPartnerFullName": "Industrias España S.A.",
+        "OrganizationBPName1": "Industrias España",
+        "BusinessPartnerCategory": "2",
+        "BusinessPartnerIsBlocked": true,
+        "YY1_ExternalSystemID": "PI-ES-999",
+        "to_BusinessPartnerAddress": [
+            {
+                "AddressID": "0001",
+                "StreetName": "Gran Via",
+                "HouseNumber": "88",
+                "CityName": "Madrid",
+                "PostalCode": "28013",
+                "Country": "ES"
+            }
+        ],
+        "to_BusinessPartnerBank": [
+            {
+                "BankCountryKey": "ES",
+                "BankAccount": "12341234123412341234",
+                "IBAN": "ES9121000418450200051332",
+                "BankName": "Banco Santander"
+            }
+        ],
+        "to_BusinessPartnerTaxNumber": [
+            {
+                "Country": "ES",
+                "TaxNumber": "ESA12345678",
+                "TaxNumberCategory": "VAT1"
+            }
+        ]
+    }
+]

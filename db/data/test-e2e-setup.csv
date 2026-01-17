@@ -1,0 +1,12 @@
+# End-to-end test scenario setup
+# Scenario: Salesforce originally created partner BP100010
+# Then Coupa submits a Change request for the same partner
+# Expected: When approved, Salesforce should receive acknowledgement notification
+
+# Step 1: Original Salesforce request (COMPLETED) - establishes partner in Salesforce
+ID,requestNumber,name1,entityType,requestType,sourceSystem,status,sapBpNumber,salesforceId,createdAt,modifiedAt
+testbp-e2e-sf,SALESFORCE-20260112-E2E,Test Partner GmbH,Customer,Create,Salesforce,Completed,BP100010,SF-ACC-12345,2026-01-10T10:00:00Z,2026-01-10T14:00:00Z
+
+# Step 2: Coupa Change request (NEW) - will be submitted and approved in test
+ID,requestNumber,name1,entityType,requestType,sourceSystem,status,sapBpNumber,coupaInternalNo,createdAt,modifiedAt
+testbp-e2e-coupa,COUPA-20260112-E2E,Test Partner GmbH,Supplier,Change,Coupa,New,BP100010,COUPA-SUP-67890,2026-01-12T10:00:00Z,2026-01-12T10:00:00Z

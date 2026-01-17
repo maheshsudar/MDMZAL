@@ -1,0 +1,5 @@
+requestType;fromStatus;toStatus;action;requiredRole;isActive
+*;New;Submitted;submitForApproval;BusinessUser;true
+*;Submitted;Approved;approveRequest;MDMApprover;true
+*;Submitted;Rejected;rejectRequest;MDMApprover;true
+*;Rejected;Submitted;submitForApproval;BusinessUser;true
