@@ -1,0 +1,82 @@
+<mvc:View
+    controllerName="com.company.adminconfig.controller.Detail"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core">
+
+    <Page
+        id="detailPage"
+        title="{detailModel>/title}"
+        showNavButton="true"
+        navButtonPress="onNavBack">
+
+        <content>
+            <VBox class="sapUiSmallMargin">
+                <!-- Table Container -->
+                <VBox
+                    visible="{= ${detailModel>/entitySet} !== undefined}"
+                    class="sapUiResponsiveContentPadding">
+
+                    <!-- Toolbar -->
+                    <OverflowToolbar design="Transparent">
+                        <Title text="{detailModel>/title}" level="H2"/>
+                        <ToolbarSpacer/>
+                        <SearchField
+                            id="searchField"
+                            width="300px"
+                            search="onSearch"
+                            placeholder="Search..."/>
+                        <ToolbarSpacer/>
+                        <Button
+                            id="createButton"
+                            text="Create"
+                            press="onCreate"
+                            type="Emphasized"
+                            icon="sap-icon://add"/>
+                        <Button
+                            id="editButton"
+                            text="Edit"
+                            press="onEdit"
+                            enabled="{= ${detailModel>/selectedItems} > 0}"
+                            icon="sap-icon://edit"/>
+                        <Button
+                            id="deleteButton"
+                            text="Delete"
+                            press="onDelete"
+                            enabled="{= ${detailModel>/selectedItems} > 0}"
+                            icon="sap-icon://delete"
+                            type="Reject"/>
+                    </OverflowToolbar>
+
+                    <!-- Dynamic Table -->
+                    <Table
+                        id="dataTable"
+                        mode="MultiSelect"
+                        growing="true"
+                        growingThreshold="20"
+                        selectionChange="onTableSelectionChange">
+                        <!-- Columns will be dynamically created based on entity -->
+                    </Table>
+                </VBox>
+
+                <!-- Empty state when no table selected -->
+                <VBox
+                    alignItems="Center"
+                    justifyContent="Center"
+                    visible="{= ${detailModel>/entitySet} === undefined}"
+                    class="sapUiLargeMarginTop">
+                    <core:Icon
+                        src="sap-icon://grid"
+                        size="4rem"
+                        color="#bfbfbf"
+                        class="sapUiMediumMarginBottom"/>
+                    <Title
+                        text="Select a Configuration Table"
+                        level="H2"
+                        class="sapUiTinyMarginBottom"/>
+                    <Text text="Choose a table from the list to view and edit its data"/>
+                </VBox>
+            </VBox>
+        </content>
+    </Page>
+</mvc:View>

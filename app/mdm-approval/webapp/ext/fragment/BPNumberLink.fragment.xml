@@ -1,0 +1,7 @@
+<core:FragmentDefinition
+    xmlns:core="sap.ui.core"
+    xmlns="sap.m">
+    <Link
+        text="{existingBpNumber}"
+        press=".extension.onBPNumberLinkPress($event, ${existingBpNumber})" />
+</core:FragmentDefinition>

@@ -1,0 +1,7 @@
+<core:FragmentDefinition
+    xmlns:core="sap.ui.core"
+    xmlns="sap.m">
+    <Link
+        text="{subAccountId}"
+        press=".extension.onSubAccountLinkPress($event, ${subAccountId})" />
+</core:FragmentDefinition>

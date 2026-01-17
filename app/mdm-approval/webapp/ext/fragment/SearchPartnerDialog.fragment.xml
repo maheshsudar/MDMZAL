@@ -1,0 +1,68 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:fb="sap.ui.comp.filterbar" xmlns:table="sap.ui.table">
+    <Dialog id="searchPartnerDialog" title="Search SAP Business Partner" contentWidth="80%" contentHeight="80%" resizable="true" draggable="true">
+        <content>
+            <fb:FilterBar id="filterBar" search=".onSearchPartner" useToolbar="false" showGoOnFB="true">
+                <fb:filterGroupItems>
+                    <fb:FilterGroupItem groupName="G1" name="PartnerName" label="Partner Name" visibleInFilterBar="true">
+                        <fb:control>
+                            <Input id="searchPartnerName" placeholder="e.g. Acme*" />
+                        </fb:control>
+                    </fb:FilterGroupItem>
+                    <fb:FilterGroupItem groupName="G1" name="SapBpNumber" label="SAP BP Number" visibleInFilterBar="true">
+                        <fb:control>
+                            <Input id="searchSapBpNumber" placeholder="e.g. 0000100001" />
+                        </fb:control>
+                    </fb:FilterGroupItem>
+                    <fb:FilterGroupItem groupName="G1" name="VatId" label="VAT ID" visibleInFilterBar="true">
+                        <fb:control>
+                            <Input id="searchVatId" placeholder="e.g. DE123456789" />
+                        </fb:control>
+                    </fb:FilterGroupItem>
+                    <fb:FilterGroupItem groupName="G1" name="SatelliteSystemId" label="Satellite System ID" visibleInFilterBar="true">
+                        <fb:control>
+                            <Input id="searchSatelliteSystemId" />
+                        </fb:control>
+                    </fb:FilterGroupItem>
+                </fb:filterGroupItems>
+            </fb:FilterBar>
+            <table:Table id="partnerResultsTable" rows="{searchResults>/results}" selectionMode="Single" visibleRowCount="10">
+                <table:columns>
+                    <table:Column width="11rem">
+                        <Label text="SAP BP Number" />
+                        <table:template>
+                            <Text text="{searchResults>sapBpNumber}" />
+                        </table:template>
+                    </table:Column>
+                    <table:Column width="20rem">
+                        <Label text="Partner Name" />
+                        <table:template>
+                            <Text text="{searchResults>partnerName}" />
+                        </table:template>
+                    </table:Column>
+                    <table:Column width="6rem">
+                        <Label text="Country" />
+                        <table:template>
+                            <Text text="{searchResults>country}" />
+                        </table:template>
+                    </table:Column>
+                    <table:Column width="11rem">
+                        <Label text="VAT ID" />
+                        <table:template>
+                            <Text text="{searchResults>vatId}" />
+                        </table:template>
+                    </table:Column>
+                    <table:Column width="8rem">
+                        <Label text="Status" />
+                        <table:template>
+                            <ObjectStatus text="{searchResults>status}" state="{= ${searchResults>isBlocked} ? 'Error' : 'Success' }" />
+                        </table:template>
+                    </table:Column>
+                </table:columns>
+            </table:Table>
+        </content>
+        <buttons>
+            <Button id="btnDialogAction" text="Start Change Request" type="Emphasized" press=".onDialogAction" />
+            <Button text="Cancel" press=".onCancelSearch" />
+        </buttons>
+    </Dialog>
+</core:FragmentDefinition>

@@ -1,0 +1,61 @@
+<mvc:View
+    controllerName="com.company.adminconfig.controller.Master"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+    <Page
+        id="masterPage"
+        title="Admin Configuration"
+        showNavButton="false">
+        <content>
+            <Table
+                id="adminMenuTable"
+                items="{
+                    path: '/AdminMenu',
+                    sorter: [
+                        { path: 'category', descending: false },
+                        { path: 'sortOrder', descending: false }
+                    ]
+                }"
+                mode="SingleSelectMaster"
+                selectionChange="onTableSelect"
+                growing="true"
+                growingThreshold="50">
+                <headerToolbar>
+                    <OverflowToolbar>
+                        <content>
+                            <Title text="Admin Configuration ({items>/length})" level="H2"/>
+                            <ToolbarSpacer/>
+                            <SearchField
+                                id="searchField"
+                                width="300px"
+                                search="onSearch"
+                                placeholder="Search tables..."/>
+                        </content>
+                    </OverflowToolbar>
+                </headerToolbar>
+                <columns>
+                    <Column width="12em">
+                        <Text text="Table"/>
+                    </Column>
+                    <Column minScreenWidth="Tablet" demandPopin="true">
+                        <Text text="Description"/>
+                    </Column>
+                    <Column minScreenWidth="Desktop" demandPopin="true" hAlign="Begin">
+                        <Text text="Category"/>
+                    </Column>
+                </columns>
+                <items>
+                    <ColumnListItem type="Active">
+                        <cells>
+                            <ObjectIdentifier
+                                title="{title}"
+                                titleActive="false"/>
+                            <Text text="{description}"/>
+                            <Text text="{category}"/>
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+        </content>
+    </Page>
+</mvc:View>

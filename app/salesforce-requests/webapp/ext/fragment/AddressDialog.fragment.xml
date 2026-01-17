@@ -1,0 +1,68 @@
+<core:FragmentDefinition
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:form="sap.ui.layout.form">
+    
+    <Dialog id="addressDialog" title="Address Details" contentWidth="600px">
+        <content>
+            <form:SimpleForm
+                id="addressForm"
+                editable="true"
+                layout="ResponsiveGridLayout"
+                labelSpanXL="4"
+                labelSpanL="4"
+                labelSpanM="4"
+                labelSpanS="12"
+                emptySpanXL="0"
+                emptySpanL="0"
+                emptySpanM="0"
+                emptySpanS="0"
+                columnsXL="1"
+                columnsL="1"
+                columnsM="1">
+                
+                <form:content>
+                    <Label text="Address Type" required="true"/>
+                    <ComboBox id="addressType" 
+                        selectedKey="{addressData>/addressType_code}"
+                        items="{path: '/AddressTypes'}"
+                        placeholder="Select Address Type"
+                        editable="{= ${dialogMode>/dialogMode} === 'edit' }">
+                        <core:Item key="{code}" text="{name}"/>
+                    </ComboBox>
+                    
+                    <Label text="Name 1" required="true"/>
+                    <Input id="addressName1" value="{addressData>/name1}" placeholder="Enter Name" editable="{= ${dialogMode>/dialogMode} === 'edit' }"/>
+
+                    <Label text="Name 2" required="false"/>
+                    <Input id="addressName2" value="{addressData>/name2}" placeholder="Enter Name 2" editable="{= ${dialogMode>/dialogMode} === 'edit' }"/>
+
+                    <Label text="Street" required="true"/>
+                    <Input id="addressStreet" value="{addressData>/street}" placeholder="Enter Street" editable="{= ${dialogMode>/dialogMode} === 'edit' }"/>
+                    
+                    <Label text="House No" required="false"/>
+                    <Input id="addressStreetNumber" value="{addressData>/streetNumber}" placeholder="Enter House Number" editable="{= ${dialogMode>/dialogMode} === 'edit' }"/>
+                    
+                    <Label text="City" required="true"/>
+                    <Input id="addressCity" value="{addressData>/city}" placeholder="Enter City" editable="{= ${dialogMode>/dialogMode} === 'edit' }"/>
+                    
+                    <Label text="Postal Code" required="true"/>
+                    <Input id="addressPostalCode" value="{addressData>/postalCode}" placeholder="Enter Postal Code" editable="{= ${dialogMode>/dialogMode} === 'edit' }"/>
+                    
+                    <Label text="Country" required="true"/>
+                    <ComboBox id="addressCountry" 
+                        selectedKey="{addressData>/country_code}"
+                        items="{path: '/Countries'}"
+                        placeholder="Select Country"
+                        editable="{= ${dialogMode>/dialogMode} === 'edit' }">
+                        <core:Item key="{code}" text="{name}"/>
+                    </ComboBox>
+                </form:content>
+            </form:SimpleForm>
+        </content>
+        <buttons>
+            <Button text="Save" type="Emphasized" press=".onSaveAddress" visible="{= ${dialogMode>/dialogMode} === 'edit' }"/>
+            <Button text="Cancel" press=".onCloseAddressDialog"/>
+        </buttons>
+    </Dialog>
+</core:FragmentDefinition>
