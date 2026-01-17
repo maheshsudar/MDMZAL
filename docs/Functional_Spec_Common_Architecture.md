@@ -1,7 +1,7 @@
 # Functional Specification: Common Architecture and Shared Services
 
-**Version:** 7.0
-**Date:** 2026-05-21
+**Version:** 6.0
+**Date:** 2026-01-17
 **Status:** Draft
 
 ---
@@ -20,7 +20,7 @@ The Business Partner Management System is organized into two layers:
 
 **Common Layer (This Document):**
 - Data model entities and relationships
-- Validation framework (Dynamic Validation System)
+- Validation framework
 - Status management and transitions
 - Notification service
 - Code lists and reference data
@@ -38,11 +38,10 @@ By separating these concerns, changes to the common layer automatically propagat
 
 | Document | Relationship |
 |:---|:---|
-| [Salesforce Request App](Functional_Spec_Salesforce_Request_App.md) | Uses shared data model, validation |
-| [Coupa Request App](Functional_Spec_Coupa_Request_App.md) | Uses shared data model, validation |
-| [PI Request App](Functional_Spec_PI_Request_App.md) | Uses shared data model, validation |
-| [MDM Approval App](Functional_Spec_MDM_Approval_App.md) | Uses status management, compliance services |
-| [Compliance Integration](Compliance_Integration_Specification.md) | Detailed AEB/VIES specifications |
+| [Salesforce Request App](file:///c:/Users/msudarsanan/.gemini/antigravity/brain/4c48700f-4a4c-4049-97a6-ff6f1821b397/Functional_Spec_Salesforce_Request_App.md) | Uses shared data model, validation |
+| [Coupa Request App](file:///c:/Users/msudarsanan/.gemini/antigravity/brain/4c48700f-4a4c-4049-97a6-ff6f1821b397/Functional_Spec_Coupa_Request_App.md) | Uses shared data model, validation |
+| [MDM Approval App](file:///c:/Users/msudarsanan/.gemini/antigravity/brain/4c48700f-4a4c-4049-97a6-ff6f1821b397/Functional_Spec_MDM_Approval_App.md) | Uses status management, compliance services |
+| [Compliance Integration](file:///c:/Users/msudarsanan/.gemini/antigravity/brain/4c48700f-4a4c-4049-97a6-ff6f1821b397/Compliance_Integration_Specification.md) | Detailed AEB/VIES specifications |
 
 ---
 
@@ -79,11 +78,6 @@ This structure also mirrors the SAP Business Partner API, making the mapping to 
 │ (Salesforce-    │                              │ (DUNS, Tax ID,       │
 │  specific)      │                              │  Satellite IDs)      │
 └─────────────────┘                              └─────────────────────┘
-          │ 1:N           │ 1:N
-          ▼               ▼
-┌─────────────────┐ ┌─────────────────┐
-│ SubAccountBanks │ │SubAccountEmails │
-└─────────────────┘ └─────────────────┘
 
 ┌──────────────────────────────────────────────────────────────────────────────┐
 │                           ChangeLogs                                          │
@@ -99,10 +93,9 @@ This is the central entity that represents a request to create or update a Busin
 These fields track the request itself:
 - **ID**: UUID primary key
 - **requestNumber**: Human-readable reference (REQ-2026-00001)
-- **requestType**: Create, Change, or AdhocSync
-- **sourceSystem**: Salesforce, Coupa, PI, or Manual
-- **status**: Current workflow status (Draft, New, Submitted, Approved, etc.)
-- **statusCriticality**: UI coloring for status
+- **requestType**: Create or Change
+- **sourceSystem**: Salesforce, Coupa, or PI
+- **status**: Current workflow status
 - **requester information**: ID, name, email of the submitter
 
 **Partner Header Fields:**
@@ -111,24 +104,19 @@ Core information about the Business Partner:
 - **name1, name2**: Structured name components
 - **searchTerm**: Short search key
 - **entityType**: Customer, Supplier, or Both
-- **bpType**: Organization or Person (via code)
-- **merchantId**: Merchant ID (Salesforce)
-- **businessChannels**: Industry codes
-- **partnerRole**: Default Supplier
+- **bpType**: Organization or Person
 
 **Payment Fields:**
 Financial configuration for the partner:
 - **paymentTerms_code**: When payment is due
 - **paymentMethod_code**: How payment is made
 - **currency_code**: Default transaction currency
-- **reconAccount**: Reconciliation Account
 
 **SAP Reference Fields (For Change Requests):**
 Links to existing SAP data:
 - **sapBpNumber**: The SAP Business Partner number
 - **existingBpNumber**: Used during search/lookup
 - **existingBpName**: Display value after lookup
-- **changeDescription**: Reason for update
 
 **Compliance Fields:**
 Results of compliance checks:
@@ -136,45 +124,29 @@ Results of compliance checks:
 - **aebCheckDate**: When AEB check was performed
 - **viesStatus**: Valid, Invalid, or Error
 - **viesCheckDate**: When VIES check was performed
-- **duplicateCheckStatus**: Status of duplicate check
-
-**Integration Status Fields:**
-- **integrationSuiteStatus**: Overall integration status
-- **sapInitialStatus**: SAP Create/Update status
-- **satelliteStatus**: Notification to source system status
-- **sapIdUpdateStatus**: Writeback of SAP ID status
 
 ### 2.4 Child Entities
 
 **PartnerAddresses:**
-Stores all addresses associated with the Business Partner. The addressType field indicates the purpose (Business, Shipping, Remit-To). For Change requests, the `sapAddressId` field contains the SAP Address ID which is critical for updating existing addresses rather than creating duplicates.
+Stores all addresses associated with the Business Partner. The addressType field indicates the purpose (Business, Shipping, Remit-To). For Change requests, the sapAddressId field contains the SAP Address ID which is critical for updating existing addresses rather than creating duplicates.
 
 **PartnerEmails:**
-Email contact information. Each email has a type (General, Invoice, Orders) and an optional default flag. Preserves `sapAddressId` and `sapOrdinalNumber` for updates.
+Email contact information. Each email has a type (General, Invoice, Orders) and an optional default flag.
 
 **PartnerBanks:**
-Bank account information for payments. Includes IBAN, SWIFT, account holder, and for Change requests, the `sapBankIdentification` for update mapping.
+Bank account information for payments. Includes IBAN, SWIFT, account holder, and for Change requests, the sapBankIdentification for update mapping.
 
 **PartnerVatIds:**
-Tax registrations by country. The vatNumber format varies by country (German VAT starts with DE, French with FR, etc.). Includes `isEstablished` flag.
+Tax registrations by country. The vatNumber format varies by country (German VAT starts with DE, French with FR, etc.).
 
 **PartnerIdentifications:**
 Business identifications such as DUNS, Tax ID, Trade Register numbers, and importantly, **Satellite System IDs** that link back to the source systems.
 
 **SubAccounts:**
-Salesforce-specific entity for managing sub-accounts with revenue stream and billing cycle information. Includes its own child entities `SubAccountBanks` and `SubAccountEmails`.
+Salesforce-specific entity for managing sub-accounts with revenue stream and billing cycle information.
 
 **ChangeLogs:**
 For Change requests, this entity records every field-level change compared to the original SAP data. This enables the Change Log view in the UI.
-
-**DuplicateChecks:**
-Stores the results of duplicate detection runs, including match scores and details.
-
-**ApprovalHistory:**
-Tracks the workflow history (approvals, rejections) with comments and timestamps.
-
-**RequestAttachments:**
-Stores metadata for uploaded documents associated with the request.
 
 ---
 
@@ -186,7 +158,7 @@ Every Business Partner request moves through a defined lifecycle. Understanding 
 
 **The Journey of a Request:**
 
-When a user creates a request, it starts in "New" (or "Draft"). This is the drafting phase - the user can save, edit, and delete their work.
+When a user creates a request, it starts in "New" status. This is the drafting phase - the user can save, edit, and delete their work. If they decide to abandon it, the request stays in New and eventually can be deleted.
 
 When the user submits, the request moves to "Submitted" and enters the MDM queue. At this point, the user loses the ability to edit - the request is now in the hands of the governance team.
 
@@ -198,7 +170,7 @@ If approved, the request enters the integration phase. Three separate integratio
 
 | Status | Who Acts | What Happens | Next Steps |
 |:---|:---|:---|:---|
-| **Draft/New** | Satellite User | Drafting the request | Submit or Delete |
+| **New** | Satellite User | Drafting the request | Submit or Delete |
 | **Submitted** | MDM Steward | Awaiting review | Approve, Reject, or Check |
 | **ComplianceCheck** | System | Running AEB/VIES | Automatic return to Submitted |
 | **DuplicateReview** | MDM Steward | Duplicates found | Approve or Reject |
@@ -217,9 +189,20 @@ Each status has a criticality value that determines how it's displayed in the UI
 | 2 | Yellow/Orange | In Progress/Warning | New, Submitted, ComplianceCheck |
 | 3 | Green | Positive/Success | Approved, Completed |
 
+### 3.4 Field Editability by Status
+
+The status determines what can be edited:
+
+| Status | User Editing | MDM Editing | Integrations |
+|:---|:---|:---|:---|
+| New | ✅ Full access | ❌ Not visible | ❌ Not running |
+| Submitted | ❌ Read-only | ✅ Can enrich | ❌ Not running |
+| Approved | ❌ Read-only | ❌ Read-only | ✅ Running |
+| Completed | ❌ Read-only | ❌ Read-only | ✅ Complete |
+
 ---
 
-## 4. Validation Framework (Dynamic Validation System)
+## 4. Validation Framework
 
 ### 4.1 How Validation Works
 
@@ -228,11 +211,11 @@ The validation framework is a dynamic, database-driven system that applies busin
 **The Validation Process:**
 
 When validation is triggered (on save, submit, or API call), the system:
-1. Identifies the request's context (source system, entity type, request type, status).
-2. Loads applicable validation rules from the `ValidationRules` and `SectionValidationRules` tables.
-3. For each rule, checks if the condition is met.
-4. Collects all violations.
-5. Returns formatted error messages.
+1. Identifies the request's context (source system, entity type, request type)
+2. Loads applicable validation rules from the database
+3. For each rule, checks if the condition is met
+4. Collects all violations
+5. Returns formatted error messages
 
 **Rule Fallback Logic:**
 
@@ -248,32 +231,37 @@ Rules are applied using a fallback mechanism that finds the most specific matchi
 This enables powerful configuration. For example:
 - A universal rule says "Partner name is required"
 - A Coupa-specific rule adds "Partner name minimum 5 characters for Coupa"
+- The Coupa rule overrides the universal rule for Coupa requests
 
-### 4.2 Validation Entities
+### 4.2 Validation Types
 
-The framework relies on these core entities:
+The framework supports various validation types:
 
-*   **ValidationRules**: Defines field-level and cross-field rules.
-    *   Validation Types: Field, Section, CrossField, Custom.
-    *   Rules: Required, MinLength, MaxLength, Regex, Email, VAT, IBAN, Custom.
-*   **SectionValidationRules**: Defines minimum/maximum record counts for child sections (e.g., "At least 1 address").
-*   **CustomValidators**: Registry of custom JavaScript validation functions for complex logic.
-*   **Pattern Entities**: `IBANPatterns`, `VATPatterns`, `PostalCodePatterns` store country-specific regex patterns.
+**Required:** Field must have a value
+**MinLength:** String must be at least N characters
+**MaxLength:** String must be at most N characters
+**Regex:** Value must match a regular expression pattern
+**Email:** Must be a valid email format
+**VAT:** Must be a valid country-specific VAT format
+**IBAN:** Must be a valid IBAN with check digit
+**MinCount:** Child entity must have at least N records
+**Custom:** Calls a custom JavaScript function for complex logic
 
 ### 4.3 Error Handling
 
 When validation fails:
 
 **UI Context:**
-- Invalid fields are highlighted with red borders.
-- Error messages appear below each field.
-- A summary message box lists all errors.
-- Submit is blocked until fixed.
+- Invalid fields are highlighted with red borders
+- Error messages appear below each field
+- A summary message box lists all errors
+- Submit is blocked until fixed
 
 **API Context:**
-- HTTP 400 response.
-- Structured error object with code, target, message.
-- Array of all validation failures.
+- HTTP 400 response
+- Structured error object with code, target, message
+- Array of all validation failures
+- Calling system can parse and display appropriately
 
 ---
 
@@ -283,20 +271,37 @@ When validation fails:
 
 The Notification Service handles all outbound communications from the system. When something important happens (request submitted, approved, rejected), the appropriate parties need to be informed.
 
-### 5.2 Change Notifications
+**Types of Notifications:**
 
-The system specifically tracks changes for Satellite System synchronization via the `ChangeNotifications` entity.
+| Type | Trigger | Recipients | Content |
+|:---|:---|:---|:---|
+| **Submit Confirmation** | User submits | Requester | "Your request was submitted" |
+| **MDM Alert** | Request arrives | MDM team | "New request to review" |
+| **Approval Notice** | MDM approves | Requester | "Your request was approved" |
+| **Rejection Notice** | MDM rejects | Requester | "Your request was rejected" + reason |
+| **Satellite Sync** | SAP completed | System owners | BP data for their system |
 
-**Scenario:**
-1. A Business Partner is updated in SAP.
-2. The system identifies which Satellite Systems (Coupa, Salesforce, PI) have a reference to this partner.
-3. A `ChangeNotification` record is created for each affected system.
-4. System Owners acknowledge these notifications via the Satellite Acknowledgement App.
+### 5.2 Notification Channels
 
-### 5.3 Notification Channels
+The service supports multiple channels:
 
-**Email**: Standard SMTP-based email to user mailboxes (requester, approver).
-**Webhook**: HTTP POST to configured endpoints for system notifications (Integration API).
+**Email:** Standard SMTP-based email to user mailboxes
+**Webhook:** HTTP POST to configured endpoints for system notifications
+**In-App:** Notifications displayed in the Fiori Launchpad (future)
+
+### 5.3 Asynchronous Processing
+
+Notifications are processed asynchronously to avoid blocking the main workflow:
+
+```
+User Action → Queue Notification → Return Immediately
+                   │
+                   ▼
+           Background Process → Send Email/Webhook
+                   │
+                   ▼
+           Retry on Failure (exponential backoff)
+```
 
 ---
 
@@ -306,23 +311,37 @@ The system specifically tracks changes for Satellite System synchronization via 
 
 Code lists provide the values for dropdown fields throughout the application. They are managed centrally in the Admin Config app.
 
-### 6.2 Key Code Lists
+### 6.2 Identification Types
 
-| Code List | Entity | Purpose |
+One of the most important code lists is Identification Types, which includes **Satellite System IDs**:
+
+| Code | Name | Category | Purpose |
+|:---|:---|:---|:---|
+| 01 | Passport | Personal | Individual identification |
+| 02 | Tax ID | Tax | Tax identification number |
+| 03 | VAT ID | Tax | VAT registration |
+| 04 | Trade Register | Business | Commercial register |
+| 05 | DUNS | Business | D&B identifier |
+| 06 | LEI | Business | Legal Entity Identifier |
+| **SALESFORCE** | Salesforce Account | **Satellite** | Salesforce system ID |
+| **COUPA** | Coupa Supplier | **Satellite** | Coupa system ID |
+| **PI** | PI Reference | **Satellite** | PI system ID |
+
+**Satellite System IDs are critical** because they link the Business Partner back to the source system. When a Salesforce request is approved, the Salesforce Account ID is stored as an identification. This enables:
+- Traceability (which Salesforce record is this BP?)
+- Duplicate detection (does this Salesforce ID already exist?)
+- Callback routing (which system to notify?)
+
+### 6.3 Other Key Code Lists
+
+| Code List | Purpose | Examples |
 |:---|:---|:---|
-| Payment Terms | PaymentTerms | When payment is due |
-| Payment Methods | PaymentMethods | How payment is made |
-| Address Types | AddressTypes | Purpose of address |
-| Request Types | RequestTypes | Create, Change |
-| Source Systems | SourceSystems | Salesforce, Coupa, PI |
-| Overall Statuses | OverallStatuses | Workflow states |
-| Identification Types | IdentificationTypes | ID types (DUNS, Tax ID, Satellite IDs) |
-| Currencies | Currencies | ISO currency codes |
-| Countries | Countries | ISO country codes |
-| Revenue Streams | RevenueStreams | Salesforce specific |
-| Billing Cycles | BillingCycles | Salesforce specific |
-| Dunning Strategies | DunningStrategies | Salesforce specific |
-| Business Channels | BusinessChannels | Industry/Channel codes |
+| Payment Terms | When payment is due | NET30, NET60, IMMEDIATE |
+| Payment Methods | How payment is made | BANK_TRANSFER, CHECK |
+| Address Types | Purpose of address | Business, Shipping, Remit-To |
+| Request Types | Nature of request | Create, Change |
+| Source Systems | Origin of request | Salesforce, Coupa, PI |
+| Overall Statuses | Workflow states | New, Submitted, Approved |
 
 ---
 
@@ -344,12 +363,12 @@ If you send an update without these IDs, SAP creates new records, resulting in d
 The Business Partner Management System solves this through ID preservation:
 
 **When a Change request is initiated:**
-1. User searches for existing SAP Business Partner.
-2. System imports current data including internal SAP IDs.
-3. IDs are stored in hidden fields (`sapAddressId`, `sapBankIdentification`, `sapOrdinalNumber`, etc.).
-4. User makes modifications (IDs remain unchanged).
-5. Upon approval, IDs are included in the SAP API call.
-6. SAP correctly updates existing records.
+1. User searches for existing SAP Business Partner
+2. System imports current data including internal SAP IDs
+3. IDs are stored in hidden fields (sapAddressId, sapBankIdentification, etc.)
+4. User makes modifications (IDs remain unchanged)
+5. Upon approval, IDs are included in the SAP API call
+6. SAP correctly updates existing records
 
 ### 7.3 Preserved IDs by Entity
 
@@ -360,6 +379,15 @@ The Business Partner Management System solves this through ID preservation:
 | Email | sapOrdinalNumber | OrdinalNumber | Duplicate email created |
 | VAT | sapTaxNumberId | TaxID sequence | Duplicate tax ID created |
 
+### 7.4 User Visibility
+
+These SAP IDs are hidden from users in the UI because:
+- They are technical identifiers with no business meaning
+- Users might accidentally modify them
+- They add complexity without adding value for the user
+
+However, they are included in the API payloads and can be seen in technical logs.
+
 ---
 
 ## 8. Environment Configuration
@@ -369,6 +397,7 @@ The Business Partner Management System solves this through ID preservation:
 | Variable | Purpose | Default |
 |:---|:---|:---|
 | NODE_ENV | Environment type | development |
+| AEB_USE_MOCK | Use mock AEB service | true |
 | AEB_API_URL | AEB endpoint | Test URL |
 | VIES_ENABLED | Enable real VIES | false |
 | SMTP_HOST | Email server | - |
