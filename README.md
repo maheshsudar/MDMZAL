@@ -1,28 +1,23 @@
-# MDM Approval Application - Functional Specifications
+# MDM Approval Application
 
-This repository contains the functional specifications for the Business Partner Management System.
+This repository contains the specifications for the Business Partner Management System.
 
-## 1. Functional Overview
+## Application Specifications
 
-*   **[System Functional Overview](docs/Functional_Overview.md)**: High-level walkthrough of business processes and personas.
+Detailed documentation covering Functional Goals, User Workflows, and Technical Implementation for each application.
 
-## 2. Application Specifications
+*   **[MDM Approval App](docs/apps/MDM_Approval_App.md)**: Governance console, Compliance Checks, Adhoc Sync.
+*   **[Admin Config App](docs/apps/Admin_Config_App.md)**: Validation Rules, Code Lists.
+*   **[Coupa Request App](docs/apps/Coupa_Request_App.md)**: Supplier Onboarding (Procurement).
+*   **[Salesforce Request App](docs/apps/Salesforce_Request_App.md)**: Customer Onboarding (Sales), Sub-Accounts.
+*   **[PI Request App](docs/apps/PI_Request_App.md)**: Supplier Onboarding (Purchasing).
+*   **[Satellite Acknowledgement App](docs/apps/Satellite_Acknowledgement_App.md)**: Integration Monitoring.
 
-Detailed functional requirements for each application module.
+## Core Architecture
 
-*   **[MDM Approval App](docs/applications/MDM_Approval_App.md)**: Central governance console, compliance checks, and adhoc sync.
-*   **[Admin Config App](docs/applications/Admin_Config_App.md)**: Management of validation rules and code lists.
-*   **[Coupa Request App](docs/applications/Coupa_Request_App.md)**: Supplier onboarding for Procurement.
-*   **[Salesforce Request App](docs/applications/Salesforce_Request_App.md)**: Customer onboarding for Sales.
-*   **[PI Request App](docs/applications/PI_Request_App.md)**: Supplier onboarding for Purchasing.
-*   **[Satellite Acknowledgement App](docs/applications/Satellite_Acknowledgement_App.md)**: Notification inbox for system owners.
+Shared technical specifications supporting the applications.
 
-## 3. Technical Specifications
-
-Underlying architecture and integration details supporting the functional requirements.
-
-*   **[System Architecture](docs/technical/System_Architecture.md)**: High-level design and data flow.
-*   **[Common Architecture](docs/technical/Common_Architecture.md)**: Shared data models and validation framework.
-*   **[Integration Schema](docs/technical/Integration_Schema.md)**: API payload definitions.
-*   **[Compliance Integration](docs/technical/Compliance_Integration.md)**: AEB and VIES integration details.
-*   **[Technical Implementation](docs/technical/Technical_Implementation.md)**: Setup and extension details.
+*   **[System Architecture](docs/common/System_Architecture.md)**: High-level design and flows.
+*   **[Common Architecture](docs/common/Common_Architecture.md)**: Shared Data Model, Validation Framework.
+*   **[Integration Schema](docs/common/Integration_Schema.md)**: API Payloads.
+*   **[Compliance Integration](docs/common/Compliance_Integration.md)**: AEB/VIES details.
