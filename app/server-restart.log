@@ -1,0 +1,614 @@
+ 
+cds serve all --with-mocks --in-memory? 
+34256 watching: cds,csn,csv,ts,mjs,cjs,js,json,properties,edmx,xml,env ... 
+ignoring: (.git|node_modules|_out|@types|@cds-models)\\|app(\\.+)?\\((webapp|dist|target)\\|tsconfig\.json$|.*\.tsbuildinfo$)|package-lock\.json$|\\gen\\ 
+live reload enabled for browsers 
+
+        ___________________________
+ 
+[cds] - bootstrapping from { file: 'server.js' }
+🚀 Bootstrapping CAP server with integration APIs...
+✅ Integration API endpoints registered at /integration
+🔒 Input validation and rate limiting enabled
+✅ Satellite mock system endpoints registered at /satellite-mock
+   - POST /satellite-mock/coupa/webhook/mdm-approval
+   - POST /satellite-mock/salesforce/webhook/mdm-approval
+   - POST /satellite-mock/pi/webhook/mdm-approval
+   - POST /satellite-mock/acknowledge (manual ack)
+   - GET  /satellite-mock/received-notifications (testing)
+[cds] - loaded model from 20 file(s):
+
+  srv\pi-service.cds
+  srv\pi-annotations.cds
+  srv\coupa-annotations.cds
+  node_modules\@sap\cds\srv\outbox.cds
+  app\services.cds
+  app\satellite-ack\annotations.cds
+  app\salesforce-requests\annotations.cds
+  app\pi-requests\annotations.cds
+  app\mdm-approval\annotations.cds
+  app\coupa-requests\annotations.cds
+  app\admin-config\annotations.cds
+  srv\satellite-acknowledgement-service.cds
+  srv\salesforce-service.cds
+  srv\mdm-service.cds
+  srv\coupa-service.cds
+  srv\admin-service.cds
+  app\mdm-approval\field-annotations.cds
+  srv\common.cds
+  db\data-model.cds
+  node_modules\@sap\cds\common.cds
+[cds] - connect using bindings from: { registry: '~/.cds-services.json' }
+[cds] - connect to db > sqlite { url: 'db.sqlite' }
+[coupa-service] - Coupa Service initialized
+[coupa-service] - Coupa Service initialization complete
+DEBUG: NotificationService constructor start
+[mdm-service] - MDM Service initialized
+[mdm-service] - Registering MDM service handlers...
+[mdm-service] - Duplicate check handler registered
+[mdm-service] - VIES validation handler registered
+[mdm-service] - AEB compliance handler registered
+DEBUG: NotificationService constructor start
+[mdm-service] - Approval handler registered
+[mdm-service] - Status update handler registered
+[mdm-service] - All MDM service handlers registered successfully
+[mdm-service] - MDM Service initialization complete
+[coupa-service] - PI Service initialized
+[coupa-service] - PI Service initialization complete
+[salesforce-service] - Salesforce Service initialized
+[salesforce-service] - Salesforce Service initialization complete
+[satellite-ack-service] - ✅ Satellite Acknowledgement Service handler registered
+[admin-service] - Admin Service initialized
+[admin-service] - Admin Service initialization complete
+[cds] - using auth strategy {
+  kind: 'dummy',
+  impl: 'node_modules\\@sap\\cds\\lib\\srv\\middlewares\\auth\\dummy-auth.js'
+}
+[cds] - serving AdminService {
+  at: [ '/admin' ],
+  decl: 'srv\\admin-service.cds:11',
+  impl: 'srv\\admin-service.js'
+}
+[cds] - serving CoupaService {
+  at: [ '/coupa' ],
+  decl: 'srv\\coupa-service.cds:5',
+  impl: 'srv\\coupa-service.js'
+}
+[cds] - serving MDMService {
+  at: [ '/mdm' ],
+  decl: 'srv\\mdm-service.cds:5',
+  impl: 'srv\\mdm-service.js'
+}
+[cds] - serving PIService {
+  at: [ '/pi' ],
+  decl: 'srv\\pi-service.cds:5',
+  impl: 'srv\\pi-service.js'
+}
+[cds] - serving SalesforceService {
+  at: [ '/salesforce' ],
+  decl: 'srv\\salesforce-service.cds:5',
+  impl: 'srv\\salesforce-service.js'
+}
+[cds] - serving SatelliteAcknowledgementService {
+  at: [ '/satellite-ack' ],
+  decl: 'srv\\satellite-acknowledgement-service.cds:3',
+  impl: 'srv\\satellite-acknowledgement-service.js'
+}
+[cds] - server listening on { url: 'http://localhost:4004' }
+[cds] - server v9.4.4 launched in 2216 ms
+
+        ___________________________
+ 
+[cds] - bootstrapping from { file: 'server.js' }
+🚀 Bootstrapping CAP server with integration APIs...
+✅ Integration API endpoints registered at /integration
+🔒 Input validation and rate limiting enabled
+✅ Satellite mock system endpoints registered at /satellite-mock
+   - POST /satellite-mock/coupa/webhook/mdm-approval
+   - POST /satellite-mock/salesforce/webhook/mdm-approval
+   - POST /satellite-mock/pi/webhook/mdm-approval
+   - POST /satellite-mock/acknowledge (manual ack)
+   - GET  /satellite-mock/received-notifications (testing)
+[cds] - loaded model from 20 file(s):
+
+  srv\pi-service.cds
+  srv\pi-annotations.cds
+  srv\coupa-annotations.cds
+  node_modules\@sap\cds\srv\outbox.cds
+  app\services.cds
+  app\satellite-ack\annotations.cds
+  app\salesforce-requests\annotations.cds
+  app\pi-requests\annotations.cds
+  app\mdm-approval\annotations.cds
+  app\coupa-requests\annotations.cds
+  app\admin-config\annotations.cds
+  srv\satellite-acknowledgement-service.cds
+  srv\salesforce-service.cds
+  srv\mdm-service.cds
+  srv\coupa-service.cds
+  srv\admin-service.cds
+  app\mdm-approval\field-annotations.cds
+  srv\common.cds
+  db\data-model.cds
+  node_modules\@sap\cds\common.cds
+[cds] - connect using bindings from: { registry: '~/.cds-services.json' }
+[cds] - connect to db > sqlite { url: 'db.sqlite' }
+[coupa-service] - Coupa Service initialized
+[coupa-service] - Coupa Service initialization complete
+DEBUG: NotificationService constructor start
+[mdm-service] - MDM Service initialized
+[mdm-service] - Registering MDM service handlers...
+[mdm-service] - Duplicate check handler registered
+[mdm-service] - VIES validation handler registered
+[mdm-service] - AEB compliance handler registered
+DEBUG: NotificationService constructor start
+[mdm-service] - Approval handler registered
+[mdm-service] - Status update handler registered
+[mdm-service] - All MDM service handlers registered successfully
+[mdm-service] - MDM Service initialization complete
+[coupa-service] - PI Service initialized
+[coupa-service] - PI Service initialization complete
+[salesforce-service] - Salesforce Service initialized
+[salesforce-service] - Salesforce Service initialization complete
+[satellite-ack-service] - ✅ Satellite Acknowledgement Service handler registered
+[admin-service] - Admin Service initialized
+[admin-service] - Admin Service initialization complete
+[cds] - using auth strategy {
+  kind: 'dummy',
+  impl: 'node_modules\\@sap\\cds\\lib\\srv\\middlewares\\auth\\dummy-auth.js'
+}
+[cds] - serving AdminService {
+  at: [ '/admin' ],
+  decl: 'srv\\admin-service.cds:11',
+  impl: 'srv\\admin-service.js'
+}
+[cds] - serving CoupaService {
+  at: [ '/coupa' ],
+  decl: 'srv\\coupa-service.cds:5',
+  impl: 'srv\\coupa-service.js'
+}
+[cds] - serving MDMService {
+  at: [ '/mdm' ],
+  decl: 'srv\\mdm-service.cds:5',
+  impl: 'srv\\mdm-service.js'
+}
+[cds] - serving PIService {
+  at: [ '/pi' ],
+  decl: 'srv\\pi-service.cds:5',
+  impl: 'srv\\pi-service.js'
+}
+[cds] - serving SalesforceService {
+  at: [ '/salesforce' ],
+  decl: 'srv\\salesforce-service.cds:5',
+  impl: 'srv\\salesforce-service.js'
+}
+[cds] - serving SatelliteAcknowledgementService {
+  at: [ '/satellite-ack' ],
+  decl: 'srv\\satellite-acknowledgement-service.cds:3',
+  impl: 'srv\\satellite-acknowledgement-service.js'
+}
+[cds] - server listening on { url: 'http://localhost:4004' }
+[cds] - server v9.4.4 launched in 2383 ms
+📧 Using Ethereal test email account: kp5rwsmjfjtyjjmu@ethereal.email
+📧 Using Ethereal test email account: ecryyr63ijpmiwtk@ethereal.email
+✅ Email service initialized successfully
+✅ Email service initialized successfully
+[odata] - GET /mdm/$metadata { 'sap-language': 'EN' }
+[odata] - HEAD /mdm/ 
+[odata] - POST /mdm/$batch 
+[odata] - > GET /MDMApprovalRequests {
+  '$count': 'true',
+  '$filter': '(IsActiveEntity eq false or SiblingEntity/IsActiveEntity eq null)',
+  '$select': 'HasActiveEntity,ID,IsActiveEntity,createdAt,createdBy,integrationSuiteStatus,name1,requestNumber,requestType,sapInitialStatus,satelliteStatus,sourceSystem,status',
+  '$skip': '0',
+  '$top': '30'
+}
+[odata] - GET /mdm/$metadata { 'sap-language': 'EN' }
+[odata] - HEAD /mdm/ 
+[odata] - POST /mdm/$batch 
+[odata] - > GET /MDMApprovalRequests {
+  '$count': 'true',
+  '$filter': '(IsActiveEntity eq false or SiblingEntity/IsActiveEntity eq null)',
+  '$select': 'HasActiveEntity,ID,IsActiveEntity,createdAt,createdBy,integrationSuiteStatus,name1,requestNumber,requestType,sapInitialStatus,satelliteStatus,sourceSystem,status',
+  '$skip': '0',
+  '$top': '30'
+}
+[odata] - GET /mdm/$metadata { 'sap-language': 'EN' }
+[odata] - HEAD /mdm/ 
+[odata] - POST /mdm/$batch 
+[odata] - > GET /MDMApprovalRequests {
+  '$count': 'true',
+  '$filter': '(IsActiveEntity eq false or SiblingEntity/IsActiveEntity eq null)',
+  '$select': 'HasActiveEntity,ID,IsActiveEntity,createdAt,createdBy,integrationSuiteStatus,name1,requestNumber,requestType,sapInitialStatus,satelliteStatus,sourceSystem,status',
+  '$skip': '0',
+  '$top': '30'
+}
+[odata] - POST /mdm/$batch 
+[odata] - > GET /validateAndFetchSAPBP(sapBpNumber='0000100001') 
+[mdm-service] - validateAndFetchSAPBP called { sapBpNumber: '0000100001' }
+[sap-partner] - Fetching SAP Partner Details { sapBpNumber: '0000100001' }
+[mdm-service] - SAP BP validated successfully { sapBpNumber: '0000100001', bpName: 'Acme Corporation' }
+[odata] - POST /mdm/$batch 
+[odata] - > POST /createAdhocSyncRequest 
+[mdm-service] - createAdhocSyncRequest called { sapBpNumber: '0000100001', targetSystem: 'Coupa' }
+[RequestNumberGenerator] Error generating number for ADHOC: SqliteError: no such column: $B.targetSystem in:
+SELECT json_insert(jsonb_insert('{}','$."ID"',ID,'$."createdAt"',createdAt,'$."createdBy"',createdBy,'$."modifiedAt"',modifiedAt,'$."modifiedBy"',modifiedBy,'$."requestNumber"',requestNumber,'$."entityType"',entityType,'$."requestType"',requestType,'$."sourceSystem"',sourceSystem,'$."status"',status,'$."statusCriticality"',statusCriticality,'$."integrationSuiteStatus"',integrationSuiteStatus,'$."sapInitialStatus"',sapInitialStatus,'$."satelliteStatus"',satelliteStatus,'$."sapIdUpdateStatus"',sapIdUpdateStatus,'$."existingBpNumber"',existingBpNumber,'$."existingBpName"',existingBpName,'$."changeDescription"',changeDescription,'$."targetSystem"',targetSystem,'$."adhocReason"',adhocReason,'$."requesterId"',requesterId,'$."requesterName"',requesterName,'$."requesterEmail"',requesterEmail,'$."partnerName"',partnerName,'$."name1"',name1,'$."name2"',name2,'$."merchantId"',merchantId,'$."searchTerm"',searchTerm,'$."partnerRole"',partnerRole,'$."businessChannels"',businessChannels,'$."communicationLanguage"',communicationLanguage,'$."reconAccount"',reconAccount,'$."currency_code"',currency_code,'$."paymentMethod_code"',paymentMethod_code,'$."paymentTerms_code"',paymentTerms_code,'$."sapBpNumber"',sapBpNumber,'$."satelliteSystemID"',satelliteSystemID,'$."coupaInternalNo"',coupaInternalNo,'$."salesforceId"',salesforceId,'$."piInternalNo"',piInternalNo,'$."piId"',piId,'$."purchaseCategories"',purchaseCategories,'$."spendThreshold"',spendThreshold,'$."procurementContact"',procurementContact,'$."accountType"',accountType,'$."industry"',industry,'$."revenueStream_code"',revenueStream_code,'$."billingCycle_code"',billingCycle_code),'$."bpType_code"',bpType_code,'$."dunningStrategy_code"',dunningStrategy_code,'$."aebStatus"',aebStatus,'$."aebCheckDate"',substr(aebCheckDate,0,20)||'Z','$."aebCheckDetails"',aebCheckDetails,'$."viesStatus"',viesStatus,'$."viesCheckDate"',substr(viesCheckDate,0,20)||'Z','$."viesCheckDetails"',viesCheckDetails,'$."duplicateCheckStatus"',duplicateCheckStatus,'$."duplicateCheckDate"',substr(duplicateCheckDate,0,20)||'Z','$."approverComments"',approverComments) as _json_ FROM (SELECT "$B".ID,"$B".createdAt,"$B".createdBy,"$B".modifiedAt,"$B".modifiedBy,"$B".requestNumber,"$B".entityType,"$B".requestType,"$B".sourceSystem,"$B".status,"$B".statusCriticality,"$B".integrationSuiteStatus,"$B".sapInitialStatus,"$B".satelliteStatus,"$B".sapIdUpdateStatus,"$B".existingBpNumber,"$B".existingBpName,"$B".changeDescription,"$B".targetSystem,"$B".adhocReason,"$B".requesterId,"$B".requesterName,"$B".requesterEmail,"$B".partnerName,"$B".name1,"$B".name2,"$B".merchantId,"$B".searchTerm,"$B".partnerRole,"$B".businessChannels,"$B".communicationLanguage,"$B".reconAccount,"$B".currency_code,"$B".paymentMethod_code,"$B".paymentTerms_code,"$B".sapBpNumber,"$B".satelliteSystemID,"$B".coupaInternalNo,"$B".salesforceId,"$B".piInternalNo,"$B".piId,"$B".purchaseCategories,"$B".spendThreshold,"$B".procurementContact,"$B".accountType,"$B".industry,"$B".revenueStream_code,"$B".billingCycle_code,"$B".bpType_code,"$B".dunningStrategy_code,"$B".aebStatus,"$B".aebCheckDate,"$B".aebCheckDetails,"$B".viesStatus,"$B".viesCheckDate,"$B".viesCheckDetails,"$B".duplicateCheckStatus,"$B".duplicateCheckDate,"$B".approverComments FROM mdm_db_BusinessPartnerRequests as "$B" WHERE "$B".requestType = ? ORDER BY "$B".requestNumber DESC LIMIT ?)
+    at Database.prepare (C:\Users\msudarsanan\Desktop\GitHub\businesspartner\node_modules\better-sqlite3\lib\methods\wrappers.js:5:21)
+    at SQLiteService.prepare (C:\Users\msudarsanan\Desktop\GitHub\businesspartner\node_modules\@cap-js\sqlite\lib\SQLiteService.js:72:29)
+    at SQLiteService.onSELECT (C:\Users\msudarsanan\Desktop\GitHub\businesspartner\node_modules\@cap-js\sqlite\node_modules\@cap-js\db-service\lib\SQLService.js:137:25)
+    at next (C:\Users\msudarsanan\Desktop\GitHub\businesspartner\node_modules\@sap\cds\lib\srv\srv-dispatch.js:57:36)
+    at SQLiteService.handle (C:\Users\msudarsanan\Desktop\GitHub\businesspartner\node_modules\@sap\cds\lib\srv\srv-dispatch.js:60:6)
+    at SQLiteService.dispatch (C:\Users\msudarsanan\Desktop\GitHub\businesspartner\node_modules\@sap\cds\lib\srv\srv-dispatch.js:27:15)
+    at SQLiteService._begin (C:\Users\msudarsanan\Desktop\GitHub\businesspartner\node_modules\@sap\cds\lib\srv\srv-tx.js:198:15)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async RequestNumberGenerator.getNextNumber (C:\Users\msudarsanan\Desktop\GitHub\businesspartner\srv\utils\request-number-generator.js:49:31)
+    at async ApplicationService.<anonymous> (C:\Users\msudarsanan\Desktop\GitHub\businesspartner\srv\mdm-service.js:570:29) {
+  code: 'SQLITE_ERROR',
+  query: `SELECT json_insert(jsonb_insert('{}','$."ID"',ID,'$."createdAt"',createdAt,'$."createdBy"',createdBy,'$."modifiedAt"',modifiedAt,'$."modifiedBy"',modifiedBy,'$."requestNumber"',requestNumber,'$."entityType"',entityType,'$."requestType"',requestType,'$."sourceSystem"',sourceSystem,'$."status"',status,'$."statusCriticality"',statusCriticality,'$."integrationSuiteStatus"',integrationSuiteStatus,'$."sapInitialStatus"',sapInitialStatus,'$."satelliteStatus"',satelliteStatus,'$."sapIdUpdateStatus"',sapIdUpdateStatus,'$."existingBpNumber"',existingBpNumber,'$."existingBpName"',existingBpName,'$."changeDescription"',changeDescription,'$."targetSystem"',targetSystem,'$."adhocReason"',adhocReason,'$."requesterId"',requesterId,'$."requesterName"',requesterName,'$."requesterEmail"',requesterEmail,'$."partnerName"',partnerName,'$."name1"',name1,'$."name2"',name2,'$."merchantId"',merchantId,'$."searchTerm"',searchTerm,'$."partnerRole"',partnerRole,'$."businessChannels"',businessChannels,'$."communicationLanguage"',communicationLanguage,'$."reconAccount"',reconAccount,'$."currency_code"',currency_code,'$."paymentMethod_code"',paymentMethod_code,'$."paymentTerms_code"',paymentTerms_code,'$."sapBpNumber"',sapBpNumber,'$."satelliteSystemID"',satelliteSystemID,'$."coupaInternalNo"',coupaInternalNo,'$."salesforceId"',salesforceId,'$."piInternalNo"',piInternalNo,'$."piId"',piId,'$."purchaseCategories"',purchaseCategories,'$."spendThreshold"',spendThreshold,'$."procurementContact"',procurementContact,'$."accountType"',accountType,'$."industry"',industry,'$."revenueStream_code"',revenueStream_code,'$."billingCycle_code"',billingCycle_code),'$."bpType_code"',bpType_code,'$."dunningStrategy_code"',dunningStrategy_code,'$."aebStatus"',aebStatus,'$."aebCheckDate"',substr(aebCheckDate,0,20)||'Z','$."aebCheckDetails"',aebCheckDetails,'$."viesStatus"',viesStatus,'$."viesCheckDate"',substr(viesCheckDate,0,20)||'Z','$."viesCheckDetails"',viesCheckDetails,'$."duplicateCheckStatus"',duplicateCheckStatus,'$."duplicateCheckDate"',substr(duplicateCheckDate,0,20)||'Z','$."approverComments"',approverComments) as _json_ FROM (SELECT "$B".ID,"$B".createdAt,"$B".createdBy,"$B".modifiedAt,"$B".modifiedBy,"$B".requestNumber,"$B".entityType,"$B".requestType,"$B".sourceSystem,"$B".status,"$B".statusCriticality,"$B".integrationSuiteStatus,"$B".sapInitialStatus,"$B".satelliteStatus,"$B".sapIdUpdateStatus,"$B".existingBpNumber,"$B".existingBpName,"$B".changeDescription,"$B".targetSystem,"$B".adhocReason,"$B".requesterId,"$B".requesterName,"$B".requesterEmail,"$B".partnerName,"$B".name1,"$B".name2,"$B".merchantId,"$B".searchTerm,"$B".partnerRole,"$B".businessChannels,"$B".communicationLanguage,"$B".reconAccount,"$B".currency_code,"$B".paymentMethod_code,"$B".paymentTerms_code,"$B".sapBpNumber,"$B".satelliteSystemID,"$B".coupaInternalNo,"$B".salesforceId,"$B".piInternalNo,"$B".piId,"$B".purchaseCategories,"$B".spendThreshold,"$B".procurementContact,"$B".accountType,"$B".industry,"$B".revenueStream_code,"$B".billingCycle_code,"$B".bpType_code,"$B".dunningStrategy_code,"$B".aebStatus,"$B".aebCheckDate,"$B".aebCheckDetails,"$B".viesStatus,"$B".viesCheckDate,"$B".viesCheckDetails,"$B".duplicateCheckStatus,"$B".duplicateCheckDate,"$B".approverComments FROM mdm_db_BusinessPartnerRequests as "$B" WHERE "$B".requestType = ? ORDER BY "$B".requestNumber DESC LIMIT ?)`
+}
+[mdm-service] - createAdhocSyncRequest error {
+  error: 'Failed to generate request number: no such column: $B.targetSystem in:\n' +
+    `SELECT json_insert(jsonb_insert('{}','$."ID"',ID,'$."createdAt"',createdAt,'$."createdBy"',createdBy,'$."modifiedAt"',modifiedAt,'$."modifiedBy"',modifiedBy,'$."requestNumber"',requestNumber,'$."entityType"',entityType,'$."requestType"',requestType,'$."sourceSystem"',sourceSystem,'$."status"',status,'$."statusCriticality"',statusCriticality,'$."integrationSuiteStatus"',integrationSuiteStatus,'$."sapInitialStatus"',sapInitialStatus,'$."satelliteStatus"',satelliteStatus,'$."sapIdUpdateStatus"',sapIdUpdateStatus,'$."existingBpNumber"',existingBpNumber,'$."existingBpName"',existingBpName,'$."changeDescription"',changeDescription,'$."targetSystem"',targetSystem,'$."adhocReason"',adhocReason,'$."requesterId"',requesterId,'$."requesterName"',requesterName,'$."requesterEmail"',requesterEmail,'$."partnerName"',partnerName,'$."name1"',name1,'$."name2"',name2,'$."merchantId"',merchantId,'$."searchTerm"',searchTerm,'$."partnerRole"',partnerRole,'$."businessChannels"',businessChannels,'$."communicationLanguage"',communicationLanguage,'$."reconAccount"',reconAccount,'$."currency_code"',currency_code,'$."paymentMethod_code"',paymentMethod_code,'$."paymentTerms_code"',paymentTerms_code,'$."sapBpNumber"',sapBpNumber,'$."satelliteSystemID"',satelliteSystemID,'$."coupaInternalNo"',coupaInternalNo,'$."salesforceId"',salesforceId,'$."piInternalNo"',piInternalNo,'$."piId"',piId,'$."purchaseCategories"',purchaseCategories,'$."spendThreshold"',spendThreshold,'$."procurementContact"',procurementContact,'$."accountType"',accountType,'$."industry"',industry,'$."revenueStream_code"',revenueStream_code,'$."billingCycle_code"',billingCycle_code),'$."bpType_code"',bpType_code,'$."dunningStrategy_code"',dunningStrategy_code,'$."aebStatus"',aebStatus,'$."aebCheckDate"',substr(aebCheckDate,0,20)||'Z','$."aebCheckDetails"',aebCheckDetails,'$."viesStatus"',viesStatus,'$."viesCheckDate"',substr(viesCheckDate,0,20)||'Z','$."viesCheckDetails"',viesCheckDetails,'$."duplicateCheckStatus"',duplicateCheckStatus,'$."duplicateCheckDate"',substr(duplicateCheckDate,0,20)||'Z','$."approverComments"',approverComments) as _json_ FROM (SELECT "$B".ID,"$B".createdAt,"$B".createdBy,"$B".modifiedAt,"$B".modifiedBy,"$B".requestNumber,"$B".entityType,"$B".requestType,"$B".sourceSystem,"$B".status,"$B".statusCriticality,"$B".integrationSuiteStatus,"$B".sapInitialStatus,"$B".satelliteStatus,"$B".sapIdUpdateStatus,"$B".existingBpNumber,"$B".existingBpName,"$B".changeDescription,"$B".targetSystem,"$B".adhocReason,"$B".requesterId,"$B".requesterName,"$B".requesterEmail,"$B".partnerName,"$B".name1,"$B".name2,"$B".merchantId,"$B".searchTerm,"$B".partnerRole,"$B".businessChannels,"$B".communicationLanguage,"$B".reconAccount,"$B".currency_code,"$B".paymentMethod_code,"$B".paymentTerms_code,"$B".sapBpNumber,"$B".satelliteSystemID,"$B".coupaInternalNo,"$B".salesforceId,"$B".piInternalNo,"$B".piId,"$B".purchaseCategories,"$B".spendThreshold,"$B".procurementContact,"$B".accountType,"$B".industry,"$B".revenueStream_code,"$B".billingCycle_code,"$B".bpType_code,"$B".dunningStrategy_code,"$B".aebStatus,"$B".aebCheckDate,"$B".aebCheckDetails,"$B".viesStatus,"$B".viesCheckDate,"$B".viesCheckDetails,"$B".duplicateCheckStatus,"$B".duplicateCheckDate,"$B".approverComments FROM mdm_db_BusinessPartnerRequests as "$B" WHERE "$B".requestType = ? ORDER BY "$B".requestNumber DESC LIMIT ?)`
+}
+[error] - 500 - Error: Failed to generate request number: no such column: $B.targetSystem in:
+SELECT json_insert(jsonb_insert('{}','$."ID"',ID,'$."createdAt"',createdAt,'$."createdBy"',createdBy,'$."modifiedAt"',modifiedAt,'$."modifiedBy"',modifiedBy,'$."requestNumber"',requestNumber,'$."entityType"',entityType,'$."requestType"',requestType,'$."sourceSystem"',sourceSystem,'$."status"',status,'$."statusCriticality"',statusCriticality,'$."integrationSuiteStatus"',integrationSuiteStatus,'$."sapInitialStatus"',sapInitialStatus,'$."satelliteStatus"',satelliteStatus,'$."sapIdUpdateStatus"',sapIdUpdateStatus,'$."existingBpNumber"',existingBpNumber,'$."existingBpName"',existingBpName,'$."changeDescription"',changeDescription,'$."targetSystem"',targetSystem,'$."adhocReason"',adhocReason,'$."requesterId"',requesterId,'$."requesterName"',requesterName,'$."requesterEmail"',requesterEmail,'$."partnerName"',partnerName,'$."name1"',name1,'$."name2"',name2,'$."merchantId"',merchantId,'$."searchTerm"',searchTerm,'$."partnerRole"',partnerRole,'$."businessChannels"',businessChannels,'$."communicationLanguage"',communicationLanguage,'$."reconAccount"',reconAccount,'$."currency_code"',currency_code,'$."paymentMethod_code"',paymentMethod_code,'$."paymentTerms_code"',paymentTerms_code,'$."sapBpNumber"',sapBpNumber,'$."satelliteSystemID"',satelliteSystemID,'$."coupaInternalNo"',coupaInternalNo,'$."salesforceId"',salesforceId,'$."piInternalNo"',piInternalNo,'$."piId"',piId,'$."purchaseCategories"',purchaseCategories,'$."spendThreshold"',spendThreshold,'$."procurementContact"',procurementContact,'$."accountType"',accountType,'$."industry"',industry,'$."revenueStream_code"',revenueStream_code,'$."billingCycle_code"',billingCycle_code),'$."bpType_code"',bpType_code,'$."dunningStrategy_code"',dunningStrategy_code,'$."aebStatus"',aebStatus,'$."aebCheckDate"',substr(aebCheckDate,0,20)||'Z','$."aebCheckDetails"',aebCheckDetails,'$."viesStatus"',viesStatus,'$."viesCheckDate"',substr(viesCheckDate,0,20)||'Z','$."viesCheckDetails"',viesCheckDetails,'$."duplicateCheckStatus"',duplicateCheckStatus,'$."duplicateCheckDate"',substr(duplicateCheckDate,0,20)||'Z','$."approverComments"',approverComments) as _json_ FROM (SELECT "$B".ID,"$B".createdAt,"$B".createdBy,"$B".modifiedAt,"$B".modifiedBy,"$B".requestNumber,"$B".entityType,"$B".requestType,"$B".sourceSystem,"$B".status,"$B".statusCriticality,"$B".integrationSuiteStatus,"$B".sapInitialStatus,"$B".satelliteStatus,"$B".sapIdUpdateStatus,"$B".existingBpNumber,"$B".existingBpName,"$B".changeDescription,"$B".targetSystem,"$B".adhocReason,"$B".requesterId,"$B".requesterName,"$B".requesterEmail,"$B".partnerName,"$B".name1,"$B".name2,"$B".merchantId,"$B".searchTerm,"$B".partnerRole,"$B".businessChannels,"$B".communicationLanguage,"$B".reconAccount,"$B".currency_code,"$B".paymentMethod_code,"$B".paymentTerms_code,"$B".sapBpNumber,"$B".satelliteSystemID,"$B".coupaInternalNo,"$B".salesforceId,"$B".piInternalNo,"$B".piId,"$B".purchaseCategories,"$B".spendThreshold,"$B".procurementContact,"$B".accountType,"$B".industry,"$B".revenueStream_code,"$B".billingCycle_code,"$B".bpType_code,"$B".dunningStrategy_code,"$B".aebStatus,"$B".aebCheckDate,"$B".aebCheckDetails,"$B".viesStatus,"$B".viesCheckDate,"$B".viesCheckDetails,"$B".duplicateCheckStatus,"$B".duplicateCheckDate,"$B".approverComments FROM mdm_db_BusinessPartnerRequests as "$B" WHERE "$B".requestType = ? ORDER BY "$B".requestNumber DESC LIMIT ?)
+    at RequestNumberGenerator.getNextNumber (C:\Users\msudarsanan\Desktop\GitHub\businesspartner\srv\utils\request-number-generator.js:82:19)
+    at async ApplicationService.<anonymous> (C:\Users\msudarsanan\Desktop\GitHub\businesspartner\srv\mdm-service.js:570:29)
+    at async next (C:\Users\msudarsanan\Desktop\GitHub\businesspartner\node_modules\@sap\cds\lib\srv\srv-dispatch.js:57:17)
+    at async ApplicationService.handle (C:\Users\msudarsanan\Desktop\GitHub\businesspartner\node_modules\@sap\cds\lib\srv\srv-dispatch.js:55:10) {
+  code: ''
+}
+
+        ___________________________
+ 
+[cds] - bootstrapping from { file: 'server.js' }
+🚀 Bootstrapping CAP server with integration APIs...
+✅ Integration API endpoints registered at /integration
+🔒 Input validation and rate limiting enabled
+✅ Satellite mock system endpoints registered at /satellite-mock
+   - POST /satellite-mock/coupa/webhook/mdm-approval
+   - POST /satellite-mock/salesforce/webhook/mdm-approval
+   - POST /satellite-mock/pi/webhook/mdm-approval
+   - POST /satellite-mock/acknowledge (manual ack)
+   - GET  /satellite-mock/received-notifications (testing)
+[cds] - loaded model from 20 file(s):
+
+  srv\pi-service.cds
+  srv\pi-annotations.cds
+  srv\coupa-annotations.cds
+  node_modules\@sap\cds\srv\outbox.cds
+  app\services.cds
+  app\satellite-ack\annotations.cds
+  app\salesforce-requests\annotations.cds
+  app\pi-requests\annotations.cds
+  app\mdm-approval\annotations.cds
+  app\coupa-requests\annotations.cds
+  app\admin-config\annotations.cds
+  srv\satellite-acknowledgement-service.cds
+  srv\salesforce-service.cds
+  srv\mdm-service.cds
+  srv\coupa-service.cds
+  srv\admin-service.cds
+  app\mdm-approval\field-annotations.cds
+  srv\common.cds
+  db\data-model.cds
+  node_modules\@sap\cds\common.cds
+[cds] - connect using bindings from: { registry: '~/.cds-services.json' }
+[cds] - connect to db > sqlite { url: 'db.sqlite' }
+[coupa-service] - Coupa Service initialized
+[coupa-service] - Coupa Service initialization complete
+DEBUG: NotificationService constructor start
+[mdm-service] - MDM Service initialized
+[mdm-service] - Registering MDM service handlers...
+[mdm-service] - Duplicate check handler registered
+[mdm-service] - VIES validation handler registered
+[mdm-service] - AEB compliance handler registered
+DEBUG: NotificationService constructor start
+[mdm-service] - Approval handler registered
+[mdm-service] - Status update handler registered
+[mdm-service] - All MDM service handlers registered successfully
+[mdm-service] - MDM Service initialization complete
+[coupa-service] - PI Service initialized
+[coupa-service] - PI Service initialization complete
+[salesforce-service] - Salesforce Service initialized
+[salesforce-service] - Salesforce Service initialization complete
+[satellite-ack-service] - ✅ Satellite Acknowledgement Service handler registered
+[admin-service] - Admin Service initialized
+[admin-service] - Admin Service initialization complete
+
+        ___________________________
+ 
+[cds] - bootstrapping from { file: 'server.js' }
+🚀 Bootstrapping CAP server with integration APIs...
+✅ Integration API endpoints registered at /integration
+🔒 Input validation and rate limiting enabled
+✅ Satellite mock system endpoints registered at /satellite-mock
+   - POST /satellite-mock/coupa/webhook/mdm-approval
+   - POST /satellite-mock/salesforce/webhook/mdm-approval
+   - POST /satellite-mock/pi/webhook/mdm-approval
+   - POST /satellite-mock/acknowledge (manual ack)
+   - GET  /satellite-mock/received-notifications (testing)
+[cds] - loaded model from 20 file(s):
+
+  srv\pi-service.cds
+  srv\pi-annotations.cds
+  srv\coupa-annotations.cds
+  node_modules\@sap\cds\srv\outbox.cds
+  app\services.cds
+  app\satellite-ack\annotations.cds
+  app\salesforce-requests\annotations.cds
+  app\pi-requests\annotations.cds
+  app\mdm-approval\annotations.cds
+  app\coupa-requests\annotations.cds
+  app\admin-config\annotations.cds
+  srv\satellite-acknowledgement-service.cds
+  srv\salesforce-service.cds
+  srv\mdm-service.cds
+  srv\coupa-service.cds
+  srv\admin-service.cds
+  app\mdm-approval\field-annotations.cds
+  srv\common.cds
+  db\data-model.cds
+  node_modules\@sap\cds\common.cds
+[cds] - connect using bindings from: { registry: '~/.cds-services.json' }
+[cds] - connect to db > sqlite { url: 'db.sqlite' }
+[coupa-service] - Coupa Service initialized
+[coupa-service] - Coupa Service initialization complete
+DEBUG: NotificationService constructor start
+[mdm-service] - MDM Service initialized
+[mdm-service] - Registering MDM service handlers...
+[mdm-service] - Duplicate check handler registered
+[mdm-service] - VIES validation handler registered
+[mdm-service] - AEB compliance handler registered
+DEBUG: NotificationService constructor start
+[mdm-service] - Approval handler registered
+[mdm-service] - Status update handler registered
+[mdm-service] - All MDM service handlers registered successfully
+[mdm-service] - MDM Service initialization complete
+[coupa-service] - PI Service initialized
+[coupa-service] - PI Service initialization complete
+[salesforce-service] - Salesforce Service initialized
+[salesforce-service] - Salesforce Service initialization complete
+[satellite-ack-service] - ✅ Satellite Acknowledgement Service handler registered
+[admin-service] - Admin Service initialized
+[admin-service] - Admin Service initialization complete
+[cds] - using auth strategy {
+  kind: 'dummy',
+  impl: 'node_modules\\@sap\\cds\\lib\\srv\\middlewares\\auth\\dummy-auth.js'
+}
+[cds] - serving AdminService {
+  at: [ '/admin' ],
+  decl: 'srv\\admin-service.cds:11',
+  impl: 'srv\\admin-service.js'
+}
+[cds] - serving CoupaService {
+  at: [ '/coupa' ],
+  decl: 'srv\\coupa-service.cds:5',
+  impl: 'srv\\coupa-service.js'
+}
+[cds] - serving MDMService {
+  at: [ '/mdm' ],
+  decl: 'srv\\mdm-service.cds:5',
+  impl: 'srv\\mdm-service.js'
+}
+[cds] - serving PIService {
+  at: [ '/pi' ],
+  decl: 'srv\\pi-service.cds:5',
+  impl: 'srv\\pi-service.js'
+}
+[cds] - serving SalesforceService {
+  at: [ '/salesforce' ],
+  decl: 'srv\\salesforce-service.cds:5',
+  impl: 'srv\\salesforce-service.js'
+}
+[cds] - serving SatelliteAcknowledgementService {
+  at: [ '/satellite-ack' ],
+  decl: 'srv\\satellite-acknowledgement-service.cds:3',
+  impl: 'srv\\satellite-acknowledgement-service.js'
+}
+[cds] - server listening on { url: 'http://localhost:4004' }
+[cds] - server v9.4.4 launched in 2967 ms
+📧 Using Ethereal test email account: pho22cqtcz7335ys@ethereal.email
+📧 Using Ethereal test email account: c4wrdugfebzvklau@ethereal.email
+✅ Email service initialized successfully
+✅ Email service initialized successfully
+[odata] - GET /mdm/$metadata { 'sap-language': 'EN' }
+[odata] - HEAD /mdm/ 
+[odata] - HEAD /mdm/ 
+[odata] - GET /mdm/$metadata { 'sap-language': 'EN' }
+[odata] - POST /mdm/$batch 
+[odata] - > GET /MDMApprovalRequests {
+  '$count': 'true',
+  '$filter': '(IsActiveEntity eq false or SiblingEntity/IsActiveEntity eq null)',
+  '$select': 'HasActiveEntity,ID,IsActiveEntity,createdAt,createdBy,integrationSuiteStatus,name1,requestNumber,requestType,sapInitialStatus,satelliteStatus,sourceSystem,status',
+  '$skip': '0',
+  '$top': '30'
+}
+[error] - 500 - SqliteError: no such table: MDMService_MDMApprovalRequests_drafts in:
+SELECT json_insert('{}','$."HasActiveEntity"',CASE HasActiveEntity when 1 then 'true' when 0 then 'false' END ->'$','$."ID"',ID,'$."createdAt"',createdAt,'$."createdBy"',createdBy,'$."integrationSuiteStatus"',integrationSuiteStatus,'$."name1"',name1,'$."requestNumber"',requestNumber,'$."requestType"',requestType,'$."sapInitialStatus"',sapInitialStatus,'$."satelliteStatus"',satelliteStatus,'$."sourceSystem"',sourceSystem,'$."status"',status) as _json_ FROM (SELECT "$d".HasActiveEntity,"$d".ID as ID,"$d".createdAt,"$d".createdBy,"$d".integrationSuiteStatus,"$d".name1,"$d".requestNumber,"$d".requestType,"$d".sapInitialStatus,"$d".satelliteStatus,"$d".sourceSystem,"$d".status FROM MDMService_MDMApprovalRequests_drafts as "$d" left JOIN MDMService_DraftAdministrativeData as DraftAdministrativeData ON DraftAdministrativeData.DraftUUID = "$d".DraftAdministrativeData_DraftUUID WHERE DraftAdministrativeData.InProcessByUser = ? ORDER BY ID ASC)
+    at Database.prepare (C:\Users\msudarsanan\Desktop\GitHub\businesspartner\node_modules\better-sqlite3\lib\methods\wrappers.js:5:21)
+    at SQLiteService.prepare (C:\Users\msudarsanan\Desktop\GitHub\businesspartner\node_modules\@cap-js\sqlite\lib\SQLiteService.js:72:29)
+    at SQLiteService.onSELECT (C:\Users\msudarsanan\Desktop\GitHub\businesspartner\node_modules\@cap-js\sqlite\node_modules\@cap-js\db-service\lib\SQLService.js:137:25)
+    at next (C:\Users\msudarsanan\Desktop\GitHub\businesspartner\node_modules\@sap\cds\lib\srv\srv-dispatch.js:57:36)
+    at SQLiteService.handle (C:\Users\msudarsanan\Desktop\GitHub\businesspartner\node_modules\@sap\cds\lib\srv\srv-dispatch.js:60:6)
+    at SQLiteService.dispatch (C:\Users\msudarsanan\Desktop\GitHub\businesspartner\node_modules\@sap\cds\lib\srv\srv-dispatch.js:27:15)
+    at SQLiteService._begin (C:\Users\msudarsanan\Desktop\GitHub\businesspartner\node_modules\@sap\cds\lib\srv\srv-tx.js:198:15)
+    at async ApplicationService.handle_crud_requests (C:\Users\msudarsanan\Desktop\GitHub\businesspartner\node_modules\@sap\cds\libx\_runtime\common\generic\crud.js:57:20)
+    at async next (C:\Users\msudarsanan\Desktop\GitHub\businesspartner\node_modules\@sap\cds\lib\srv\srv-dispatch.js:57:17) {
+  code: 'SQLITE_ERROR',
+  query: `SELECT json_insert('{}','$."HasActiveEntity"',CASE HasActiveEntity when 1 then 'true' when 0 then 'false' END ->'$','$."ID"',ID,'$."createdAt"',createdAt,'$."createdBy"',createdBy,'$."integrationSuiteStatus"',integrationSuiteStatus,'$."name1"',name1,'$."requestNumber"',requestNumber,'$."requestType"',requestType,'$."sapInitialStatus"',sapInitialStatus,'$."satelliteStatus"',satelliteStatus,'$."sourceSystem"',sourceSystem,'$."status"',status) as _json_ FROM (SELECT "$d".HasActiveEntity,"$d".ID as ID,"$d".createdAt,"$d".createdBy,"$d".integrationSuiteStatus,"$d".name1,"$d".requestNumber,"$d".requestType,"$d".sapInitialStatus,"$d".satelliteStatus,"$d".sourceSystem,"$d".status FROM MDMService_MDMApprovalRequests_drafts as "$d" left JOIN MDMService_DraftAdministrativeData as DraftAdministrativeData ON DraftAdministrativeData.DraftUUID = "$d".DraftAdministrativeData_DraftUUID WHERE DraftAdministrativeData.InProcessByUser = ? ORDER BY ID ASC)`
+}
+[odata] - HEAD /mdm/ 
+[odata] - GET /mdm/$metadata { 'sap-language': 'EN' }
+[odata] - POST /mdm/$batch 
+[odata] - > GET /MDMApprovalRequests {
+  '$count': 'true',
+  '$filter': '(IsActiveEntity eq false or SiblingEntity/IsActiveEntity eq null)',
+  '$select': 'HasActiveEntity,ID,IsActiveEntity,createdAt,createdBy,integrationSuiteStatus,name1,requestNumber,requestType,sapInitialStatus,satelliteStatus,sourceSystem,status',
+  '$skip': '0',
+  '$top': '30'
+}
+[error] - 500 - SqliteError: no such table: MDMService_MDMApprovalRequests_drafts in:
+SELECT json_insert('{}','$."HasActiveEntity"',CASE HasActiveEntity when 1 then 'true' when 0 then 'false' END ->'$','$."ID"',ID,'$."createdAt"',createdAt,'$."createdBy"',createdBy,'$."integrationSuiteStatus"',integrationSuiteStatus,'$."name1"',name1,'$."requestNumber"',requestNumber,'$."requestType"',requestType,'$."sapInitialStatus"',sapInitialStatus,'$."satelliteStatus"',satelliteStatus,'$."sourceSystem"',sourceSystem,'$."status"',status) as _json_ FROM (SELECT "$d".HasActiveEntity,"$d".ID as ID,"$d".createdAt,"$d".createdBy,"$d".integrationSuiteStatus,"$d".name1,"$d".requestNumber,"$d".requestType,"$d".sapInitialStatus,"$d".satelliteStatus,"$d".sourceSystem,"$d".status FROM MDMService_MDMApprovalRequests_drafts as "$d" left JOIN MDMService_DraftAdministrativeData as DraftAdministrativeData ON DraftAdministrativeData.DraftUUID = "$d".DraftAdministrativeData_DraftUUID WHERE DraftAdministrativeData.InProcessByUser = ? ORDER BY ID ASC)
+    at Database.prepare (C:\Users\msudarsanan\Desktop\GitHub\businesspartner\node_modules\better-sqlite3\lib\methods\wrappers.js:5:21)
+    at SQLiteService.prepare (C:\Users\msudarsanan\Desktop\GitHub\businesspartner\node_modules\@cap-js\sqlite\lib\SQLiteService.js:72:29)
+    at SQLiteService.onSELECT (C:\Users\msudarsanan\Desktop\GitHub\businesspartner\node_modules\@cap-js\sqlite\node_modules\@cap-js\db-service\lib\SQLService.js:137:25)
+    at next (C:\Users\msudarsanan\Desktop\GitHub\businesspartner\node_modules\@sap\cds\lib\srv\srv-dispatch.js:57:36)
+    at SQLiteService.handle (C:\Users\msudarsanan\Desktop\GitHub\businesspartner\node_modules\@sap\cds\lib\srv\srv-dispatch.js:60:6)
+    at SQLiteService.dispatch (C:\Users\msudarsanan\Desktop\GitHub\businesspartner\node_modules\@sap\cds\lib\srv\srv-dispatch.js:27:15)
+    at SQLiteService._begin (C:\Users\msudarsanan\Desktop\GitHub\businesspartner\node_modules\@sap\cds\lib\srv\srv-tx.js:198:15)
+    at async ApplicationService.handle_crud_requests (C:\Users\msudarsanan\Desktop\GitHub\businesspartner\node_modules\@sap\cds\libx\_runtime\common\generic\crud.js:57:20)
+    at async next (C:\Users\msudarsanan\Desktop\GitHub\businesspartner\node_modules\@sap\cds\lib\srv\srv-dispatch.js:57:17) {
+  code: 'SQLITE_ERROR',
+  query: `SELECT json_insert('{}','$."HasActiveEntity"',CASE HasActiveEntity when 1 then 'true' when 0 then 'false' END ->'$','$."ID"',ID,'$."createdAt"',createdAt,'$."createdBy"',createdBy,'$."integrationSuiteStatus"',integrationSuiteStatus,'$."name1"',name1,'$."requestNumber"',requestNumber,'$."requestType"',requestType,'$."sapInitialStatus"',sapInitialStatus,'$."satelliteStatus"',satelliteStatus,'$."sourceSystem"',sourceSystem,'$."status"',status) as _json_ FROM (SELECT "$d".HasActiveEntity,"$d".ID as ID,"$d".createdAt,"$d".createdBy,"$d".integrationSuiteStatus,"$d".name1,"$d".requestNumber,"$d".requestType,"$d".sapInitialStatus,"$d".satelliteStatus,"$d".sourceSystem,"$d".status FROM MDMService_MDMApprovalRequests_drafts as "$d" left JOIN MDMService_DraftAdministrativeData as DraftAdministrativeData ON DraftAdministrativeData.DraftUUID = "$d".DraftAdministrativeData_DraftUUID WHERE DraftAdministrativeData.InProcessByUser = ? ORDER BY ID ASC)`
+}
+
+        ___________________________
+ 
+[cds] - bootstrapping from { file: 'server.js' }
+🚀 Bootstrapping CAP server with integration APIs...
+✅ Integration API endpoints registered at /integration
+🔒 Input validation and rate limiting enabled
+✅ Satellite mock system endpoints registered at /satellite-mock
+   - POST /satellite-mock/coupa/webhook/mdm-approval
+   - POST /satellite-mock/salesforce/webhook/mdm-approval
+   - POST /satellite-mock/pi/webhook/mdm-approval
+   - POST /satellite-mock/acknowledge (manual ack)
+   - GET  /satellite-mock/received-notifications (testing)
+[cds] - loaded model from 20 file(s):
+
+  srv\pi-service.cds
+  srv\pi-annotations.cds
+  srv\coupa-annotations.cds
+  node_modules\@sap\cds\srv\outbox.cds
+  app\services.cds
+  app\satellite-ack\annotations.cds
+  app\salesforce-requests\annotations.cds
+  app\pi-requests\annotations.cds
+  app\mdm-approval\annotations.cds
+  app\coupa-requests\annotations.cds
+  app\admin-config\annotations.cds
+  srv\satellite-acknowledgement-service.cds
+  srv\salesforce-service.cds
+  srv\mdm-service.cds
+  srv\coupa-service.cds
+  srv\admin-service.cds
+  app\mdm-approval\field-annotations.cds
+  srv\common.cds
+  db\data-model.cds
+  node_modules\@sap\cds\common.cds
+[cds] - connect using bindings from: { registry: '~/.cds-services.json' }
+[cds] - connect to db > sqlite { url: 'db.sqlite' }
+[coupa-service] - Coupa Service initialized
+[coupa-service] - Coupa Service initialization complete
+DEBUG: NotificationService constructor start
+[mdm-service] - MDM Service initialized
+[mdm-service] - Registering MDM service handlers...
+[mdm-service] - Duplicate check handler registered
+[mdm-service] - VIES validation handler registered
+[mdm-service] - AEB compliance handler registered
+DEBUG: NotificationService constructor start
+[mdm-service] - Approval handler registered
+[mdm-service] - Status update handler registered
+[mdm-service] - All MDM service handlers registered successfully
+[mdm-service] - MDM Service initialization complete
+[coupa-service] - PI Service initialized
+[coupa-service] - PI Service initialization complete
+[salesforce-service] - Salesforce Service initialized
+[salesforce-service] - Salesforce Service initialization complete
+[satellite-ack-service] - ✅ Satellite Acknowledgement Service handler registered
+[admin-service] - Admin Service initialized
+[admin-service] - Admin Service initialization complete
+[cds] - using auth strategy {
+  kind: 'dummy',
+  impl: 'node_modules\\@sap\\cds\\lib\\srv\\middlewares\\auth\\dummy-auth.js'
+}
+[cds] - serving AdminService {
+  at: [ '/admin' ],
+  decl: 'srv\\admin-service.cds:11',
+  impl: 'srv\\admin-service.js'
+}
+[cds] - serving CoupaService {
+  at: [ '/coupa' ],
+  decl: 'srv\\coupa-service.cds:5',
+  impl: 'srv\\coupa-service.js'
+}
+[cds] - serving MDMService {
+  at: [ '/mdm' ],
+  decl: 'srv\\mdm-service.cds:5',
+  impl: 'srv\\mdm-service.js'
+}
+[cds] - serving PIService {
+  at: [ '/pi' ],
+  decl: 'srv\\pi-service.cds:5',
+  impl: 'srv\\pi-service.js'
+}
+[cds] - serving SalesforceService {
+  at: [ '/salesforce' ],
+  decl: 'srv\\salesforce-service.cds:5',
+  impl: 'srv\\salesforce-service.js'
+}
+[cds] - serving SatelliteAcknowledgementService {
+  at: [ '/satellite-ack' ],
+  decl: 'srv\\satellite-acknowledgement-service.cds:3',
+  impl: 'srv\\satellite-acknowledgement-service.js'
+}
+[cds] - server listening on { url: 'http://localhost:4004' }
+[cds] - server v9.4.4 launched in 2466 ms
+📧 Using Ethereal test email account: ku743sgklmehexyz@ethereal.email
+📧 Using Ethereal test email account: yzzhofk3zhrzx6ih@ethereal.email
+✅ Email service initialized successfully
+✅ Email service initialized successfully
+[odata] - GET /mdm/$metadata { 'sap-language': 'EN' }
+[odata] - HEAD /mdm/ 
+[odata] - POST /mdm/$batch 
+[odata] - > GET /MDMApprovalRequests {
+  '$count': 'true',
+  '$filter': '(IsActiveEntity eq false or SiblingEntity/IsActiveEntity eq null)',
+  '$select': 'HasActiveEntity,ID,IsActiveEntity,createdAt,createdBy,integrationSuiteStatus,name1,requestNumber,requestType,sapInitialStatus,satelliteStatus,sourceSystem,status',
+  '$skip': '0',
+  '$top': '30'
+}
+[error] - 500 - SqliteError: no such table: MDMService_MDMApprovalRequests_drafts in:
+SELECT json_insert('{}','$."HasActiveEntity"',CASE HasActiveEntity when 1 then 'true' when 0 then 'false' END ->'$','$."ID"',ID,'$."createdAt"',createdAt,'$."createdBy"',createdBy,'$."integrationSuiteStatus"',integrationSuiteStatus,'$."name1"',name1,'$."requestNumber"',requestNumber,'$."requestType"',requestType,'$."sapInitialStatus"',sapInitialStatus,'$."satelliteStatus"',satelliteStatus,'$."sourceSystem"',sourceSystem,'$."status"',status) as _json_ FROM (SELECT "$d".HasActiveEntity,"$d".ID as ID,"$d".createdAt,"$d".createdBy,"$d".integrationSuiteStatus,"$d".name1,"$d".requestNumber,"$d".requestType,"$d".sapInitialStatus,"$d".satelliteStatus,"$d".sourceSystem,"$d".status FROM MDMService_MDMApprovalRequests_drafts as "$d" left JOIN MDMService_DraftAdministrativeData as DraftAdministrativeData ON DraftAdministrativeData.DraftUUID = "$d".DraftAdministrativeData_DraftUUID WHERE DraftAdministrativeData.InProcessByUser = ? ORDER BY ID ASC)
+    at Database.prepare (C:\Users\msudarsanan\Desktop\GitHub\businesspartner\node_modules\better-sqlite3\lib\methods\wrappers.js:5:21)
+    at SQLiteService.prepare (C:\Users\msudarsanan\Desktop\GitHub\businesspartner\node_modules\@cap-js\sqlite\lib\SQLiteService.js:72:29)
+    at SQLiteService.onSELECT (C:\Users\msudarsanan\Desktop\GitHub\businesspartner\node_modules\@cap-js\sqlite\node_modules\@cap-js\db-service\lib\SQLService.js:137:25)
+    at next (C:\Users\msudarsanan\Desktop\GitHub\businesspartner\node_modules\@sap\cds\lib\srv\srv-dispatch.js:57:36)
+    at SQLiteService.handle (C:\Users\msudarsanan\Desktop\GitHub\businesspartner\node_modules\@sap\cds\lib\srv\srv-dispatch.js:60:6)
+    at SQLiteService.dispatch (C:\Users\msudarsanan\Desktop\GitHub\businesspartner\node_modules\@sap\cds\lib\srv\srv-dispatch.js:27:15)
+    at SQLiteService._begin (C:\Users\msudarsanan\Desktop\GitHub\businesspartner\node_modules\@sap\cds\lib\srv\srv-tx.js:198:15)
+    at async ApplicationService.handle_crud_requests (C:\Users\msudarsanan\Desktop\GitHub\businesspartner\node_modules\@sap\cds\libx\_runtime\common\generic\crud.js:57:20)
+    at async next (C:\Users\msudarsanan\Desktop\GitHub\businesspartner\node_modules\@sap\cds\lib\srv\srv-dispatch.js:57:17) {
+  code: 'SQLITE_ERROR',
+  query: `SELECT json_insert('{}','$."HasActiveEntity"',CASE HasActiveEntity when 1 then 'true' when 0 then 'false' END ->'$','$."ID"',ID,'$."createdAt"',createdAt,'$."createdBy"',createdBy,'$."integrationSuiteStatus"',integrationSuiteStatus,'$."name1"',name1,'$."requestNumber"',requestNumber,'$."requestType"',requestType,'$."sapInitialStatus"',sapInitialStatus,'$."satelliteStatus"',satelliteStatus,'$."sourceSystem"',sourceSystem,'$."status"',status) as _json_ FROM (SELECT "$d".HasActiveEntity,"$d".ID as ID,"$d".createdAt,"$d".createdBy,"$d".integrationSuiteStatus,"$d".name1,"$d".requestNumber,"$d".requestType,"$d".sapInitialStatus,"$d".satelliteStatus,"$d".sourceSystem,"$d".status FROM MDMService_MDMApprovalRequests_drafts as "$d" left JOIN MDMService_DraftAdministrativeData as DraftAdministrativeData ON DraftAdministrativeData.DraftUUID = "$d".DraftAdministrativeData_DraftUUID WHERE DraftAdministrativeData.InProcessByUser = ? ORDER BY ID ASC)`
+}
+[odata] - POST /mdm/createAdhocSyncRequest 
+[mdm-service] - createAdhocSyncRequest called { sapBpNumber: '0000100001', targetSystem: 'Coupa' }
+[RequestNumberGenerator] Error generating number for ADHOC: SqliteError: no such table: mdm_db_BusinessPartnerRequests in:
+SELECT json_insert(jsonb_insert('{}','$."ID"',ID,'$."createdAt"',createdAt,'$."createdBy"',createdBy,'$."modifiedAt"',modifiedAt,'$."modifiedBy"',modifiedBy,'$."requestNumber"',requestNumber,'$."entityType"',entityType,'$."requestType"',requestType,'$."sourceSystem"',sourceSystem,'$."status"',status,'$."statusCriticality"',statusCriticality,'$."integrationSuiteStatus"',integrationSuiteStatus,'$."sapInitialStatus"',sapInitialStatus,'$."satelliteStatus"',satelliteStatus,'$."sapIdUpdateStatus"',sapIdUpdateStatus,'$."existingBpNumber"',existingBpNumber,'$."existingBpName"',existingBpName,'$."changeDescription"',changeDescription,'$."targetSystem"',targetSystem,'$."adhocReason"',adhocReason,'$."requesterId"',requesterId,'$."requesterName"',requesterName,'$."requesterEmail"',requesterEmail,'$."partnerName"',partnerName,'$."name1"',name1,'$."name2"',name2,'$."merchantId"',merchantId,'$."searchTerm"',searchTerm,'$."partnerRole"',partnerRole,'$."businessChannels"',businessChannels,'$."communicationLanguage"',communicationLanguage,'$."reconAccount"',reconAccount,'$."currency_code"',currency_code,'$."paymentMethod_code"',paymentMethod_code,'$."paymentTerms_code"',paymentTerms_code,'$."sapBpNumber"',sapBpNumber,'$."satelliteSystemID"',satelliteSystemID,'$."coupaInternalNo"',coupaInternalNo,'$."salesforceId"',salesforceId,'$."piInternalNo"',piInternalNo,'$."piId"',piId,'$."purchaseCategories"',purchaseCategories,'$."spendThreshold"',spendThreshold,'$."procurementContact"',procurementContact,'$."accountType"',accountType,'$."industry"',industry,'$."revenueStream_code"',revenueStream_code,'$."billingCycle_code"',billingCycle_code),'$."bpType_code"',bpType_code,'$."dunningStrategy_code"',dunningStrategy_code,'$."aebStatus"',aebStatus,'$."aebCheckDate"',substr(aebCheckDate,0,20)||'Z','$."aebCheckDetails"',aebCheckDetails,'$."viesStatus"',viesStatus,'$."viesCheckDate"',substr(viesCheckDate,0,20)||'Z','$."viesCheckDetails"',viesCheckDetails,'$."duplicateCheckStatus"',duplicateCheckStatus,'$."duplicateCheckDate"',substr(duplicateCheckDate,0,20)||'Z','$."approverComments"',approverComments) as _json_ FROM (SELECT "$B".ID,"$B".createdAt,"$B".createdBy,"$B".modifiedAt,"$B".modifiedBy,"$B".requestNumber,"$B".entityType,"$B".requestType,"$B".sourceSystem,"$B".status,"$B".statusCriticality,"$B".integrationSuiteStatus,"$B".sapInitialStatus,"$B".satelliteStatus,"$B".sapIdUpdateStatus,"$B".existingBpNumber,"$B".existingBpName,"$B".changeDescription,"$B".targetSystem,"$B".adhocReason,"$B".requesterId,"$B".requesterName,"$B".requesterEmail,"$B".partnerName,"$B".name1,"$B".name2,"$B".merchantId,"$B".searchTerm,"$B".partnerRole,"$B".businessChannels,"$B".communicationLanguage,"$B".reconAccount,"$B".currency_code,"$B".paymentMethod_code,"$B".paymentTerms_code,"$B".sapBpNumber,"$B".satelliteSystemID,"$B".coupaInternalNo,"$B".salesforceId,"$B".piInternalNo,"$B".piId,"$B".purchaseCategories,"$B".spendThreshold,"$B".procurementContact,"$B".accountType,"$B".industry,"$B".revenueStream_code,"$B".billingCycle_code,"$B".bpType_code,"$B".dunningStrategy_code,"$B".aebStatus,"$B".aebCheckDate,"$B".aebCheckDetails,"$B".viesStatus,"$B".viesCheckDate,"$B".viesCheckDetails,"$B".duplicateCheckStatus,"$B".duplicateCheckDate,"$B".approverComments FROM mdm_db_BusinessPartnerRequests as "$B" WHERE "$B".requestType = ? ORDER BY "$B".requestNumber DESC LIMIT ?)
+    at Database.prepare (C:\Users\msudarsanan\Desktop\GitHub\businesspartner\node_modules\better-sqlite3\lib\methods\wrappers.js:5:21)
+    at SQLiteService.prepare (C:\Users\msudarsanan\Desktop\GitHub\businesspartner\node_modules\@cap-js\sqlite\lib\SQLiteService.js:72:29)
+    at SQLiteService.onSELECT (C:\Users\msudarsanan\Desktop\GitHub\businesspartner\node_modules\@cap-js\sqlite\node_modules\@cap-js\db-service\lib\SQLService.js:137:25)
+    at next (C:\Users\msudarsanan\Desktop\GitHub\businesspartner\node_modules\@sap\cds\lib\srv\srv-dispatch.js:57:36)
+    at SQLiteService.handle (C:\Users\msudarsanan\Desktop\GitHub\businesspartner\node_modules\@sap\cds\lib\srv\srv-dispatch.js:60:6)
+    at SQLiteService.dispatch (C:\Users\msudarsanan\Desktop\GitHub\businesspartner\node_modules\@sap\cds\lib\srv\srv-dispatch.js:27:15)
+    at SQLiteService._begin (C:\Users\msudarsanan\Desktop\GitHub\businesspartner\node_modules\@sap\cds\lib\srv\srv-tx.js:198:15)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async RequestNumberGenerator.getNextNumber (C:\Users\msudarsanan\Desktop\GitHub\businesspartner\srv\utils\request-number-generator.js:49:31)
+    at async ApplicationService.<anonymous> (C:\Users\msudarsanan\Desktop\GitHub\businesspartner\srv\mdm-service.js:570:29) {
+  code: 'SQLITE_ERROR',
+  query: `SELECT json_insert(jsonb_insert('{}','$."ID"',ID,'$."createdAt"',createdAt,'$."createdBy"',createdBy,'$."modifiedAt"',modifiedAt,'$."modifiedBy"',modifiedBy,'$."requestNumber"',requestNumber,'$."entityType"',entityType,'$."requestType"',requestType,'$."sourceSystem"',sourceSystem,'$."status"',status,'$."statusCriticality"',statusCriticality,'$."integrationSuiteStatus"',integrationSuiteStatus,'$."sapInitialStatus"',sapInitialStatus,'$."satelliteStatus"',satelliteStatus,'$."sapIdUpdateStatus"',sapIdUpdateStatus,'$."existingBpNumber"',existingBpNumber,'$."existingBpName"',existingBpName,'$."changeDescription"',changeDescription,'$."targetSystem"',targetSystem,'$."adhocReason"',adhocReason,'$."requesterId"',requesterId,'$."requesterName"',requesterName,'$."requesterEmail"',requesterEmail,'$."partnerName"',partnerName,'$."name1"',name1,'$."name2"',name2,'$."merchantId"',merchantId,'$."searchTerm"',searchTerm,'$."partnerRole"',partnerRole,'$."businessChannels"',businessChannels,'$."communicationLanguage"',communicationLanguage,'$."reconAccount"',reconAccount,'$."currency_code"',currency_code,'$."paymentMethod_code"',paymentMethod_code,'$."paymentTerms_code"',paymentTerms_code,'$."sapBpNumber"',sapBpNumber,'$."satelliteSystemID"',satelliteSystemID,'$."coupaInternalNo"',coupaInternalNo,'$."salesforceId"',salesforceId,'$."piInternalNo"',piInternalNo,'$."piId"',piId,'$."purchaseCategories"',purchaseCategories,'$."spendThreshold"',spendThreshold,'$."procurementContact"',procurementContact,'$."accountType"',accountType,'$."industry"',industry,'$."revenueStream_code"',revenueStream_code,'$."billingCycle_code"',billingCycle_code),'$."bpType_code"',bpType_code,'$."dunningStrategy_code"',dunningStrategy_code,'$."aebStatus"',aebStatus,'$."aebCheckDate"',substr(aebCheckDate,0,20)||'Z','$."aebCheckDetails"',aebCheckDetails,'$."viesStatus"',viesStatus,'$."viesCheckDate"',substr(viesCheckDate,0,20)||'Z','$."viesCheckDetails"',viesCheckDetails,'$."duplicateCheckStatus"',duplicateCheckStatus,'$."duplicateCheckDate"',substr(duplicateCheckDate,0,20)||'Z','$."approverComments"',approverComments) as _json_ FROM (SELECT "$B".ID,"$B".createdAt,"$B".createdBy,"$B".modifiedAt,"$B".modifiedBy,"$B".requestNumber,"$B".entityType,"$B".requestType,"$B".sourceSystem,"$B".status,"$B".statusCriticality,"$B".integrationSuiteStatus,"$B".sapInitialStatus,"$B".satelliteStatus,"$B".sapIdUpdateStatus,"$B".existingBpNumber,"$B".existingBpName,"$B".changeDescription,"$B".targetSystem,"$B".adhocReason,"$B".requesterId,"$B".requesterName,"$B".requesterEmail,"$B".partnerName,"$B".name1,"$B".name2,"$B".merchantId,"$B".searchTerm,"$B".partnerRole,"$B".businessChannels,"$B".communicationLanguage,"$B".reconAccount,"$B".currency_code,"$B".paymentMethod_code,"$B".paymentTerms_code,"$B".sapBpNumber,"$B".satelliteSystemID,"$B".coupaInternalNo,"$B".salesforceId,"$B".piInternalNo,"$B".piId,"$B".purchaseCategories,"$B".spendThreshold,"$B".procurementContact,"$B".accountType,"$B".industry,"$B".revenueStream_code,"$B".billingCycle_code,"$B".bpType_code,"$B".dunningStrategy_code,"$B".aebStatus,"$B".aebCheckDate,"$B".aebCheckDetails,"$B".viesStatus,"$B".viesCheckDate,"$B".viesCheckDetails,"$B".duplicateCheckStatus,"$B".duplicateCheckDate,"$B".approverComments FROM mdm_db_BusinessPartnerRequests as "$B" WHERE "$B".requestType = ? ORDER BY "$B".requestNumber DESC LIMIT ?)`
+}
+[mdm-service] - createAdhocSyncRequest error {
+  error: 'Failed to generate request number: no such table: mdm_db_BusinessPartnerRequests in:\n' +
+    `SELECT json_insert(jsonb_insert('{}','$."ID"',ID,'$."createdAt"',createdAt,'$."createdBy"',createdBy,'$."modifiedAt"',modifiedAt,'$."modifiedBy"',modifiedBy,'$."requestNumber"',requestNumber,'$."entityType"',entityType,'$."requestType"',requestType,'$."sourceSystem"',sourceSystem,'$."status"',status,'$."statusCriticality"',statusCriticality,'$."integrationSuiteStatus"',integrationSuiteStatus,'$."sapInitialStatus"',sapInitialStatus,'$."satelliteStatus"',satelliteStatus,'$."sapIdUpdateStatus"',sapIdUpdateStatus,'$."existingBpNumber"',existingBpNumber,'$."existingBpName"',existingBpName,'$."changeDescription"',changeDescription,'$."targetSystem"',targetSystem,'$."adhocReason"',adhocReason,'$."requesterId"',requesterId,'$."requesterName"',requesterName,'$."requesterEmail"',requesterEmail,'$."partnerName"',partnerName,'$."name1"',name1,'$."name2"',name2,'$."merchantId"',merchantId,'$."searchTerm"',searchTerm,'$."partnerRole"',partnerRole,'$."businessChannels"',businessChannels,'$."communicationLanguage"',communicationLanguage,'$."reconAccount"',reconAccount,'$."currency_code"',currency_code,'$."paymentMethod_code"',paymentMethod_code,'$."paymentTerms_code"',paymentTerms_code,'$."sapBpNumber"',sapBpNumber,'$."satelliteSystemID"',satelliteSystemID,'$."coupaInternalNo"',coupaInternalNo,'$."salesforceId"',salesforceId,'$."piInternalNo"',piInternalNo,'$."piId"',piId,'$."purchaseCategories"',purchaseCategories,'$."spendThreshold"',spendThreshold,'$."procurementContact"',procurementContact,'$."accountType"',accountType,'$."industry"',industry,'$."revenueStream_code"',revenueStream_code,'$."billingCycle_code"',billingCycle_code),'$."bpType_code"',bpType_code,'$."dunningStrategy_code"',dunningStrategy_code,'$."aebStatus"',aebStatus,'$."aebCheckDate"',substr(aebCheckDate,0,20)||'Z','$."aebCheckDetails"',aebCheckDetails,'$."viesStatus"',viesStatus,'$."viesCheckDate"',substr(viesCheckDate,0,20)||'Z','$."viesCheckDetails"',viesCheckDetails,'$."duplicateCheckStatus"',duplicateCheckStatus,'$."duplicateCheckDate"',substr(duplicateCheckDate,0,20)||'Z','$."approverComments"',approverComments) as _json_ FROM (SELECT "$B".ID,"$B".createdAt,"$B".createdBy,"$B".modifiedAt,"$B".modifiedBy,"$B".requestNumber,"$B".entityType,"$B".requestType,"$B".sourceSystem,"$B".status,"$B".statusCriticality,"$B".integrationSuiteStatus,"$B".sapInitialStatus,"$B".satelliteStatus,"$B".sapIdUpdateStatus,"$B".existingBpNumber,"$B".existingBpName,"$B".changeDescription,"$B".targetSystem,"$B".adhocReason,"$B".requesterId,"$B".requesterName,"$B".requesterEmail,"$B".partnerName,"$B".name1,"$B".name2,"$B".merchantId,"$B".searchTerm,"$B".partnerRole,"$B".businessChannels,"$B".communicationLanguage,"$B".reconAccount,"$B".currency_code,"$B".paymentMethod_code,"$B".paymentTerms_code,"$B".sapBpNumber,"$B".satelliteSystemID,"$B".coupaInternalNo,"$B".salesforceId,"$B".piInternalNo,"$B".piId,"$B".purchaseCategories,"$B".spendThreshold,"$B".procurementContact,"$B".accountType,"$B".industry,"$B".revenueStream_code,"$B".billingCycle_code,"$B".bpType_code,"$B".dunningStrategy_code,"$B".aebStatus,"$B".aebCheckDate,"$B".aebCheckDetails,"$B".viesStatus,"$B".viesCheckDate,"$B".viesCheckDetails,"$B".duplicateCheckStatus,"$B".duplicateCheckDate,"$B".approverComments FROM mdm_db_BusinessPartnerRequests as "$B" WHERE "$B".requestType = ? ORDER BY "$B".requestNumber DESC LIMIT ?)`
+}
+[error] - 500 - Error: Failed to generate request number: no such table: mdm_db_BusinessPartnerRequests in:
+SELECT json_insert(jsonb_insert('{}','$."ID"',ID,'$."createdAt"',createdAt,'$."createdBy"',createdBy,'$."modifiedAt"',modifiedAt,'$."modifiedBy"',modifiedBy,'$."requestNumber"',requestNumber,'$."entityType"',entityType,'$."requestType"',requestType,'$."sourceSystem"',sourceSystem,'$."status"',status,'$."statusCriticality"',statusCriticality,'$."integrationSuiteStatus"',integrationSuiteStatus,'$."sapInitialStatus"',sapInitialStatus,'$."satelliteStatus"',satelliteStatus,'$."sapIdUpdateStatus"',sapIdUpdateStatus,'$."existingBpNumber"',existingBpNumber,'$."existingBpName"',existingBpName,'$."changeDescription"',changeDescription,'$."targetSystem"',targetSystem,'$."adhocReason"',adhocReason,'$."requesterId"',requesterId,'$."requesterName"',requesterName,'$."requesterEmail"',requesterEmail,'$."partnerName"',partnerName,'$."name1"',name1,'$."name2"',name2,'$."merchantId"',merchantId,'$."searchTerm"',searchTerm,'$."partnerRole"',partnerRole,'$."businessChannels"',businessChannels,'$."communicationLanguage"',communicationLanguage,'$."reconAccount"',reconAccount,'$."currency_code"',currency_code,'$."paymentMethod_code"',paymentMethod_code,'$."paymentTerms_code"',paymentTerms_code,'$."sapBpNumber"',sapBpNumber,'$."satelliteSystemID"',satelliteSystemID,'$."coupaInternalNo"',coupaInternalNo,'$."salesforceId"',salesforceId,'$."piInternalNo"',piInternalNo,'$."piId"',piId,'$."purchaseCategories"',purchaseCategories,'$."spendThreshold"',spendThreshold,'$."procurementContact"',procurementContact,'$."accountType"',accountType,'$."industry"',industry,'$."revenueStream_code"',revenueStream_code,'$."billingCycle_code"',billingCycle_code),'$."bpType_code"',bpType_code,'$."dunningStrategy_code"',dunningStrategy_code,'$."aebStatus"',aebStatus,'$."aebCheckDate"',substr(aebCheckDate,0,20)||'Z','$."aebCheckDetails"',aebCheckDetails,'$."viesStatus"',viesStatus,'$."viesCheckDate"',substr(viesCheckDate,0,20)||'Z','$."viesCheckDetails"',viesCheckDetails,'$."duplicateCheckStatus"',duplicateCheckStatus,'$."duplicateCheckDate"',substr(duplicateCheckDate,0,20)||'Z','$."approverComments"',approverComments) as _json_ FROM (SELECT "$B".ID,"$B".createdAt,"$B".createdBy,"$B".modifiedAt,"$B".modifiedBy,"$B".requestNumber,"$B".entityType,"$B".requestType,"$B".sourceSystem,"$B".status,"$B".statusCriticality,"$B".integrationSuiteStatus,"$B".sapInitialStatus,"$B".satelliteStatus,"$B".sapIdUpdateStatus,"$B".existingBpNumber,"$B".existingBpName,"$B".changeDescription,"$B".targetSystem,"$B".adhocReason,"$B".requesterId,"$B".requesterName,"$B".requesterEmail,"$B".partnerName,"$B".name1,"$B".name2,"$B".merchantId,"$B".searchTerm,"$B".partnerRole,"$B".businessChannels,"$B".communicationLanguage,"$B".reconAccount,"$B".currency_code,"$B".paymentMethod_code,"$B".paymentTerms_code,"$B".sapBpNumber,"$B".satelliteSystemID,"$B".coupaInternalNo,"$B".salesforceId,"$B".piInternalNo,"$B".piId,"$B".purchaseCategories,"$B".spendThreshold,"$B".procurementContact,"$B".accountType,"$B".industry,"$B".revenueStream_code,"$B".billingCycle_code,"$B".bpType_code,"$B".dunningStrategy_code,"$B".aebStatus,"$B".aebCheckDate,"$B".aebCheckDetails,"$B".viesStatus,"$B".viesCheckDate,"$B".viesCheckDetails,"$B".duplicateCheckStatus,"$B".duplicateCheckDate,"$B".approverComments FROM mdm_db_BusinessPartnerRequests as "$B" WHERE "$B".requestType = ? ORDER BY "$B".requestNumber DESC LIMIT ?)
+    at RequestNumberGenerator.getNextNumber (C:\Users\msudarsanan\Desktop\GitHub\businesspartner\srv\utils\request-number-generator.js:82:19)
+    at async ApplicationService.<anonymous> (C:\Users\msudarsanan\Desktop\GitHub\businesspartner\srv\mdm-service.js:570:29)
+    at async next (C:\Users\msudarsanan\Desktop\GitHub\businesspartner\node_modules\@sap\cds\lib\srv\srv-dispatch.js:57:17)
+    at async ApplicationService.handle (C:\Users\msudarsanan\Desktop\GitHub\businesspartner\node_modules\@sap\cds\lib\srv\srv-dispatch.js:55:10) {
+  code: ''
+}

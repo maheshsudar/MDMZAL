@@ -1,0 +1,1678 @@
+ 
+cds serve all --with-mocks --in-memory? 
+27124 watching: cds,csn,csv,ts,mjs,cjs,js,json,properties,edmx,xml,env ... 
+ignoring: (.git|node_modules|_out|@types|@cds-models)\\|app(\\.+)?\\((webapp|dist|target)\\|tsconfig\.json$|.*\.tsbuildinfo$)|package-lock\.json$|\\gen\\ 
+live reload enabled for browsers 
+
+        ___________________________
+ 
+[cds] - bootstrapping from { file: 'server.js' }
+🚀 Bootstrapping CAP server with integration APIs...
+✅ Integration API endpoints registered at /integration
+🔒 Input validation and rate limiting enabled
+✅ Satellite mock system endpoints registered at /satellite-mock
+   - POST /satellite-mock/coupa/webhook/mdm-approval
+   - POST /satellite-mock/salesforce/webhook/mdm-approval
+   - POST /satellite-mock/pi/webhook/mdm-approval
+   - POST /satellite-mock/acknowledge (manual ack)
+   - GET  /satellite-mock/received-notifications (testing)
+[cds] - loaded model from 20 file(s):
+
+  srv\pi-service.cds
+  srv\pi-annotations.cds
+  srv\coupa-annotations.cds
+  node_modules\@sap\cds\srv\outbox.cds
+  app\services.cds
+  app\satellite-ack\annotations.cds
+  app\salesforce-requests\annotations.cds
+  app\pi-requests\annotations.cds
+  app\mdm-approval\annotations.cds
+  app\coupa-requests\annotations.cds
+  app\admin-config\annotations.cds
+  srv\satellite-acknowledgement-service.cds
+  srv\salesforce-service.cds
+  srv\mdm-service.cds
+  srv\coupa-service.cds
+  srv\admin-service.cds
+  app\mdm-approval\field-annotations.cds
+  srv\common.cds
+  db\data-model.cds
+  node_modules\@sap\cds\common.cds
+[cds] - connect using bindings from: { registry: '~/.cds-services.json' }
+[cds] - connect to db > sqlite { url: 'db.sqlite' }
+[coupa-service] - Coupa Service initialized
+[coupa-service] - Coupa Service initialization complete
+DEBUG: NotificationService constructor start
+[mdm-service] - MDM Service initialized
+[mdm-service] - Registering MDM service handlers...
+[mdm-service] - Duplicate check handler registered
+[mdm-service] - VIES validation handler registered
+[mdm-service] - AEB compliance handler registered
+DEBUG: NotificationService constructor start
+[mdm-service] - Approval handler registered
+[mdm-service] - Status update handler registered
+[mdm-service] - All MDM service handlers registered successfully
+[mdm-service] - MDM Service initialization complete
+[coupa-service] - PI Service initialized
+[coupa-service] - PI Service initialization complete
+[salesforce-service] - Salesforce Service initialized
+[salesforce-service] - Salesforce Service initialization complete
+[satellite-ack-service] - ✅ Satellite Acknowledgement Service handler registered
+[admin-service] - Admin Service initialized
+[admin-service] - Admin Service initialization complete
+[cds] - using auth strategy {
+  kind: 'dummy',
+  impl: 'node_modules\\@sap\\cds\\lib\\srv\\middlewares\\auth\\dummy-auth.js'
+}
+[cds] - serving AdminService {
+  at: [ '/admin' ],
+  decl: 'srv\\admin-service.cds:11',
+  impl: 'srv\\admin-service.js'
+}
+[cds] - serving CoupaService {
+  at: [ '/coupa' ],
+  decl: 'srv\\coupa-service.cds:5',
+  impl: 'srv\\coupa-service.js'
+}
+[cds] - serving MDMService {
+  at: [ '/mdm' ],
+  decl: 'srv\\mdm-service.cds:5',
+  impl: 'srv\\mdm-service.js'
+}
+[cds] - serving PIService {
+  at: [ '/pi' ],
+  decl: 'srv\\pi-service.cds:5',
+  impl: 'srv\\pi-service.js'
+}
+[cds] - serving SalesforceService {
+  at: [ '/salesforce' ],
+  decl: 'srv\\salesforce-service.cds:5',
+  impl: 'srv\\salesforce-service.js'
+}
+[cds] - serving SatelliteAcknowledgementService {
+  at: [ '/satellite-ack' ],
+  decl: 'srv\\satellite-acknowledgement-service.cds:3',
+  impl: 'srv\\satellite-acknowledgement-service.js'
+}
+[cds] - server listening on { url: 'http://localhost:4004' }
+[cds] - server v9.4.4 launched in 2155 ms
+📧 Using Ethereal test email account: mna45s77luzw6ngw@ethereal.email
+📧 Using Ethereal test email account: ci2xa3gy6xjgtjfk@ethereal.email
+✅ Email service initialized successfully
+✅ Email service initialized successfully
+[odata] - GET /mdm/$metadata { 'sap-language': 'EN' }
+[odata] - HEAD /mdm/ 
+[odata] - POST /mdm/$batch 
+[odata] - > GET /MDMApprovalRequests {
+  '$count': 'true',
+  '$filter': '(IsActiveEntity eq false or SiblingEntity/IsActiveEntity eq null)',
+  '$select': 'HasActiveEntity,ID,IsActiveEntity,createdAt,createdBy,integrationSuiteStatus,name1,requestNumber,requestType,sapInitialStatus,satelliteStatus,sourceSystem,status',
+  '$skip': '0',
+  '$top': '30'
+}
+[odata] - POST /mdm/$batch 
+[odata] - > GET /validateAndFetchSAPBP(sapBpNumber='0000100001') 
+[mdm-service] - validateAndFetchSAPBP called { sapBpNumber: '0000100001' }
+[sap-partner] - Fetching SAP Partner Details { sapBpNumber: '0000100001' }
+[mdm-service] - SAP BP not found { sapBpNumber: '0000100001' }
+[odata] - HEAD /mdm/ 
+[odata] - GET /mdm/$metadata { 'sap-language': 'EN' }
+[odata] - POST /mdm/$batch 
+[odata] - > GET /MDMApprovalRequests {
+  '$count': 'true',
+  '$filter': '(IsActiveEntity eq false or SiblingEntity/IsActiveEntity eq null)',
+  '$select': 'HasActiveEntity,ID,IsActiveEntity,createdAt,createdBy,integrationSuiteStatus,name1,requestNumber,requestType,sapInitialStatus,satelliteStatus,sourceSystem,status',
+  '$skip': '0',
+  '$top': '30'
+}
+[odata] - POST /mdm/$batch 
+[odata] - > GET /validateAndFetchSAPBP(sapBpNumber='0000100001') 
+[mdm-service] - validateAndFetchSAPBP called { sapBpNumber: '0000100001' }
+[sap-partner] - Fetching SAP Partner Details { sapBpNumber: '0000100001' }
+[mdm-service] - SAP BP not found { sapBpNumber: '0000100001' }
+[odata] - GET /mdm/ExistingPartners { '$select': 'sapBpNumber,partnerName', '$top': '5' }
+[error] - 404 - Error: Invalid resource path "MDMService.ExistingPartners"
+    at module.exports [as afterburner] (C:\Users\msudarsanan\Desktop\GitHub\businesspartner\node_modules\@sap\cds\libx\odata\parse\afterburner.js:883:11)
+    at _enhanceCqn (C:\Users\msudarsanan\Desktop\GitHub\businesspartner\node_modules\@sap\cds\libx\odata\index.js:73:19)
+    at Object.parse (C:\Users\msudarsanan\Desktop\GitHub\businesspartner\node_modules\@sap\cds\libx\odata\index.js:125:13)
+    at odata_parse_url (C:\Users\msudarsanan\Desktop\GitHub\businesspartner\node_modules\@sap\cds\libx\odata\middleware\parse.js:12:28)
+    at Layer.handle [as handle_request] (C:\Users\msudarsanan\Desktop\GitHub\businesspartner\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\msudarsanan\Desktop\GitHub\businesspartner\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\msudarsanan\Desktop\GitHub\businesspartner\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\msudarsanan\Desktop\GitHub\businesspartner\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\msudarsanan\Desktop\GitHub\businesspartner\node_modules\express\lib\router\index.js:280:10)
+    at set_odata_version (C:\Users\msudarsanan\Desktop\GitHub\businesspartner\node_modules\@sap\cds\libx\odata\ODataAdapter.js:34:7) {
+  code: '404'
+}
+[odata] - HEAD /mdm/ 
+[odata] - GET /mdm/$metadata { 'sap-language': 'EN' }
+[odata] - POST /mdm/$batch 
+[odata] - > GET /MDMApprovalRequests {
+  '$count': 'true',
+  '$filter': '(IsActiveEntity eq false or SiblingEntity/IsActiveEntity eq null)',
+  '$select': 'HasActiveEntity,ID,IsActiveEntity,createdAt,createdBy,integrationSuiteStatus,name1,requestNumber,requestType,sapInitialStatus,satelliteStatus,sourceSystem,status',
+  '$skip': '0',
+  '$top': '30'
+}
+[odata] - GET /mdm/%24metadata 
+[error] - 404 - Error: Invalid resource path "MDMService.$metadata"
+    at module.exports [as afterburner] (C:\Users\msudarsanan\Desktop\GitHub\businesspartner\node_modules\@sap\cds\libx\odata\parse\afterburner.js:883:11)
+    at _enhanceCqn (C:\Users\msudarsanan\Desktop\GitHub\businesspartner\node_modules\@sap\cds\libx\odata\index.js:73:19)
+    at Object.parse (C:\Users\msudarsanan\Desktop\GitHub\businesspartner\node_modules\@sap\cds\libx\odata\index.js:125:13)
+    at odata_parse_url (C:\Users\msudarsanan\Desktop\GitHub\businesspartner\node_modules\@sap\cds\libx\odata\middleware\parse.js:12:28)
+    at Layer.handle [as handle_request] (C:\Users\msudarsanan\Desktop\GitHub\businesspartner\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\msudarsanan\Desktop\GitHub\businesspartner\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\msudarsanan\Desktop\GitHub\businesspartner\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\msudarsanan\Desktop\GitHub\businesspartner\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\msudarsanan\Desktop\GitHub\businesspartner\node_modules\express\lib\router\index.js:280:10)
+    at set_odata_version (C:\Users\msudarsanan\Desktop\GitHub\businesspartner\node_modules\@sap\cds\libx\odata\ODataAdapter.js:34:7) {
+  code: '404'
+}
+[odata] - GET /mdm/validateAndFetchSAPBP(sapBpNumber='0000100001') 
+[mdm-service] - validateAndFetchSAPBP called { sapBpNumber: '0000100001' }
+[sap-partner] - Fetching SAP Partner Details { sapBpNumber: '0000100001' }
+[mdm-service] - SAP BP not found { sapBpNumber: '0000100001' }
+
+        ___________________________
+ 
+[cds] - bootstrapping from { file: 'server.js' }
+🚀 Bootstrapping CAP server with integration APIs...
+✅ Integration API endpoints registered at /integration
+🔒 Input validation and rate limiting enabled
+✅ Satellite mock system endpoints registered at /satellite-mock
+   - POST /satellite-mock/coupa/webhook/mdm-approval
+   - POST /satellite-mock/salesforce/webhook/mdm-approval
+   - POST /satellite-mock/pi/webhook/mdm-approval
+   - POST /satellite-mock/acknowledge (manual ack)
+   - GET  /satellite-mock/received-notifications (testing)
+[cds] - loaded model from 20 file(s):
+
+  srv\pi-service.cds
+  srv\pi-annotations.cds
+  srv\coupa-annotations.cds
+  node_modules\@sap\cds\srv\outbox.cds
+  app\services.cds
+  app\satellite-ack\annotations.cds
+  app\salesforce-requests\annotations.cds
+  app\pi-requests\annotations.cds
+  app\mdm-approval\annotations.cds
+  app\coupa-requests\annotations.cds
+  app\admin-config\annotations.cds
+  srv\satellite-acknowledgement-service.cds
+  srv\salesforce-service.cds
+  srv\mdm-service.cds
+  srv\coupa-service.cds
+  srv\admin-service.cds
+  app\mdm-approval\field-annotations.cds
+  srv\common.cds
+  db\data-model.cds
+  node_modules\@sap\cds\common.cds
+[cds] - connect using bindings from: { registry: '~/.cds-services.json' }
+[cds] - connect to db > sqlite { url: 'db.sqlite' }
+[coupa-service] - Coupa Service initialized
+[coupa-service] - Coupa Service initialization complete
+DEBUG: NotificationService constructor start
+[mdm-service] - MDM Service initialized
+[mdm-service] - Registering MDM service handlers...
+[mdm-service] - Duplicate check handler registered
+[mdm-service] - VIES validation handler registered
+[mdm-service] - AEB compliance handler registered
+DEBUG: NotificationService constructor start
+[mdm-service] - Approval handler registered
+[mdm-service] - Status update handler registered
+[mdm-service] - All MDM service handlers registered successfully
+[mdm-service] - MDM Service initialization complete
+[coupa-service] - PI Service initialized
+[coupa-service] - PI Service initialization complete
+[salesforce-service] - Salesforce Service initialized
+[salesforce-service] - Salesforce Service initialization complete
+[satellite-ack-service] - ✅ Satellite Acknowledgement Service handler registered
+[admin-service] - Admin Service initialized
+[admin-service] - Admin Service initialization complete
+[cds] - using auth strategy {
+  kind: 'dummy',
+  impl: 'node_modules\\@sap\\cds\\lib\\srv\\middlewares\\auth\\dummy-auth.js'
+}
+[cds] - serving AdminService {
+  at: [ '/admin' ],
+  decl: 'srv\\admin-service.cds:11',
+  impl: 'srv\\admin-service.js'
+}
+[cds] - serving CoupaService {
+  at: [ '/coupa' ],
+  decl: 'srv\\coupa-service.cds:5',
+  impl: 'srv\\coupa-service.js'
+}
+[cds] - serving MDMService {
+  at: [ '/mdm' ],
+  decl: 'srv\\mdm-service.cds:5',
+  impl: 'srv\\mdm-service.js'
+}
+[cds] - serving PIService {
+  at: [ '/pi' ],
+  decl: 'srv\\pi-service.cds:5',
+  impl: 'srv\\pi-service.js'
+}
+[cds] - serving SalesforceService {
+  at: [ '/salesforce' ],
+  decl: 'srv\\salesforce-service.cds:5',
+  impl: 'srv\\salesforce-service.js'
+}
+[cds] - serving SatelliteAcknowledgementService {
+  at: [ '/satellite-ack' ],
+  decl: 'srv\\satellite-acknowledgement-service.cds:3',
+  impl: 'srv\\satellite-acknowledgement-service.js'
+}
+[cds] - server listening on { url: 'http://localhost:4004' }
+[cds] - server v9.4.4 launched in 2857 ms
+📧 Using Ethereal test email account: lqlwcxr5gjvlyju2@ethereal.email
+📧 Using Ethereal test email account: fmqwr7e6kmhsh2ow@ethereal.email
+✅ Email service initialized successfully
+✅ Email service initialized successfully
+[odata] - HEAD /mdm/ 
+[odata] - GET /mdm/$metadata { 'sap-language': 'EN' }
+[odata] - POST /mdm/$batch 
+[odata] - > GET /MDMApprovalRequests {
+  '$count': 'true',
+  '$filter': '(IsActiveEntity eq false or SiblingEntity/IsActiveEntity eq null)',
+  '$select': 'HasActiveEntity,ID,IsActiveEntity,createdAt,createdBy,integrationSuiteStatus,name1,requestNumber,requestType,sapInitialStatus,satelliteStatus,sourceSystem,status',
+  '$skip': '0',
+  '$top': '30'
+}
+[odata] - HEAD /mdm/ 
+[odata] - GET /mdm/$metadata { 'sap-language': 'EN' }
+
+        ___________________________
+ 
+[cds] - bootstrapping from { file: 'server.js' }
+🚀 Bootstrapping CAP server with integration APIs...
+✅ Integration API endpoints registered at /integration
+🔒 Input validation and rate limiting enabled
+✅ Satellite mock system endpoints registered at /satellite-mock
+   - POST /satellite-mock/coupa/webhook/mdm-approval
+   - POST /satellite-mock/salesforce/webhook/mdm-approval
+   - POST /satellite-mock/pi/webhook/mdm-approval
+   - POST /satellite-mock/acknowledge (manual ack)
+   - GET  /satellite-mock/received-notifications (testing)
+[cds] - loaded model from 20 file(s):
+
+  srv\pi-service.cds
+  srv\pi-annotations.cds
+  srv\coupa-annotations.cds
+  node_modules\@sap\cds\srv\outbox.cds
+  app\services.cds
+  app\satellite-ack\annotations.cds
+  app\salesforce-requests\annotations.cds
+  app\pi-requests\annotations.cds
+  app\mdm-approval\annotations.cds
+  app\coupa-requests\annotations.cds
+  app\admin-config\annotations.cds
+  srv\satellite-acknowledgement-service.cds
+  srv\salesforce-service.cds
+  srv\mdm-service.cds
+  srv\coupa-service.cds
+  srv\admin-service.cds
+  app\mdm-approval\field-annotations.cds
+  srv\common.cds
+  db\data-model.cds
+  node_modules\@sap\cds\common.cds
+[cds] - connect using bindings from: { registry: '~/.cds-services.json' }
+[cds] - connect to db > sqlite { url: 'db.sqlite' }
+[coupa-service] - Coupa Service initialized
+[coupa-service] - Coupa Service initialization complete
+DEBUG: NotificationService constructor start
+[mdm-service] - MDM Service initialized
+[mdm-service] - Registering MDM service handlers...
+[mdm-service] - Duplicate check handler registered
+[mdm-service] - VIES validation handler registered
+[mdm-service] - AEB compliance handler registered
+DEBUG: NotificationService constructor start
+[mdm-service] - Approval handler registered
+[mdm-service] - Status update handler registered
+[mdm-service] - All MDM service handlers registered successfully
+[mdm-service] - MDM Service initialization complete
+[coupa-service] - PI Service initialized
+[coupa-service] - PI Service initialization complete
+[salesforce-service] - Salesforce Service initialized
+[salesforce-service] - Salesforce Service initialization complete
+[satellite-ack-service] - ✅ Satellite Acknowledgement Service handler registered
+[admin-service] - Admin Service initialized
+[admin-service] - Admin Service initialization complete
+[cds] - using auth strategy {
+  kind: 'dummy',
+  impl: 'node_modules\\@sap\\cds\\lib\\srv\\middlewares\\auth\\dummy-auth.js'
+}
+[cds] - serving AdminService {
+  at: [ '/admin' ],
+  decl: 'srv\\admin-service.cds:11',
+  impl: 'srv\\admin-service.js'
+}
+[cds] - serving CoupaService {
+  at: [ '/coupa' ],
+  decl: 'srv\\coupa-service.cds:5',
+  impl: 'srv\\coupa-service.js'
+}
+[cds] - serving MDMService {
+  at: [ '/mdm' ],
+  decl: 'srv\\mdm-service.cds:5',
+  impl: 'srv\\mdm-service.js'
+}
+[cds] - serving PIService {
+  at: [ '/pi' ],
+  decl: 'srv\\pi-service.cds:5',
+  impl: 'srv\\pi-service.js'
+}
+[cds] - serving SalesforceService {
+  at: [ '/salesforce' ],
+  decl: 'srv\\salesforce-service.cds:5',
+  impl: 'srv\\salesforce-service.js'
+}
+[cds] - serving SatelliteAcknowledgementService {
+  at: [ '/satellite-ack' ],
+  decl: 'srv\\satellite-acknowledgement-service.cds:3',
+  impl: 'srv\\satellite-acknowledgement-service.js'
+}
+[cds] - server listening on { url: 'http://localhost:4004' }
+[cds] - server v9.4.4 launched in 2168 ms
+📧 Using Ethereal test email account: witfu3ql5ovtezcy@ethereal.email
+📧 Using Ethereal test email account: rhaa2zsi4rcgwswk@ethereal.email
+✅ Email service initialized successfully
+✅ Email service initialized successfully
+[odata] - HEAD /mdm/ 
+[odata] - GET /mdm/$metadata { 'sap-language': 'EN' }
+[odata] - POST /mdm/$batch 
+[odata] - > GET /MDMApprovalRequests {
+  '$count': 'true',
+  '$filter': '(IsActiveEntity eq false or SiblingEntity/IsActiveEntity eq null)',
+  '$select': 'HasActiveEntity,ID,IsActiveEntity,createdAt,createdBy,integrationSuiteStatus,name1,requestNumber,requestType,sapInitialStatus,satelliteStatus,sourceSystem,status',
+  '$skip': '0',
+  '$top': '30'
+}
+[odata] - GET /mdm/validateAndFetchSAPBP(sapBpNumber='0000100001') 
+[mdm-service] - validateAndFetchSAPBP called { sapBpNumber: '0000100001' }
+[sap-partner] - Fetching SAP Partner Details { sapBpNumber: '0000100001' }
+[mdm-service] - SAP BP validated successfully { sapBpNumber: '0000100001', bpName: 'Acme Corporation' }
+[odata] - HEAD /mdm/ 
+[odata] - GET /mdm/$metadata { 'sap-language': 'EN' }
+[odata] - POST /mdm/$batch 
+[odata] - > GET /MDMApprovalRequests {
+  '$count': 'true',
+  '$filter': '(IsActiveEntity eq false or SiblingEntity/IsActiveEntity eq null)',
+  '$select': 'HasActiveEntity,ID,IsActiveEntity,createdAt,createdBy,integrationSuiteStatus,name1,requestNumber,requestType,sapInitialStatus,satelliteStatus,sourceSystem,status',
+  '$skip': '0',
+  '$top': '30'
+}
+[odata] - POST /mdm/$batch 
+[odata] - > GET /validateAndFetchSAPBP(sapBpNumber='0000100001') 
+[mdm-service] - validateAndFetchSAPBP called { sapBpNumber: '0000100001' }
+[sap-partner] - Fetching SAP Partner Details { sapBpNumber: '0000100001' }
+[mdm-service] - SAP BP validated successfully { sapBpNumber: '0000100001', bpName: 'Acme Corporation' }
+[odata] - POST /mdm/$batch 
+[odata] - > POST /MDMApprovalRequests 
+[error] - 405 - Error: Method Not Allowed
+    at ApplicationService.onNew (C:\Users\msudarsanan\Desktop\GitHub\businesspartner\node_modules\@sap\cds\libx\_runtime\fiori\lean-draft.js:1935:9)
+    at ApplicationService.handle_draft_requests (C:\Users\msudarsanan\Desktop\GitHub\businesspartner\node_modules\@sap\cds\libx\_runtime\fiori\lean-draft.js:2383:22)
+    at next (C:\Users\msudarsanan\Desktop\GitHub\businesspartner\node_modules\@sap\cds\lib\srv\srv-dispatch.js:57:36)
+    at ApplicationService.handle (C:\Users\msudarsanan\Desktop\GitHub\businesspartner\node_modules\@sap\cds\lib\srv\srv-dispatch.js:60:6)
+    at async ApplicationService.handle (C:\Users\msudarsanan\Desktop\GitHub\businesspartner\node_modules\@sap\cds\libx\_runtime\fiori\lean-draft.js:748:20) {
+  code: '405',
+  numericSeverity: 4
+}
+
+        ___________________________
+ 
+[cds] - bootstrapping from { file: 'server.js' }
+🚀 Bootstrapping CAP server with integration APIs...
+✅ Integration API endpoints registered at /integration
+🔒 Input validation and rate limiting enabled
+✅ Satellite mock system endpoints registered at /satellite-mock
+   - POST /satellite-mock/coupa/webhook/mdm-approval
+   - POST /satellite-mock/salesforce/webhook/mdm-approval
+   - POST /satellite-mock/pi/webhook/mdm-approval
+   - POST /satellite-mock/acknowledge (manual ack)
+   - GET  /satellite-mock/received-notifications (testing)
+[cds] - loaded model from 20 file(s):
+
+  srv\pi-service.cds
+  srv\pi-annotations.cds
+  srv\coupa-annotations.cds
+  node_modules\@sap\cds\srv\outbox.cds
+  app\services.cds
+  app\satellite-ack\annotations.cds
+  app\salesforce-requests\annotations.cds
+  app\pi-requests\annotations.cds
+  app\mdm-approval\annotations.cds
+  app\coupa-requests\annotations.cds
+  app\admin-config\annotations.cds
+  srv\satellite-acknowledgement-service.cds
+  srv\salesforce-service.cds
+  srv\mdm-service.cds
+  srv\coupa-service.cds
+  srv\admin-service.cds
+  app\mdm-approval\field-annotations.cds
+  srv\common.cds
+  db\data-model.cds
+  node_modules\@sap\cds\common.cds
+[cds] - connect using bindings from: { registry: '~/.cds-services.json' }
+[cds] - connect to db > sqlite { url: 'db.sqlite' }
+[coupa-service] - Coupa Service initialized
+[coupa-service] - Coupa Service initialization complete
+DEBUG: NotificationService constructor start
+[mdm-service] - MDM Service initialized
+[mdm-service] - Registering MDM service handlers...
+[mdm-service] - Duplicate check handler registered
+[mdm-service] - VIES validation handler registered
+[mdm-service] - AEB compliance handler registered
+DEBUG: NotificationService constructor start
+[mdm-service] - Approval handler registered
+[mdm-service] - Status update handler registered
+[mdm-service] - All MDM service handlers registered successfully
+[mdm-service] - MDM Service initialization complete
+[coupa-service] - PI Service initialized
+[coupa-service] - PI Service initialization complete
+[salesforce-service] - Salesforce Service initialized
+[salesforce-service] - Salesforce Service initialization complete
+[satellite-ack-service] - ✅ Satellite Acknowledgement Service handler registered
+[admin-service] - Admin Service initialized
+[admin-service] - Admin Service initialization complete
+[cds] - using auth strategy {
+  kind: 'dummy',
+  impl: 'node_modules\\@sap\\cds\\lib\\srv\\middlewares\\auth\\dummy-auth.js'
+}
+[cds] - serving AdminService {
+  at: [ '/admin' ],
+  decl: 'srv\\admin-service.cds:11',
+  impl: 'srv\\admin-service.js'
+}
+[cds] - serving CoupaService {
+  at: [ '/coupa' ],
+  decl: 'srv\\coupa-service.cds:5',
+  impl: 'srv\\coupa-service.js'
+}
+[cds] - serving MDMService {
+  at: [ '/mdm' ],
+  decl: 'srv\\mdm-service.cds:5',
+  impl: 'srv\\mdm-service.js'
+}
+[cds] - serving PIService {
+  at: [ '/pi' ],
+  decl: 'srv\\pi-service.cds:5',
+  impl: 'srv\\pi-service.js'
+}
+[cds] - serving SalesforceService {
+  at: [ '/salesforce' ],
+  decl: 'srv\\salesforce-service.cds:5',
+  impl: 'srv\\salesforce-service.js'
+}
+[cds] - serving SatelliteAcknowledgementService {
+  at: [ '/satellite-ack' ],
+  decl: 'srv\\satellite-acknowledgement-service.cds:3',
+  impl: 'srv\\satellite-acknowledgement-service.js'
+}
+[cds] - server listening on { url: 'http://localhost:4004' }
+[cds] - server v9.4.4 launched in 1620 ms
+📧 Using Ethereal test email account: aucjnne5okfkrbyz@ethereal.email
+📧 Using Ethereal test email account: m6ziwfh7wpwnnxly@ethereal.email
+✅ Email service initialized successfully
+✅ Email service initialized successfully
+
+        ___________________________
+ 
+[cds] - bootstrapping from { file: 'server.js' }
+🚀 Bootstrapping CAP server with integration APIs...
+✅ Integration API endpoints registered at /integration
+🔒 Input validation and rate limiting enabled
+✅ Satellite mock system endpoints registered at /satellite-mock
+   - POST /satellite-mock/coupa/webhook/mdm-approval
+   - POST /satellite-mock/salesforce/webhook/mdm-approval
+   - POST /satellite-mock/pi/webhook/mdm-approval
+   - POST /satellite-mock/acknowledge (manual ack)
+   - GET  /satellite-mock/received-notifications (testing)
+[cds] - loaded model from 20 file(s):
+
+  srv\pi-service.cds
+  srv\pi-annotations.cds
+  srv\coupa-annotations.cds
+  node_modules\@sap\cds\srv\outbox.cds
+  app\services.cds
+  app\satellite-ack\annotations.cds
+  app\salesforce-requests\annotations.cds
+  app\pi-requests\annotations.cds
+  app\mdm-approval\annotations.cds
+  app\coupa-requests\annotations.cds
+  app\admin-config\annotations.cds
+  srv\satellite-acknowledgement-service.cds
+  srv\salesforce-service.cds
+  srv\mdm-service.cds
+  srv\coupa-service.cds
+  srv\admin-service.cds
+  app\mdm-approval\field-annotations.cds
+  srv\common.cds
+  db\data-model.cds
+  node_modules\@sap\cds\common.cds
+[cds] - connect using bindings from: { registry: '~/.cds-services.json' }
+[cds] - connect to db > sqlite { url: 'db.sqlite' }
+[coupa-service] - Coupa Service initialized
+[coupa-service] - Coupa Service initialization complete
+DEBUG: NotificationService constructor start
+[mdm-service] - MDM Service initialized
+[mdm-service] - Registering MDM service handlers...
+[mdm-service] - Duplicate check handler registered
+[mdm-service] - VIES validation handler registered
+[mdm-service] - AEB compliance handler registered
+DEBUG: NotificationService constructor start
+[mdm-service] - Approval handler registered
+[mdm-service] - Status update handler registered
+[mdm-service] - All MDM service handlers registered successfully
+[mdm-service] - MDM Service initialization complete
+[coupa-service] - PI Service initialized
+[coupa-service] - PI Service initialization complete
+[salesforce-service] - Salesforce Service initialized
+[salesforce-service] - Salesforce Service initialization complete
+[satellite-ack-service] - ✅ Satellite Acknowledgement Service handler registered
+[admin-service] - Admin Service initialized
+[admin-service] - Admin Service initialization complete
+[cds] - using auth strategy {
+  kind: 'dummy',
+  impl: 'node_modules\\@sap\\cds\\lib\\srv\\middlewares\\auth\\dummy-auth.js'
+}
+[cds] - serving AdminService {
+  at: [ '/admin' ],
+  decl: 'srv\\admin-service.cds:11',
+  impl: 'srv\\admin-service.js'
+}
+[cds] - serving CoupaService {
+  at: [ '/coupa' ],
+  decl: 'srv\\coupa-service.cds:5',
+  impl: 'srv\\coupa-service.js'
+}
+[cds] - serving MDMService {
+  at: [ '/mdm' ],
+  decl: 'srv\\mdm-service.cds:5',
+  impl: 'srv\\mdm-service.js'
+}
+[cds] - serving PIService {
+  at: [ '/pi' ],
+  decl: 'srv\\pi-service.cds:5',
+  impl: 'srv\\pi-service.js'
+}
+[cds] - serving SalesforceService {
+  at: [ '/salesforce' ],
+  decl: 'srv\\salesforce-service.cds:5',
+  impl: 'srv\\salesforce-service.js'
+}
+[cds] - serving SatelliteAcknowledgementService {
+  at: [ '/satellite-ack' ],
+  decl: 'srv\\satellite-acknowledgement-service.cds:3',
+  impl: 'srv\\satellite-acknowledgement-service.js'
+}
+[cds] - server listening on { url: 'http://localhost:4004' }
+[cds] - server v9.4.4 launched in 1688 ms
+📧 Using Ethereal test email account: nwoutqq6j2qkygja@ethereal.email
+📧 Using Ethereal test email account: msf47tbemcyfthur@ethereal.email
+✅ Email service initialized successfully
+[odata] - GET /mdm/$metadata { 'sap-language': 'EN' }
+[odata] - HEAD /mdm/ 
+✅ Email service initialized successfully
+[odata] - POST /mdm/$batch 
+[odata] - > GET /MDMApprovalRequests {
+  '$count': 'true',
+  '$filter': '(IsActiveEntity eq false or SiblingEntity/IsActiveEntity eq null)',
+  '$select': 'HasActiveEntity,ID,IsActiveEntity,createdAt,createdBy,integrationSuiteStatus,name1,requestNumber,requestType,sapInitialStatus,satelliteStatus,sourceSystem,status',
+  '$skip': '0',
+  '$top': '30'
+}
+[odata] - GET /mdm/$metadata { 'sap-language': 'EN' }
+[odata] - HEAD /mdm/ 
+[odata] - POST /mdm/$batch 
+[odata] - > GET /MDMApprovalRequests {
+  '$count': 'true',
+  '$filter': '(IsActiveEntity eq false or SiblingEntity/IsActiveEntity eq null)',
+  '$select': 'HasActiveEntity,ID,IsActiveEntity,createdAt,createdBy,integrationSuiteStatus,name1,requestNumber,requestType,sapInitialStatus,satelliteStatus,sourceSystem,status',
+  '$skip': '0',
+  '$top': '30'
+}
+[odata] - POST /mdm/MDMApprovalRequests 
+[error] - 405 - Error: Method Not Allowed
+    at ApplicationService.onNew (C:\Users\msudarsanan\Desktop\GitHub\businesspartner\node_modules\@sap\cds\libx\_runtime\fiori\lean-draft.js:1935:9)
+    at ApplicationService.handle_draft_requests (C:\Users\msudarsanan\Desktop\GitHub\businesspartner\node_modules\@sap\cds\libx\_runtime\fiori\lean-draft.js:2383:22)
+    at next (C:\Users\msudarsanan\Desktop\GitHub\businesspartner\node_modules\@sap\cds\lib\srv\srv-dispatch.js:57:36)
+    at ApplicationService.handle (C:\Users\msudarsanan\Desktop\GitHub\businesspartner\node_modules\@sap\cds\lib\srv\srv-dispatch.js:60:6)
+    at async ApplicationService.handle (C:\Users\msudarsanan\Desktop\GitHub\businesspartner\node_modules\@sap\cds\libx\_runtime\fiori\lean-draft.js:748:20) {
+  code: '405',
+  numericSeverity: 4
+}
+
+        ___________________________
+ 
+[cds] - bootstrapping from { file: 'server.js' }
+🚀 Bootstrapping CAP server with integration APIs...
+✅ Integration API endpoints registered at /integration
+🔒 Input validation and rate limiting enabled
+✅ Satellite mock system endpoints registered at /satellite-mock
+   - POST /satellite-mock/coupa/webhook/mdm-approval
+   - POST /satellite-mock/salesforce/webhook/mdm-approval
+   - POST /satellite-mock/pi/webhook/mdm-approval
+   - POST /satellite-mock/acknowledge (manual ack)
+   - GET  /satellite-mock/received-notifications (testing)
+[cds] - loaded model from 20 file(s):
+
+  srv\pi-service.cds
+  srv\pi-annotations.cds
+  srv\coupa-annotations.cds
+  node_modules\@sap\cds\srv\outbox.cds
+  app\services.cds
+  app\satellite-ack\annotations.cds
+  app\salesforce-requests\annotations.cds
+  app\pi-requests\annotations.cds
+  app\mdm-approval\annotations.cds
+  app\coupa-requests\annotations.cds
+  app\admin-config\annotations.cds
+  srv\satellite-acknowledgement-service.cds
+  srv\salesforce-service.cds
+  srv\mdm-service.cds
+  srv\coupa-service.cds
+  srv\admin-service.cds
+  app\mdm-approval\field-annotations.cds
+  srv\common.cds
+  db\data-model.cds
+  node_modules\@sap\cds\common.cds
+[cds] - connect using bindings from: { registry: '~/.cds-services.json' }
+[cds] - connect to db > sqlite { url: 'db.sqlite' }
+[coupa-service] - Coupa Service initialized
+[coupa-service] - Coupa Service initialization complete
+DEBUG: NotificationService constructor start
+[mdm-service] - MDM Service initialized
+[mdm-service] - Registering MDM service handlers...
+[mdm-service] - Duplicate check handler registered
+[mdm-service] - VIES validation handler registered
+[mdm-service] - AEB compliance handler registered
+DEBUG: NotificationService constructor start
+[mdm-service] - Approval handler registered
+[mdm-service] - Status update handler registered
+[mdm-service] - All MDM service handlers registered successfully
+[mdm-service] - MDM Service initialization complete
+[coupa-service] - PI Service initialized
+[coupa-service] - PI Service initialization complete
+[salesforce-service] - Salesforce Service initialized
+[salesforce-service] - Salesforce Service initialization complete
+[satellite-ack-service] - ✅ Satellite Acknowledgement Service handler registered
+[admin-service] - Admin Service initialized
+[admin-service] - Admin Service initialization complete
+[cds] - using auth strategy {
+  kind: 'dummy',
+  impl: 'node_modules\\@sap\\cds\\lib\\srv\\middlewares\\auth\\dummy-auth.js'
+}
+[cds] - serving AdminService {
+  at: [ '/admin' ],
+  decl: 'srv\\admin-service.cds:11',
+  impl: 'srv\\admin-service.js'
+}
+[cds] - serving CoupaService {
+  at: [ '/coupa' ],
+  decl: 'srv\\coupa-service.cds:5',
+  impl: 'srv\\coupa-service.js'
+}
+[cds] - serving MDMService {
+  at: [ '/mdm' ],
+  decl: 'srv\\mdm-service.cds:5',
+  impl: 'srv\\mdm-service.js'
+}
+[cds] - serving PIService {
+  at: [ '/pi' ],
+  decl: 'srv\\pi-service.cds:5',
+  impl: 'srv\\pi-service.js'
+}
+[cds] - serving SalesforceService {
+  at: [ '/salesforce' ],
+  decl: 'srv\\salesforce-service.cds:5',
+  impl: 'srv\\salesforce-service.js'
+}
+[cds] - serving SatelliteAcknowledgementService {
+  at: [ '/satellite-ack' ],
+  decl: 'srv\\satellite-acknowledgement-service.cds:3',
+  impl: 'srv\\satellite-acknowledgement-service.js'
+}
+[cds] - server listening on { url: 'http://localhost:4004' }
+[cds] - server v9.4.4 launched in 2617 ms
+📧 Using Ethereal test email account: p2dlm7hnhd57dcjb@ethereal.email
+📧 Using Ethereal test email account: k3zfco4jp4asarw7@ethereal.email
+✅ Email service initialized successfully
+✅ Email service initialized successfully
+[odata] - GET /mdm/$metadata { 'sap-language': 'EN' }
+[odata] - HEAD /mdm/ 
+[odata] - POST /mdm/$batch 
+[odata] - > GET /MDMApprovalRequests {
+  '$count': 'true',
+  '$filter': '(IsActiveEntity eq false or SiblingEntity/IsActiveEntity eq null)',
+  '$select': 'HasActiveEntity,ID,IsActiveEntity,createdAt,createdBy,integrationSuiteStatus,name1,requestNumber,requestType,sapInitialStatus,satelliteStatus,sourceSystem,status',
+  '$skip': '0',
+  '$top': '30'
+}
+[odata] - POST /mdm/MDMApprovalRequests 
+[error] - 405 - Error: Method Not Allowed
+    at ApplicationService.onNew (C:\Users\msudarsanan\Desktop\GitHub\businesspartner\node_modules\@sap\cds\libx\_runtime\fiori\lean-draft.js:1935:9)
+    at ApplicationService.handle_draft_requests (C:\Users\msudarsanan\Desktop\GitHub\businesspartner\node_modules\@sap\cds\libx\_runtime\fiori\lean-draft.js:2383:22)
+    at next (C:\Users\msudarsanan\Desktop\GitHub\businesspartner\node_modules\@sap\cds\lib\srv\srv-dispatch.js:57:36)
+    at ApplicationService.handle (C:\Users\msudarsanan\Desktop\GitHub\businesspartner\node_modules\@sap\cds\lib\srv\srv-dispatch.js:60:6)
+    at async ApplicationService.handle (C:\Users\msudarsanan\Desktop\GitHub\businesspartner\node_modules\@sap\cds\libx\_runtime\fiori\lean-draft.js:748:20) {
+  code: '405',
+  numericSeverity: 4
+}
+
+        ___________________________
+ 
+[cds] - bootstrapping from { file: 'server.js' }
+🚀 Bootstrapping CAP server with integration APIs...
+✅ Integration API endpoints registered at /integration
+🔒 Input validation and rate limiting enabled
+✅ Satellite mock system endpoints registered at /satellite-mock
+   - POST /satellite-mock/coupa/webhook/mdm-approval
+   - POST /satellite-mock/salesforce/webhook/mdm-approval
+   - POST /satellite-mock/pi/webhook/mdm-approval
+   - POST /satellite-mock/acknowledge (manual ack)
+   - GET  /satellite-mock/received-notifications (testing)
+[cds] - loaded model from 20 file(s):
+
+  srv\pi-service.cds
+  srv\pi-annotations.cds
+  srv\coupa-annotations.cds
+  node_modules\@sap\cds\srv\outbox.cds
+  app\services.cds
+  app\satellite-ack\annotations.cds
+  app\salesforce-requests\annotations.cds
+  app\pi-requests\annotations.cds
+  app\mdm-approval\annotations.cds
+  app\coupa-requests\annotations.cds
+  app\admin-config\annotations.cds
+  srv\satellite-acknowledgement-service.cds
+  srv\salesforce-service.cds
+  srv\mdm-service.cds
+  srv\coupa-service.cds
+  srv\admin-service.cds
+  app\mdm-approval\field-annotations.cds
+  srv\common.cds
+  db\data-model.cds
+  node_modules\@sap\cds\common.cds
+[cds] - connect using bindings from: { registry: '~/.cds-services.json' }
+[cds] - connect to db > sqlite { url: 'db.sqlite' }
+[coupa-service] - Coupa Service initialized
+[coupa-service] - Coupa Service initialization complete
+DEBUG: NotificationService constructor start
+[mdm-service] - MDM Service initialized
+[mdm-service] - Registering MDM service handlers...
+[mdm-service] - Duplicate check handler registered
+[mdm-service] - VIES validation handler registered
+[mdm-service] - AEB compliance handler registered
+DEBUG: NotificationService constructor start
+[mdm-service] - Approval handler registered
+[mdm-service] - Status update handler registered
+[mdm-service] - All MDM service handlers registered successfully
+[mdm-service] - MDM Service initialization complete
+[coupa-service] - PI Service initialized
+[coupa-service] - PI Service initialization complete
+[salesforce-service] - Salesforce Service initialized
+[salesforce-service] - Salesforce Service initialization complete
+[satellite-ack-service] - ✅ Satellite Acknowledgement Service handler registered
+[admin-service] - Admin Service initialized
+[admin-service] - Admin Service initialization complete
+[cds] - using auth strategy {
+  kind: 'dummy',
+  impl: 'node_modules\\@sap\\cds\\lib\\srv\\middlewares\\auth\\dummy-auth.js'
+}
+[cds] - serving AdminService {
+  at: [ '/admin' ],
+  decl: 'srv\\admin-service.cds:11',
+  impl: 'srv\\admin-service.js'
+}
+[cds] - serving CoupaService {
+  at: [ '/coupa' ],
+  decl: 'srv\\coupa-service.cds:5',
+  impl: 'srv\\coupa-service.js'
+}
+[cds] - serving MDMService {
+  at: [ '/mdm' ],
+  decl: 'srv\\mdm-service.cds:5',
+  impl: 'srv\\mdm-service.js'
+}
+[cds] - serving PIService {
+  at: [ '/pi' ],
+  decl: 'srv\\pi-service.cds:5',
+  impl: 'srv\\pi-service.js'
+}
+[cds] - serving SalesforceService {
+  at: [ '/salesforce' ],
+  decl: 'srv\\salesforce-service.cds:5',
+  impl: 'srv\\salesforce-service.js'
+}
+[cds] - serving SatelliteAcknowledgementService {
+  at: [ '/satellite-ack' ],
+  decl: 'srv\\satellite-acknowledgement-service.cds:3',
+  impl: 'srv\\satellite-acknowledgement-service.js'
+}
+[cds] - server listening on { url: 'http://localhost:4004' }
+[cds] - server v9.4.4 launched in 2112 ms
+📧 Using Ethereal test email account: f4xf6xsfyczsqr4c@ethereal.email
+📧 Using Ethereal test email account: sjucko3i7zrz6h6a@ethereal.email
+✅ Email service initialized successfully
+✅ Email service initialized successfully
+[odata] - HEAD /mdm/ 
+[odata] - GET /mdm/$metadata { 'sap-language': 'EN' }
+[odata] - POST /mdm/$batch 
+[odata] - > GET /MDMApprovalRequests {
+  '$count': 'true',
+  '$filter': '(IsActiveEntity eq false or SiblingEntity/IsActiveEntity eq null)',
+  '$select': 'HasActiveEntity,ID,IsActiveEntity,createdAt,createdBy,integrationSuiteStatus,name1,requestNumber,requestType,sapInitialStatus,satelliteStatus,sourceSystem,status',
+  '$skip': '0',
+  '$top': '30'
+}
+
+        ___________________________
+ 
+[cds] - bootstrapping from { file: 'server.js' }
+🚀 Bootstrapping CAP server with integration APIs...
+✅ Integration API endpoints registered at /integration
+🔒 Input validation and rate limiting enabled
+✅ Satellite mock system endpoints registered at /satellite-mock
+   - POST /satellite-mock/coupa/webhook/mdm-approval
+   - POST /satellite-mock/salesforce/webhook/mdm-approval
+   - POST /satellite-mock/pi/webhook/mdm-approval
+   - POST /satellite-mock/acknowledge (manual ack)
+   - GET  /satellite-mock/received-notifications (testing)
+[cds] - loaded model from 20 file(s):
+
+  srv\pi-service.cds
+  srv\pi-annotations.cds
+  srv\coupa-annotations.cds
+  node_modules\@sap\cds\srv\outbox.cds
+  app\services.cds
+  app\satellite-ack\annotations.cds
+  app\salesforce-requests\annotations.cds
+  app\pi-requests\annotations.cds
+  app\mdm-approval\annotations.cds
+  app\coupa-requests\annotations.cds
+  app\admin-config\annotations.cds
+  srv\satellite-acknowledgement-service.cds
+  srv\salesforce-service.cds
+  srv\mdm-service.cds
+  srv\coupa-service.cds
+  srv\admin-service.cds
+  app\mdm-approval\field-annotations.cds
+  srv\common.cds
+  db\data-model.cds
+  node_modules\@sap\cds\common.cds
+[cds] - connect using bindings from: { registry: '~/.cds-services.json' }
+[cds] - connect to db > sqlite { url: 'db.sqlite' }
+[coupa-service] - Coupa Service initialized
+[coupa-service] - Coupa Service initialization complete
+DEBUG: NotificationService constructor start
+[mdm-service] - MDM Service initialized
+[mdm-service] - Registering MDM service handlers...
+[mdm-service] - Duplicate check handler registered
+[mdm-service] - VIES validation handler registered
+[mdm-service] - AEB compliance handler registered
+DEBUG: NotificationService constructor start
+[mdm-service] - Approval handler registered
+[mdm-service] - Status update handler registered
+[mdm-service] - All MDM service handlers registered successfully
+[mdm-service] - MDM Service initialization complete
+[coupa-service] - PI Service initialized
+[coupa-service] - PI Service initialization complete
+[salesforce-service] - Salesforce Service initialized
+[salesforce-service] - Salesforce Service initialization complete
+[satellite-ack-service] - ✅ Satellite Acknowledgement Service handler registered
+[admin-service] - Admin Service initialized
+[admin-service] - Admin Service initialization complete
+[cds] - using auth strategy {
+  kind: 'dummy',
+  impl: 'node_modules\\@sap\\cds\\lib\\srv\\middlewares\\auth\\dummy-auth.js'
+}
+[cds] - serving AdminService {
+  at: [ '/admin' ],
+  decl: 'srv\\admin-service.cds:11',
+  impl: 'srv\\admin-service.js'
+}
+[cds] - serving CoupaService {
+  at: [ '/coupa' ],
+  decl: 'srv\\coupa-service.cds:5',
+  impl: 'srv\\coupa-service.js'
+}
+[cds] - serving MDMService {
+  at: [ '/mdm' ],
+  decl: 'srv\\mdm-service.cds:5',
+  impl: 'srv\\mdm-service.js'
+}
+[cds] - serving PIService {
+  at: [ '/pi' ],
+  decl: 'srv\\pi-service.cds:5',
+  impl: 'srv\\pi-service.js'
+}
+[cds] - serving SalesforceService {
+  at: [ '/salesforce' ],
+  decl: 'srv\\salesforce-service.cds:5',
+  impl: 'srv\\salesforce-service.js'
+}
+[cds] - serving SatelliteAcknowledgementService {
+  at: [ '/satellite-ack' ],
+  decl: 'srv\\satellite-acknowledgement-service.cds:3',
+  impl: 'srv\\satellite-acknowledgement-service.js'
+}
+[cds] - server listening on { url: 'http://localhost:4004' }
+[cds] - server v9.4.4 launched in 2153 ms
+📧 Using Ethereal test email account: a67rs2ooev4hprkh@ethereal.email
+📧 Using Ethereal test email account: ebw5bmxhbfeqao35@ethereal.email
+✅ Email service initialized successfully
+✅ Email service initialized successfully
+[odata] - GET /mdm/$metadata { 'sap-language': 'EN' }
+[odata] - HEAD /mdm/ 
+[odata] - POST /mdm/$batch 
+[odata] - > GET /MDMApprovalRequests {
+  '$count': 'true',
+  '$filter': '(IsActiveEntity eq false or SiblingEntity/IsActiveEntity eq null)',
+  '$select': 'HasActiveEntity,ID,IsActiveEntity,createdAt,createdBy,integrationSuiteStatus,name1,requestNumber,requestType,sapInitialStatus,satelliteStatus,sourceSystem,status',
+  '$skip': '0',
+  '$top': '30'
+}
+[odata] - GET /mdm/$metadata { 'sap-language': 'EN' }
+[odata] - HEAD /mdm/ 
+
+        ___________________________
+ 
+[cds] - bootstrapping from { file: 'server.js' }
+🚀 Bootstrapping CAP server with integration APIs...
+✅ Integration API endpoints registered at /integration
+🔒 Input validation and rate limiting enabled
+✅ Satellite mock system endpoints registered at /satellite-mock
+   - POST /satellite-mock/coupa/webhook/mdm-approval
+   - POST /satellite-mock/salesforce/webhook/mdm-approval
+   - POST /satellite-mock/pi/webhook/mdm-approval
+   - POST /satellite-mock/acknowledge (manual ack)
+   - GET  /satellite-mock/received-notifications (testing)
+[cds] - loaded model from 20 file(s):
+
+  srv\pi-service.cds
+  srv\pi-annotations.cds
+  srv\coupa-annotations.cds
+  node_modules\@sap\cds\srv\outbox.cds
+  app\services.cds
+  app\satellite-ack\annotations.cds
+  app\salesforce-requests\annotations.cds
+  app\pi-requests\annotations.cds
+  app\mdm-approval\annotations.cds
+  app\coupa-requests\annotations.cds
+  app\admin-config\annotations.cds
+  srv\satellite-acknowledgement-service.cds
+  srv\salesforce-service.cds
+  srv\mdm-service.cds
+  srv\coupa-service.cds
+  srv\admin-service.cds
+  app\mdm-approval\field-annotations.cds
+  srv\common.cds
+  db\data-model.cds
+  node_modules\@sap\cds\common.cds
+[cds] - connect using bindings from: { registry: '~/.cds-services.json' }
+[cds] - connect to db > sqlite { url: 'db.sqlite' }
+[coupa-service] - Coupa Service initialized
+[coupa-service] - Coupa Service initialization complete
+DEBUG: NotificationService constructor start
+[mdm-service] - MDM Service initialized
+[mdm-service] - Registering MDM service handlers...
+[mdm-service] - Duplicate check handler registered
+[mdm-service] - VIES validation handler registered
+[mdm-service] - AEB compliance handler registered
+DEBUG: NotificationService constructor start
+[mdm-service] - Approval handler registered
+[mdm-service] - Status update handler registered
+[mdm-service] - All MDM service handlers registered successfully
+[mdm-service] - MDM Service initialization complete
+[coupa-service] - PI Service initialized
+[coupa-service] - PI Service initialization complete
+[salesforce-service] - Salesforce Service initialized
+[salesforce-service] - Salesforce Service initialization complete
+[satellite-ack-service] - ✅ Satellite Acknowledgement Service handler registered
+[admin-service] - Admin Service initialized
+[admin-service] - Admin Service initialization complete
+[cds] - using auth strategy {
+  kind: 'dummy',
+  impl: 'node_modules\\@sap\\cds\\lib\\srv\\middlewares\\auth\\dummy-auth.js'
+}
+[cds] - serving AdminService {
+  at: [ '/admin' ],
+  decl: 'srv\\admin-service.cds:11',
+  impl: 'srv\\admin-service.js'
+}
+[cds] - serving CoupaService {
+  at: [ '/coupa' ],
+  decl: 'srv\\coupa-service.cds:5',
+  impl: 'srv\\coupa-service.js'
+}
+[cds] - serving MDMService {
+  at: [ '/mdm' ],
+  decl: 'srv\\mdm-service.cds:5',
+  impl: 'srv\\mdm-service.js'
+}
+[cds] - serving PIService {
+  at: [ '/pi' ],
+  decl: 'srv\\pi-service.cds:5',
+  impl: 'srv\\pi-service.js'
+}
+[cds] - serving SalesforceService {
+  at: [ '/salesforce' ],
+  decl: 'srv\\salesforce-service.cds:5',
+  impl: 'srv\\salesforce-service.js'
+}
+[cds] - serving SatelliteAcknowledgementService {
+  at: [ '/satellite-ack' ],
+  decl: 'srv\\satellite-acknowledgement-service.cds:3',
+  impl: 'srv\\satellite-acknowledgement-service.js'
+}
+[cds] - server listening on { url: 'http://localhost:4004' }
+[cds] - server v9.4.4 launched in 2055 ms
+📧 Using Ethereal test email account: bo6gmj56fndzmakp@ethereal.email
+📧 Using Ethereal test email account: h473vc26xuxuyu2l@ethereal.email
+✅ Email service initialized successfully
+✅ Email service initialized successfully
+[odata] - GET /mdm/$metadata { 'sap-language': 'EN' }
+[odata] - HEAD /mdm/ 
+[odata] - POST /mdm/$batch 
+[odata] - > GET /MDMApprovalRequests {
+  '$count': 'true',
+  '$filter': '(IsActiveEntity eq false or SiblingEntity/IsActiveEntity eq null)',
+  '$select': 'HasActiveEntity,ID,IsActiveEntity,createdAt,createdBy,integrationSuiteStatus,name1,requestNumber,requestType,sapInitialStatus,satelliteStatus,sourceSystem,status',
+  '$skip': '0',
+  '$top': '30'
+}
+
+        ___________________________
+ 
+[cds] - bootstrapping from { file: 'server.js' }
+🚀 Bootstrapping CAP server with integration APIs...
+✅ Integration API endpoints registered at /integration
+🔒 Input validation and rate limiting enabled
+✅ Satellite mock system endpoints registered at /satellite-mock
+   - POST /satellite-mock/coupa/webhook/mdm-approval
+   - POST /satellite-mock/salesforce/webhook/mdm-approval
+   - POST /satellite-mock/pi/webhook/mdm-approval
+   - POST /satellite-mock/acknowledge (manual ack)
+   - GET  /satellite-mock/received-notifications (testing)
+[cds] - loaded model from 20 file(s):
+
+  srv\pi-service.cds
+  srv\pi-annotations.cds
+  srv\coupa-annotations.cds
+  node_modules\@sap\cds\srv\outbox.cds
+  app\services.cds
+  app\satellite-ack\annotations.cds
+  app\salesforce-requests\annotations.cds
+  app\pi-requests\annotations.cds
+  app\mdm-approval\annotations.cds
+  app\coupa-requests\annotations.cds
+  app\admin-config\annotations.cds
+  srv\satellite-acknowledgement-service.cds
+  srv\salesforce-service.cds
+  srv\mdm-service.cds
+  srv\coupa-service.cds
+  srv\admin-service.cds
+  app\mdm-approval\field-annotations.cds
+  srv\common.cds
+  db\data-model.cds
+  node_modules\@sap\cds\common.cds
+[cds] - connect using bindings from: { registry: '~/.cds-services.json' }
+[cds] - connect to db > sqlite { url: 'db.sqlite' }
+[coupa-service] - Coupa Service initialized
+[coupa-service] - Coupa Service initialization complete
+DEBUG: NotificationService constructor start
+[mdm-service] - MDM Service initialized
+[mdm-service] - Registering MDM service handlers...
+[mdm-service] - Duplicate check handler registered
+[mdm-service] - VIES validation handler registered
+[mdm-service] - AEB compliance handler registered
+DEBUG: NotificationService constructor start
+[mdm-service] - Approval handler registered
+[mdm-service] - Status update handler registered
+[mdm-service] - All MDM service handlers registered successfully
+[mdm-service] - MDM Service initialization complete
+[coupa-service] - PI Service initialized
+[coupa-service] - PI Service initialization complete
+[salesforce-service] - Salesforce Service initialized
+[salesforce-service] - Salesforce Service initialization complete
+[satellite-ack-service] - ✅ Satellite Acknowledgement Service handler registered
+[admin-service] - Admin Service initialized
+[admin-service] - Admin Service initialization complete
+[cds] - using auth strategy {
+  kind: 'dummy',
+  impl: 'node_modules\\@sap\\cds\\lib\\srv\\middlewares\\auth\\dummy-auth.js'
+}
+[cds] - serving AdminService {
+  at: [ '/admin' ],
+  decl: 'srv\\admin-service.cds:11',
+  impl: 'srv\\admin-service.js'
+}
+[cds] - serving CoupaService {
+  at: [ '/coupa' ],
+  decl: 'srv\\coupa-service.cds:5',
+  impl: 'srv\\coupa-service.js'
+}
+[cds] - serving MDMService {
+  at: [ '/mdm' ],
+  decl: 'srv\\mdm-service.cds:5',
+  impl: 'srv\\mdm-service.js'
+}
+[cds] - serving PIService {
+  at: [ '/pi' ],
+  decl: 'srv\\pi-service.cds:5',
+  impl: 'srv\\pi-service.js'
+}
+[cds] - serving SalesforceService {
+  at: [ '/salesforce' ],
+  decl: 'srv\\salesforce-service.cds:5',
+  impl: 'srv\\salesforce-service.js'
+}
+[cds] - serving SatelliteAcknowledgementService {
+  at: [ '/satellite-ack' ],
+  decl: 'srv\\satellite-acknowledgement-service.cds:3',
+  impl: 'srv\\satellite-acknowledgement-service.js'
+}
+[cds] - server listening on { url: 'http://localhost:4004' }
+[cds] - server v9.4.4 launched in 2415 ms
+📧 Using Ethereal test email account: s6fqtgndoesvxvq7@ethereal.email
+📧 Using Ethereal test email account: gz7w6r4zecfr5zaf@ethereal.email
+✅ Email service initialized successfully
+✅ Email service initialized successfully
+[odata] - GET /mdm/$metadata { 'sap-language': 'EN' }
+[odata] - HEAD /mdm/ 
+[odata] - POST /mdm/$batch 
+[odata] - > GET /MDMApprovalRequests {
+  '$count': 'true',
+  '$filter': '(IsActiveEntity eq false or SiblingEntity/IsActiveEntity eq null)',
+  '$select': 'HasActiveEntity,ID,IsActiveEntity,createdAt,createdBy,integrationSuiteStatus,name1,requestNumber,requestType,sapInitialStatus,satelliteStatus,sourceSystem,status',
+  '$skip': '0',
+  '$top': '30'
+}
+
+        ___________________________
+ 
+[cds] - bootstrapping from { file: 'server.js' }
+🚀 Bootstrapping CAP server with integration APIs...
+✅ Integration API endpoints registered at /integration
+🔒 Input validation and rate limiting enabled
+✅ Satellite mock system endpoints registered at /satellite-mock
+   - POST /satellite-mock/coupa/webhook/mdm-approval
+   - POST /satellite-mock/salesforce/webhook/mdm-approval
+   - POST /satellite-mock/pi/webhook/mdm-approval
+   - POST /satellite-mock/acknowledge (manual ack)
+   - GET  /satellite-mock/received-notifications (testing)
+[cds] - loaded model from 20 file(s):
+
+  srv\pi-service.cds
+  srv\pi-annotations.cds
+  srv\coupa-annotations.cds
+  node_modules\@sap\cds\srv\outbox.cds
+  app\services.cds
+  app\satellite-ack\annotations.cds
+  app\salesforce-requests\annotations.cds
+  app\pi-requests\annotations.cds
+  app\mdm-approval\annotations.cds
+  app\coupa-requests\annotations.cds
+  app\admin-config\annotations.cds
+  srv\satellite-acknowledgement-service.cds
+  srv\salesforce-service.cds
+  srv\mdm-service.cds
+  srv\coupa-service.cds
+  srv\admin-service.cds
+  app\mdm-approval\field-annotations.cds
+  srv\common.cds
+  db\data-model.cds
+  node_modules\@sap\cds\common.cds
+[cds] - connect using bindings from: { registry: '~/.cds-services.json' }
+[cds] - connect to db > sqlite { url: 'db.sqlite' }
+[coupa-service] - Coupa Service initialized
+[coupa-service] - Coupa Service initialization complete
+DEBUG: NotificationService constructor start
+[mdm-service] - MDM Service initialized
+[mdm-service] - Registering MDM service handlers...
+[mdm-service] - Duplicate check handler registered
+[mdm-service] - VIES validation handler registered
+[mdm-service] - AEB compliance handler registered
+DEBUG: NotificationService constructor start
+[mdm-service] - Approval handler registered
+[mdm-service] - Status update handler registered
+[mdm-service] - All MDM service handlers registered successfully
+[mdm-service] - MDM Service initialization complete
+[coupa-service] - PI Service initialized
+[coupa-service] - PI Service initialization complete
+[salesforce-service] - Salesforce Service initialized
+[salesforce-service] - Salesforce Service initialization complete
+[satellite-ack-service] - ✅ Satellite Acknowledgement Service handler registered
+[admin-service] - Admin Service initialized
+[admin-service] - Admin Service initialization complete
+[cds] - using auth strategy {
+  kind: 'dummy',
+  impl: 'node_modules\\@sap\\cds\\lib\\srv\\middlewares\\auth\\dummy-auth.js'
+}
+[cds] - serving AdminService {
+  at: [ '/admin' ],
+  decl: 'srv\\admin-service.cds:11',
+  impl: 'srv\\admin-service.js'
+}
+[cds] - serving CoupaService {
+  at: [ '/coupa' ],
+  decl: 'srv\\coupa-service.cds:5',
+  impl: 'srv\\coupa-service.js'
+}
+[cds] - serving MDMService {
+  at: [ '/mdm' ],
+  decl: 'srv\\mdm-service.cds:5',
+  impl: 'srv\\mdm-service.js'
+}
+[cds] - serving PIService {
+  at: [ '/pi' ],
+  decl: 'srv\\pi-service.cds:5',
+  impl: 'srv\\pi-service.js'
+}
+[cds] - serving SalesforceService {
+  at: [ '/salesforce' ],
+  decl: 'srv\\salesforce-service.cds:5',
+  impl: 'srv\\salesforce-service.js'
+}
+[cds] - serving SatelliteAcknowledgementService {
+  at: [ '/satellite-ack' ],
+  decl: 'srv\\satellite-acknowledgement-service.cds:3',
+  impl: 'srv\\satellite-acknowledgement-service.js'
+}
+[cds] - server listening on { url: 'http://localhost:4004' }
+[cds] - server v9.4.4 launched in 2271 ms
+📧 Using Ethereal test email account: ztkre5xiid674iuf@ethereal.email
+📧 Using Ethereal test email account: z2hpieuh6telqj4x@ethereal.email
+✅ Email service initialized successfully
+✅ Email service initialized successfully
+
+        ___________________________
+ 
+[cds] - bootstrapping from { file: 'server.js' }
+🚀 Bootstrapping CAP server with integration APIs...
+✅ Integration API endpoints registered at /integration
+🔒 Input validation and rate limiting enabled
+✅ Satellite mock system endpoints registered at /satellite-mock
+   - POST /satellite-mock/coupa/webhook/mdm-approval
+   - POST /satellite-mock/salesforce/webhook/mdm-approval
+   - POST /satellite-mock/pi/webhook/mdm-approval
+   - POST /satellite-mock/acknowledge (manual ack)
+   - GET  /satellite-mock/received-notifications (testing)
+[cds] - loaded model from 20 file(s):
+
+  srv\pi-service.cds
+  srv\pi-annotations.cds
+  srv\coupa-annotations.cds
+  node_modules\@sap\cds\srv\outbox.cds
+  app\services.cds
+  app\satellite-ack\annotations.cds
+  app\salesforce-requests\annotations.cds
+  app\pi-requests\annotations.cds
+  app\mdm-approval\annotations.cds
+  app\coupa-requests\annotations.cds
+  app\admin-config\annotations.cds
+  srv\satellite-acknowledgement-service.cds
+  srv\salesforce-service.cds
+  srv\mdm-service.cds
+  srv\coupa-service.cds
+  srv\admin-service.cds
+  app\mdm-approval\field-annotations.cds
+  srv\common.cds
+  db\data-model.cds
+  node_modules\@sap\cds\common.cds
+[cds] - connect using bindings from: { registry: '~/.cds-services.json' }
+[cds] - connect to db > sqlite { url: 'db.sqlite' }
+[coupa-service] - Coupa Service initialized
+[coupa-service] - Coupa Service initialization complete
+DEBUG: NotificationService constructor start
+[mdm-service] - MDM Service initialized
+[mdm-service] - Registering MDM service handlers...
+[mdm-service] - Duplicate check handler registered
+[mdm-service] - VIES validation handler registered
+[mdm-service] - AEB compliance handler registered
+DEBUG: NotificationService constructor start
+[mdm-service] - Approval handler registered
+[mdm-service] - Status update handler registered
+[mdm-service] - All MDM service handlers registered successfully
+[mdm-service] - MDM Service initialization complete
+[coupa-service] - PI Service initialized
+[coupa-service] - PI Service initialization complete
+[salesforce-service] - Salesforce Service initialized
+[salesforce-service] - Salesforce Service initialization complete
+[satellite-ack-service] - ✅ Satellite Acknowledgement Service handler registered
+[admin-service] - Admin Service initialized
+[admin-service] - Admin Service initialization complete
+[cds] - using auth strategy {
+  kind: 'dummy',
+  impl: 'node_modules\\@sap\\cds\\lib\\srv\\middlewares\\auth\\dummy-auth.js'
+}
+[cds] - serving AdminService {
+  at: [ '/admin' ],
+  decl: 'srv\\admin-service.cds:11',
+  impl: 'srv\\admin-service.js'
+}
+[cds] - serving CoupaService {
+  at: [ '/coupa' ],
+  decl: 'srv\\coupa-service.cds:5',
+  impl: 'srv\\coupa-service.js'
+}
+[cds] - serving MDMService {
+  at: [ '/mdm' ],
+  decl: 'srv\\mdm-service.cds:5',
+  impl: 'srv\\mdm-service.js'
+}
+[cds] - serving PIService {
+  at: [ '/pi' ],
+  decl: 'srv\\pi-service.cds:5',
+  impl: 'srv\\pi-service.js'
+}
+[cds] - serving SalesforceService {
+  at: [ '/salesforce' ],
+  decl: 'srv\\salesforce-service.cds:5',
+  impl: 'srv\\salesforce-service.js'
+}
+[cds] - serving SatelliteAcknowledgementService {
+  at: [ '/satellite-ack' ],
+  decl: 'srv\\satellite-acknowledgement-service.cds:3',
+  impl: 'srv\\satellite-acknowledgement-service.js'
+}
+
+  [EADDRINUSE] - port 4004 is already in use by another server process.
+  > Press Return to restart with an arbitrary port.
+
+📧 Using Ethereal test email account: uhx7llxxj7gusidr@ethereal.email
+📧 Using Ethereal test email account: uxwocvubmpfw2wou@ethereal.email
+✅ Email service initialized successfully
+✅ Email service initialized successfully
+
+        ___________________________
+ 
+
+        ___________________________
+ 
+[cds] - bootstrapping from { file: 'server.js' }
+[cds] - bootstrapping from { file: 'server.js' }
+🚀 Bootstrapping CAP server with integration APIs...
+✅ Integration API endpoints registered at /integration
+🔒 Input validation and rate limiting enabled
+✅ Satellite mock system endpoints registered at /satellite-mock
+   - POST /satellite-mock/coupa/webhook/mdm-approval
+   - POST /satellite-mock/salesforce/webhook/mdm-approval
+   - POST /satellite-mock/pi/webhook/mdm-approval
+   - POST /satellite-mock/acknowledge (manual ack)
+   - GET  /satellite-mock/received-notifications (testing)
+🚀 Bootstrapping CAP server with integration APIs...
+✅ Integration API endpoints registered at /integration
+🔒 Input validation and rate limiting enabled
+✅ Satellite mock system endpoints registered at /satellite-mock
+   - POST /satellite-mock/coupa/webhook/mdm-approval
+   - POST /satellite-mock/salesforce/webhook/mdm-approval
+   - POST /satellite-mock/pi/webhook/mdm-approval
+   - POST /satellite-mock/acknowledge (manual ack)
+   - GET  /satellite-mock/received-notifications (testing)
+[cds] - loaded model from 20 file(s):
+
+  srv\pi-service.cds
+  srv\pi-annotations.cds
+  srv\coupa-annotations.cds
+  node_modules\@sap\cds\srv\outbox.cds
+  app\services.cds
+  app\satellite-ack\annotations.cds
+  app\salesforce-requests\annotations.cds
+  app\pi-requests\annotations.cds
+  app\mdm-approval\annotations.cds
+  app\coupa-requests\annotations.cds
+  app\admin-config\annotations.cds
+  srv\satellite-acknowledgement-service.cds
+  srv\salesforce-service.cds
+  srv\mdm-service.cds
+  srv\coupa-service.cds
+  srv\admin-service.cds
+  app\mdm-approval\field-annotations.cds
+  srv\common.cds
+  db\data-model.cds
+  node_modules\@sap\cds\common.cds
+[cds] - loaded model from 20 file(s):
+
+  srv\pi-service.cds
+  srv\pi-annotations.cds
+  srv\coupa-annotations.cds
+  node_modules\@sap\cds\srv\outbox.cds
+  app\services.cds
+  app\satellite-ack\annotations.cds
+  app\salesforce-requests\annotations.cds
+  app\pi-requests\annotations.cds
+  app\mdm-approval\annotations.cds
+  app\coupa-requests\annotations.cds
+  app\admin-config\annotations.cds
+  srv\satellite-acknowledgement-service.cds
+  srv\salesforce-service.cds
+  srv\mdm-service.cds
+  srv\coupa-service.cds
+  srv\admin-service.cds
+  app\mdm-approval\field-annotations.cds
+  srv\common.cds
+  db\data-model.cds
+  node_modules\@sap\cds\common.cds
+[cds] - connect using bindings from: { registry: '~/.cds-services.json' }
+[cds] - connect to db > sqlite { url: 'db.sqlite' }
+[cds] - connect using bindings from: { registry: '~/.cds-services.json' }
+[cds] - connect to db > sqlite { url: 'db.sqlite' }
+[coupa-service] - Coupa Service initialized
+[coupa-service] - Coupa Service initialization complete
+DEBUG: NotificationService constructor start
+[mdm-service] - MDM Service initialized
+[mdm-service] - Registering MDM service handlers...
+[mdm-service] - Duplicate check handler registered
+[mdm-service] - VIES validation handler registered
+[mdm-service] - AEB compliance handler registered
+DEBUG: NotificationService constructor start
+[mdm-service] - Approval handler registered
+[mdm-service] - Status update handler registered
+[mdm-service] - All MDM service handlers registered successfully
+[mdm-service] - MDM Service initialization complete
+[coupa-service] - PI Service initialized
+[coupa-service] - PI Service initialization complete
+[salesforce-service] - Salesforce Service initialized
+[salesforce-service] - Salesforce Service initialization complete
+[satellite-ack-service] - ✅ Satellite Acknowledgement Service handler registered
+[admin-service] - Admin Service initialized
+[admin-service] - Admin Service initialization complete
+[cds] - using auth strategy {
+  kind: 'dummy',
+  impl: 'node_modules\\@sap\\cds\\lib\\srv\\middlewares\\auth\\dummy-auth.js'
+}
+[coupa-service] - Coupa Service initialized
+[coupa-service] - Coupa Service initialization complete
+DEBUG: NotificationService constructor start
+[cds] - serving AdminService {
+  at: [ '/admin' ],
+  decl: 'srv\\admin-service.cds:11',
+  impl: 'srv\\admin-service.js'
+}
+[cds] - serving CoupaService {
+  at: [ '/coupa' ],
+  decl: 'srv\\coupa-service.cds:5',
+  impl: 'srv\\coupa-service.js'
+}
+[cds] - serving MDMService {
+  at: [ '/mdm' ],
+  decl: 'srv\\mdm-service.cds:5',
+  impl: 'srv\\mdm-service.js'
+}
+[cds] - serving PIService {
+  at: [ '/pi' ],
+  decl: 'srv\\pi-service.cds:5',
+  impl: 'srv\\pi-service.js'
+}
+[cds] - serving SalesforceService {
+  at: [ '/salesforce' ],
+  decl: 'srv\\salesforce-service.cds:5',
+  impl: 'srv\\salesforce-service.js'
+}
+[cds] - serving SatelliteAcknowledgementService {
+  at: [ '/satellite-ack' ],
+  decl: 'srv\\satellite-acknowledgement-service.cds:3',
+  impl: 'srv\\satellite-acknowledgement-service.js'
+}
+[cds] - server listening on { url: 'http://localhost:61007' }
+[cds] - server v9.4.4 launched in 2919 ms
+[mdm-service] - MDM Service initialized
+[mdm-service] - Registering MDM service handlers...
+[mdm-service] - Duplicate check handler registered
+[mdm-service] - VIES validation handler registered
+[mdm-service] - AEB compliance handler registered
+DEBUG: NotificationService constructor start
+[mdm-service] - Approval handler registered
+[mdm-service] - Status update handler registered
+[mdm-service] - All MDM service handlers registered successfully
+[mdm-service] - MDM Service initialization complete
+[coupa-service] - PI Service initialized
+[coupa-service] - PI Service initialization complete
+[salesforce-service] - Salesforce Service initialized
+[salesforce-service] - Salesforce Service initialization complete
+[satellite-ack-service] - ✅ Satellite Acknowledgement Service handler registered
+[admin-service] - Admin Service initialized
+[admin-service] - Admin Service initialization complete
+[cds] - using auth strategy {
+  kind: 'dummy',
+  impl: 'node_modules\\@sap\\cds\\lib\\srv\\middlewares\\auth\\dummy-auth.js'
+}
+[cds] - serving AdminService {
+  at: [ '/admin' ],
+  decl: 'srv\\admin-service.cds:11',
+  impl: 'srv\\admin-service.js'
+}
+[cds] - serving CoupaService {
+  at: [ '/coupa' ],
+  decl: 'srv\\coupa-service.cds:5',
+  impl: 'srv\\coupa-service.js'
+}
+[cds] - serving MDMService {
+  at: [ '/mdm' ],
+  decl: 'srv\\mdm-service.cds:5',
+  impl: 'srv\\mdm-service.js'
+}
+[cds] - serving PIService {
+  at: [ '/pi' ],
+  decl: 'srv\\pi-service.cds:5',
+  impl: 'srv\\pi-service.js'
+}
+[cds] - serving SalesforceService {
+  at: [ '/salesforce' ],
+  decl: 'srv\\salesforce-service.cds:5',
+  impl: 'srv\\salesforce-service.js'
+}
+[cds] - serving SatelliteAcknowledgementService {
+  at: [ '/satellite-ack' ],
+  decl: 'srv\\satellite-acknowledgement-service.cds:3',
+  impl: 'srv\\satellite-acknowledgement-service.js'
+}
+[cds] - server listening on { url: 'http://localhost:61010' }
+[cds] - server v9.4.4 launched in 2961 ms
+📧 Using Ethereal test email account: pyloyfzb4ahriezk@ethereal.email
+📧 Using Ethereal test email account: mo2dvnhxwf5tuk67@ethereal.email
+📧 Using Ethereal test email account: s6uavgbuoz3b77ju@ethereal.email
+📧 Using Ethereal test email account: wm6ghfjesdx2hc6u@ethereal.email
+✅ Email service initialized successfully
+✅ Email service initialized successfully
+✅ Email service initialized successfully
+✅ Email service initialized successfully
+
+        ___________________________
+ 
+[cds] - bootstrapping from { file: 'server.js' }
+🚀 Bootstrapping CAP server with integration APIs...
+✅ Integration API endpoints registered at /integration
+🔒 Input validation and rate limiting enabled
+✅ Satellite mock system endpoints registered at /satellite-mock
+   - POST /satellite-mock/coupa/webhook/mdm-approval
+   - POST /satellite-mock/salesforce/webhook/mdm-approval
+   - POST /satellite-mock/pi/webhook/mdm-approval
+   - POST /satellite-mock/acknowledge (manual ack)
+   - GET  /satellite-mock/received-notifications (testing)
+[cds] - loaded model from 20 file(s):
+
+  srv\pi-service.cds
+  srv\pi-annotations.cds
+  srv\coupa-annotations.cds
+  node_modules\@sap\cds\srv\outbox.cds
+  app\services.cds
+  app\satellite-ack\annotations.cds
+  app\salesforce-requests\annotations.cds
+  app\pi-requests\annotations.cds
+  app\mdm-approval\annotations.cds
+  app\coupa-requests\annotations.cds
+  app\admin-config\annotations.cds
+  srv\satellite-acknowledgement-service.cds
+  srv\salesforce-service.cds
+  srv\mdm-service.cds
+  srv\coupa-service.cds
+  srv\admin-service.cds
+  app\mdm-approval\field-annotations.cds
+  srv\common.cds
+  db\data-model.cds
+  node_modules\@sap\cds\common.cds
+[cds] - connect using bindings from: { registry: '~/.cds-services.json' }
+[cds] - connect to db > sqlite { url: 'db.sqlite' }
+[coupa-service] - Coupa Service initialized
+[coupa-service] - Coupa Service initialization complete
+DEBUG: NotificationService constructor start
+[mdm-service] - MDM Service initialized
+[mdm-service] - Registering MDM service handlers...
+[mdm-service] - Duplicate check handler registered
+[mdm-service] - VIES validation handler registered
+[mdm-service] - AEB compliance handler registered
+DEBUG: NotificationService constructor start
+[mdm-service] - Approval handler registered
+[mdm-service] - Status update handler registered
+[mdm-service] - All MDM service handlers registered successfully
+[mdm-service] - MDM Service initialization complete
+[coupa-service] - PI Service initialized
+[coupa-service] - PI Service initialization complete
+[salesforce-service] - Salesforce Service initialized
+[salesforce-service] - Salesforce Service initialization complete
+[satellite-ack-service] - ✅ Satellite Acknowledgement Service handler registered
+[admin-service] - Admin Service initialized
+[admin-service] - Admin Service initialization complete
+[cds] - using auth strategy {
+  kind: 'dummy',
+  impl: 'node_modules\\@sap\\cds\\lib\\srv\\middlewares\\auth\\dummy-auth.js'
+}
+[cds] - serving AdminService {
+  at: [ '/admin' ],
+  decl: 'srv\\admin-service.cds:11',
+  impl: 'srv\\admin-service.js'
+}
+[cds] - serving CoupaService {
+  at: [ '/coupa' ],
+  decl: 'srv\\coupa-service.cds:5',
+  impl: 'srv\\coupa-service.js'
+}
+[cds] - serving MDMService {
+  at: [ '/mdm' ],
+  decl: 'srv\\mdm-service.cds:5',
+  impl: 'srv\\mdm-service.js'
+}
+[cds] - serving PIService {
+  at: [ '/pi' ],
+  decl: 'srv\\pi-service.cds:5',
+  impl: 'srv\\pi-service.js'
+}
+[cds] - serving SalesforceService {
+  at: [ '/salesforce' ],
+  decl: 'srv\\salesforce-service.cds:5',
+  impl: 'srv\\salesforce-service.js'
+}
+[cds] - serving SatelliteAcknowledgementService {
+  at: [ '/satellite-ack' ],
+  decl: 'srv\\satellite-acknowledgement-service.cds:3',
+  impl: 'srv\\satellite-acknowledgement-service.js'
+}
+[cds] - server listening on { url: 'http://localhost:61010' }
+[cds] - server v9.4.4 launched in 3830 ms
+📧 Using Ethereal test email account: s6y5cjzujabjrcxb@ethereal.email
+📧 Using Ethereal test email account: j6vt2uqehiyc6fkk@ethereal.email
+✅ Email service initialized successfully
+✅ Email service initialized successfully

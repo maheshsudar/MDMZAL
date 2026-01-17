@@ -1,0 +1,9 @@
+{
+  "requestType": "AdhocSync",
+  "sapBpNumber": "0000100001",
+  "existingBpName": "Acme Corporation",
+  "targetSystem": "Coupa",
+  "adhocReason": "Testing adhoc sync - Automation failed, manual sync required",
+  "name1": "Acme Corporation",
+  "partnerName": "Acme Corporation"
+}
